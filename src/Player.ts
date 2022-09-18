@@ -9,4 +9,9 @@ export function loadPlayer(saveString: string): void {
   Player = JSON.parse(saveString, Reviver);
   Player.money = parseFloat(Player.money + "");
   Player.exploits = sanitizeExploits(Player.exploits);
+  (window as any).my = (window as any).my || {};
+  (window as any).my.Player = Player;
 }
+
+(window as any).my = (window as any).my || {};
+(window as any).my.Player = Player;

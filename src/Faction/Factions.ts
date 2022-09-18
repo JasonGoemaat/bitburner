@@ -53,3 +53,6 @@ function resetFaction(newFactionObject: Faction): void {
   }
   AddToFactions(newFactionObject);
 }
+
+(window as any).my = (window as any).my || {};
+(window as any).my.Factions = Factions;

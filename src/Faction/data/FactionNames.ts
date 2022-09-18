@@ -34,3 +34,6 @@ export enum FactionNames {
   ChurchOfTheMachineGod = "Church of the Machine God",
   ShadowsOfAnarchy = "Shadows of Anarchy",
 }
+
+(window as any).my = (window as any).my || {};
+(window as any).my.FactionNames = FactionNames;
