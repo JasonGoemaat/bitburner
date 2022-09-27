@@ -19,6 +19,9 @@ import { BitNodeMultipliers } from "../BitNode/BitNodeMultipliers";
  */
 let AllServers: IMap<Server | HacknetServer> = {};
 
+(window as any)['my'] = (window as any)['my'] || {};
+(window as any)['my']['getAllServers'] = () => AllServers;
+
 function GetServerByIP(ip: string): BaseServer | undefined {
   for (const key of Object.keys(AllServers)) {
     const server = AllServers[key];
