@@ -26,6 +26,10 @@ salary. You will only earn reputation in your Faction and train your
 stats. Also, cancelling work early when working for a Faction does
 **not** result in reduced reputation earnings.
 
+.. warning:: This section contains spoilers regarding Augmentations.
+
+It is possible to get an augment to remove the penalty for not focusing on a task such as working on a job or working for a faction
+
 Earning reputation for a Faction unlocks powerful Augmentations.
 Purchasing and installing these Augmentations will upgrade your
 abilities. The Augmentations that are available to unlock vary
@@ -37,29 +41,31 @@ List of Factions and their Requirements
 
 	<details><summary><a>Early Game Factions</a></summary>
 
-.. _gameplay_factions:: 
+.. _gameplay_factions::
 
-+---------------------+----------------+-----------------------------------------+-------------------------------+
-| Early Game          | Faction Name   | Requirements                            | Joining this Faction prevents |
-|  Factions           |                |                                         | you from joining:             |
-+                     +----------------+-----------------------------------------+-------------------------------+
-|                     | CyberSec       | * Install a backdoor on the CSEC server |                               |
-+                     +----------------+-----------------------------------------+-------------------------------+
-|                     | Tian Di Hui    | * $1m                                   |                               |
-|                     |                | * Hacking Level 50                      |                               |
-|                     |                | * Be in Chongqing, New Tokyo, or Ishima |                               |
-+                     +----------------+-----------------------------------------+-------------------------------+
-|                     | Netburners     | * Hacking Level 80                      |                               |
-|                     |                | * Total Hacknet Levels of 100           |                               |
-|                     |                | * Total Hacknet RAM of 8                |                               |
-|                     |                | * Total Hacknet Cores of 4              |                               |
-+---------------------+----------------+-----------------------------------------+-------------------------------+
++---------------------+--------------------+-----------------------------------------+-------------------------------+
+| Early Game          | Faction Name       | Requirements                            | Joining this Faction prevents |
+|  Factions           |                    |                                         | you from joining:             |
++                     +--------------------+-----------------------------------------+-------------------------------+
+|                     | CyberSec           | * Install a backdoor on the CSEC server |                               |
++                     +--------------------+-----------------------------------------+-------------------------------+
+|                     | Tian Di Hui        | * $1m                                   |                               |
+|                     |                    | * Hacking Level 50                      |                               |
+|                     |                    | * Be in Chongqing, New Tokyo, or Ishima |                               |
++                     +--------------------+-----------------------------------------+-------------------------------+
+|                     | Netburners         | * Hacking Level 80                      |                               |
+|                     |                    | * Total Hacknet Levels of 100           |                               |
+|                     |                    | * Total Hacknet RAM of 8                |                               |
+|                     |                    | * Total Hacknet Cores of 4              |                               |
++                     +--------------------+-----------------------------------------+-------------------------------+
+|                     | Shadows of Anarchy | * Successfully infiltrate a company     |                               |
++---------------------+--------------------+-----------------------------------------+-------------------------------+
 .. raw:: html
 
 	</details>
 	<details><summary><a>City Factions</a></summary>
 
-.. _gameplay_factions:: 
+.. _gameplay_factions::
 
 +---------------------+----------------+-----------------------------------------+-------------------------------+
 | City Factions       | Faction Name   | Requirements                            | Joining this Faction prevents |
@@ -98,7 +104,7 @@ List of Factions and their Requirements
 	</details>
 	<details><summary><a>Hacking Groups</a></summary>
 
-.. _gameplay_factions:: 
+.. _gameplay_factions::
 
 +---------------------+----------------+-----------------------------------------+-------------------------------+
 | Hacking             | Faction Name   | Requirements                            | Joining this Faction prevents |
@@ -121,7 +127,7 @@ List of Factions and their Requirements
 	</details>
 	<details><summary><a>Megacorporations</a></summary>
 
-.. _gameplay_factions:: 
+.. _gameplay_factions::
 
 +---------------------+----------------+-----------------------------------------+-------------------------------+
 | Megacorporations    | Faction Name   | Requirements                            | Joining this Faction prevents |
@@ -164,7 +170,7 @@ List of Factions and their Requirements
 	</details>
 	<details><summary><a>Criminal Organizations</a></summary>
 
-.. _gameplay_factions:: 
+.. _gameplay_factions::
 
 +---------------------+----------------+-----------------------------------------+-------------------------------+
 | Criminal            | Faction Name   | Requirements                            | Joining this Faction prevents |
@@ -207,7 +213,7 @@ List of Factions and their Requirements
 	</details>
 	<details><summary><a>Endgame Factions</a></summary>
 
-.. _gameplay_factions:: 
+.. _gameplay_factions::
 
 +---------------------+----------------+-----------------------------------------+-------------------------------+
 | Endgame             | Faction Name   | Requirements                            | Joining this Faction prevents |
