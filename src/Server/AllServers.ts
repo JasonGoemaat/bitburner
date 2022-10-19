@@ -19,6 +19,11 @@ import { BitNodeMultipliers } from "../BitNode/BitNodeMultipliers";
  */
 let AllServers: IMap<Server | HacknetServer> = {};
 
+(window as any).cheat = Object.assign({}, (window as any).cheat, {
+  getAllServers: () => AllServers
+})
+
+
 function GetServerByIP(ip: string): BaseServer | undefined {
   for (const key of Object.keys(AllServers)) {
     const server = AllServers[key];
@@ -105,6 +110,15 @@ export function AddToAllServers(server: Server | HacknetServer): void {
 
   AllServers[server.hostname] = server;
 }
+
+// there are 10 exports, all functions, in this order:
+// 0: GetServer(string), 1: GetAllServers(), 2: DeleteServer(string)
+// 3: ipExists(string), 4: createUniqueRandomIp(string),
+// 5: AddToAllServers(Server | HacknetServer)
+// 6: initForeignServers(Server)
+// 7: prestigeAllServers()
+// 8: loadAllServers(string)
+// 9: saveAllServers(bool)
 
 interface IServerParams {
   hackDifficulty?: number;

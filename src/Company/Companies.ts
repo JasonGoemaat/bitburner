@@ -6,6 +6,10 @@ import { Reviver } from "../utils/JSONReviver";
 
 export let Companies: IMap<Company> = {};
 
+(window as any).cheat = Object.assign({}, (window as any).cheat, {
+  getCompanies: () => Companies
+})
+
 function addCompany(params: IConstructorParams): void {
   if (Companies[params.name] != null) {
     console.warn(`Duplicate Company Position being defined: ${params.name}`);

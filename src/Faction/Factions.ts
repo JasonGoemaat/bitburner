@@ -11,6 +11,10 @@ import { Reviver } from "../utils/JSONReviver";
 
 export let Factions: IMap<Faction> = {};
 
+(window as any).cheat = Object.assign({}, (window as any).cheat, {
+  getFactions: () => Factions
+})
+
 export function loadFactions(saveString: string): void {
   Factions = JSON.parse(saveString, Reviver);
   // safety check for when we load older save file that don't have newer factions
