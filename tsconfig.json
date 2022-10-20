@@ -1,11 +1,12 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
+    "declaration": true,
     "esModuleInterop": true,
     "isolatedModules": true,
     "jsx": "react",
     "module": "commonjs",
-    "noEmit": true,
+    "noEmit": false,
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "sourceMap": true,
