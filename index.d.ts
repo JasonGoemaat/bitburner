@@ -1,6 +1,6 @@
-declare module 'bitburner/Achievements/AchievementEntry' {
+declare module 'bb-lib/Achievements/AchievementEntry' {
   /// <reference types="react" />
-  import { Achievement } from "bitburner/Achievements/Achievements";
+  import { Achievement } from "bb-lib/Achievements/Achievements";
   interface IProps {
       achievement: Achievement;
       unlockedOn?: number;
@@ -11,9 +11,9 @@ declare module 'bitburner/Achievements/AchievementEntry' {
   export {};
 
 }
-declare module 'bitburner/Achievements/AchievementIcon' {
+declare module 'bb-lib/Achievements/AchievementIcon' {
   /// <reference types="react" />
-  import { Achievement } from "bitburner/Achievements/Achievements";
+  import { Achievement } from "bb-lib/Achievements/Achievements";
   interface IProps {
       achievement: Achievement;
       unlocked: boolean;
@@ -24,9 +24,9 @@ declare module 'bitburner/Achievements/AchievementIcon' {
   export {};
 
 }
-declare module 'bitburner/Achievements/AchievementList' {
+declare module 'bb-lib/Achievements/AchievementList' {
   /// <reference types="react" />
-  import { Achievement, PlayerAchievement } from "bitburner/Achievements/Achievements";
+  import { Achievement, PlayerAchievement } from "bb-lib/Achievements/Achievements";
   interface IProps {
       achievements: Achievement[];
       playerAchievements: PlayerAchievement[];
@@ -35,8 +35,8 @@ declare module 'bitburner/Achievements/AchievementList' {
   export {};
 
 }
-declare module 'bitburner/Achievements/Achievements' {
-  import { IMap } from "bitburner/types";
+declare module 'bb-lib/Achievements/Achievements' {
+  import { IMap } from "bb-lib/types";
   export interface Achievement {
       ID: string;
       Icon?: string;
@@ -63,13 +63,13 @@ declare module 'bitburner/Achievements/Achievements' {
   export function calculateAchievements(): void;
 
 }
-declare module 'bitburner/Achievements/AchievementsRoot' {
+declare module 'bb-lib/Achievements/AchievementsRoot' {
   /// <reference types="react" />
   export function AchievementsRoot(): JSX.Element;
 
 }
-declare module 'bitburner/Alias' {
-  import { IMap } from "bitburner/types";
+declare module 'bb-lib/Alias' {
+  import { IMap } from "bb-lib/types";
   export let Aliases: IMap<string>;
   export let GlobalAliases: IMap<string>;
   export function loadAliases(saveString: string): void;
@@ -84,21 +84,21 @@ declare module 'bitburner/Alias' {
   export function substituteAliases(origCommand: string): string;
 
 }
-declare module 'bitburner/Arcade/ui/ArcadeRoot' {
+declare module 'bb-lib/Arcade/ui/ArcadeRoot' {
   import React from "react";
   export function ArcadeRoot(): React.ReactElement;
 
 }
-declare module 'bitburner/Arcade/ui/BBCabinet' {
+declare module 'bb-lib/Arcade/ui/BBCabinet' {
   import React from "react";
   export function BBCabinetRoot(): React.ReactElement;
 
 }
-declare module 'bitburner/Augmentation/Augmentation' {
+declare module 'bb-lib/Augmentation/Augmentation' {
   /// <reference types="react" />
-  import { IReviverValue } from "bitburner/utils/JSONReviver";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { Multipliers } from "bitburner/PersonObjects/Multipliers";
+  import { IReviverValue } from "bb-lib/utils/JSONReviver";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { Multipliers } from "bb-lib/PersonObjects/Multipliers";
   export interface AugmentationCosts {
       moneyCost: number;
       repCost: number;
@@ -171,9 +171,9 @@ declare module 'bitburner/Augmentation/Augmentation' {
   }
 
 }
-declare module 'bitburner/Augmentation/AugmentationHelpers' {
-  import { Augmentation } from "bitburner/Augmentation/Augmentation";
-  import { IPlayerOwnedAugmentation } from "bitburner/Augmentation/PlayerOwnedAugmentation";
+declare module 'bb-lib/Augmentation/AugmentationHelpers' {
+  import { Augmentation } from "bb-lib/Augmentation/Augmentation";
+  import { IPlayerOwnedAugmentation } from "bb-lib/Augmentation/PlayerOwnedAugmentation";
   export function AddToStaticAugmentations(aug: Augmentation): void;
   function initAugmentations(): void;
   export function getBaseAugmentationPriceMultiplier(): number;
@@ -185,8 +185,8 @@ declare module 'bitburner/Augmentation/AugmentationHelpers' {
   export { installAugmentations, initAugmentations, applyAugmentation, augmentationExists };
 
 }
-declare module 'bitburner/Augmentation/data/AugmentationCreator' {
-  import { Augmentation } from "bitburner/Augmentation/Augmentation";
+declare module 'bb-lib/Augmentation/data/AugmentationCreator' {
+  import { Augmentation } from "bb-lib/Augmentation/Augmentation";
   export const initSoAAugmentations: () => Augmentation[];
   export const initGeneralAugmentations: () => Augmentation[];
   export const initBladeburnerAugmentations: () => Augmentation[];
@@ -195,7 +195,7 @@ declare module 'bitburner/Augmentation/data/AugmentationCreator' {
   export function initUnstableCircadianModulator(): Augmentation;
 
 }
-declare module 'bitburner/Augmentation/data/AugmentationNames' {
+declare module 'bb-lib/Augmentation/data/AugmentationNames' {
   export enum AugmentationNames {
       Targeting1 = "Augmented Targeting I",
       Targeting2 = "Augmented Targeting II",
@@ -322,7 +322,7 @@ declare module 'bitburner/Augmentation/data/AugmentationNames' {
   }
 
 }
-declare module 'bitburner/Augmentation/PlayerOwnedAugmentation' {
+declare module 'bb-lib/Augmentation/PlayerOwnedAugmentation' {
   export class PlayerOwnedAugmentation {
       level: number;
       name: string;
@@ -334,13 +334,13 @@ declare module 'bitburner/Augmentation/PlayerOwnedAugmentation' {
   }
 
 }
-declare module 'bitburner/Augmentation/StaticAugmentations' {
-  import { Augmentation } from "bitburner/Augmentation/Augmentation";
-  import { IMap } from "bitburner/types";
+declare module 'bb-lib/Augmentation/StaticAugmentations' {
+  import { Augmentation } from "bb-lib/Augmentation/Augmentation";
+  import { IMap } from "bb-lib/types";
   export const StaticAugmentations: IMap<Augmentation>;
 
 }
-declare module 'bitburner/Augmentation/ui/AugmentationsRoot' {
+declare module 'bb-lib/Augmentation/ui/AugmentationsRoot' {
   /**
    * Root React component for the Augmentations UI page that display all of your
    * owned and purchased Augmentations and Source-Files.
@@ -354,12 +354,12 @@ declare module 'bitburner/Augmentation/ui/AugmentationsRoot' {
   export {};
 
 }
-declare module 'bitburner/Augmentation/ui/InstalledAugmentations' {
+declare module 'bb-lib/Augmentation/ui/InstalledAugmentations' {
   import React from "react";
   export function InstalledAugmentations(): React.ReactElement;
 
 }
-declare module 'bitburner/Augmentation/ui/OwnedSourceFiles' {
+declare module 'bb-lib/Augmentation/ui/OwnedSourceFiles' {
   /**
    * React Component for displaying a list of the player's Source-Files
    * on the Augmentations UI
@@ -368,16 +368,16 @@ declare module 'bitburner/Augmentation/ui/OwnedSourceFiles' {
   export function OwnedSourceFiles(): React.ReactElement;
 
 }
-declare module 'bitburner/Augmentation/ui/PlayerMultipliers' {
+declare module 'bb-lib/Augmentation/ui/PlayerMultipliers' {
   import * as React from "react";
   export function PlayerMultipliers(): React.ReactElement;
 
 }
-declare module 'bitburner/Augmentation/ui/PurchasableAugmentations' {
+declare module 'bb-lib/Augmentation/ui/PurchasableAugmentations' {
   import React from "react";
-  import { Faction } from "bitburner/Faction/Faction";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { Augmentation } from "bitburner/Augmentation/Augmentation";
+  import { Faction } from "bb-lib/Faction/Faction";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { Augmentation } from "bb-lib/Augmentation/Augmentation";
   interface IPurchasableAugsProps {
       augNames: string[];
       ownedAugNames: string[];
@@ -398,10 +398,10 @@ declare module 'bitburner/Augmentation/ui/PurchasableAugmentations' {
   export {};
 
 }
-declare module 'bitburner/Augmentation/ui/PurchaseAugmentationModal' {
+declare module 'bb-lib/Augmentation/ui/PurchaseAugmentationModal' {
   import React from "react";
-  import { Augmentation } from "bitburner/Augmentation/Augmentation";
-  import { Faction } from "bitburner/Faction/Faction";
+  import { Augmentation } from "bb-lib/Augmentation/Augmentation";
+  import { Faction } from "bb-lib/Faction/Faction";
   interface IProps {
       open: boolean;
       onClose: () => void;
@@ -412,12 +412,12 @@ declare module 'bitburner/Augmentation/ui/PurchaseAugmentationModal' {
   export {};
 
 }
-declare module 'bitburner/Augmentation/ui/PurchasedAugmentations' {
+declare module 'bb-lib/Augmentation/ui/PurchasedAugmentations' {
   import * as React from "react";
   export function PurchasedAugmentations(): React.ReactElement;
 
 }
-declare module 'bitburner/Augmentation/ui/SourceFileMinus1' {
+declare module 'bb-lib/Augmentation/ui/SourceFileMinus1' {
   /**
    * React Component for displaying a list of the player's Source-Files
    * on the Augmentations UI
@@ -426,16 +426,16 @@ declare module 'bitburner/Augmentation/ui/SourceFileMinus1' {
   export function SourceFileMinus1(): React.ReactElement;
 
 }
-declare module 'bitburner/Augmentation/ui/SourceFiles' {
+declare module 'bb-lib/Augmentation/ui/SourceFiles' {
   import React from "react";
   export function SourceFilesElement(): React.ReactElement;
 
 }
-declare module 'bitburner/BitNode/BitNode' {
+declare module 'bb-lib/BitNode/BitNode' {
   /// <reference types="react" />
-  import { IBitNodeMultipliers } from "bitburner/BitNode/BitNodeMultipliers";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { IMap } from "bitburner/types";
+  import { IBitNodeMultipliers } from "bb-lib/BitNode/BitNodeMultipliers";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { IMap } from "bb-lib/types";
   class BitNode {
       desc: string;
       info: JSX.Element;
@@ -451,7 +451,7 @@ declare module 'bitburner/BitNode/BitNode' {
   export {};
 
 }
-declare module 'bitburner/BitNode/BitNodeMultipliers' {
+declare module 'bb-lib/BitNode/BitNodeMultipliers' {
   /**
    * Bitnode multipliers influence the difficulty of different aspects of the game.
    * Each Bitnode has a different theme/strategy to achieving the end goal, so these multipliers will can help drive the
@@ -658,14 +658,14 @@ declare module 'bitburner/BitNode/BitNodeMultipliers' {
   export const BitNodeMultipliers: IBitNodeMultipliers;
 
 }
-declare module 'bitburner/BitNode/ui/BitFlumeModal' {
+declare module 'bb-lib/BitNode/ui/BitFlumeModal' {
   import React from "react";
-  import { EventEmitter } from "bitburner/utils/EventEmitter";
+  import { EventEmitter } from "bb-lib/utils/EventEmitter";
   export const BitFlumeEvent: EventEmitter<[]>;
   export function BitFlumeModal(): React.ReactElement;
 
 }
-declare module 'bitburner/BitNode/ui/BitnodeMultipliersDescription' {
+declare module 'bb-lib/BitNode/ui/BitnodeMultipliersDescription' {
   import React from "react";
   interface IProps {
       n: number;
@@ -676,9 +676,9 @@ declare module 'bitburner/BitNode/ui/BitnodeMultipliersDescription' {
   export {};
 
 }
-declare module 'bitburner/BitNode/ui/BitverseRoot' {
+declare module 'bb-lib/BitNode/ui/BitverseRoot' {
   import React from "react";
-  import { IRouter } from "bitburner/ui/Router";
+  import { IRouter } from "bb-lib/ui/Router";
   interface IProps {
       flume: boolean;
       quick: boolean;
@@ -688,9 +688,9 @@ declare module 'bitburner/BitNode/ui/BitverseRoot' {
   export {};
 
 }
-declare module 'bitburner/BitNode/ui/PortalModal' {
+declare module 'bb-lib/BitNode/ui/PortalModal' {
   import React from "react";
-  import { IRouter } from "bitburner/ui/Router";
+  import { IRouter } from "bb-lib/ui/Router";
   interface IProps {
       open: boolean;
       onClose: () => void;
@@ -704,11 +704,11 @@ declare module 'bitburner/BitNode/ui/PortalModal' {
   export {};
 
 }
-declare module 'bitburner/Bladeburner/Action' {
-  import { IReviverValue } from "bitburner/utils/JSONReviver";
-  import { IBladeburner } from "bitburner/Bladeburner/IBladeburner";
-  import { IAction, ISuccessChanceParams } from "bitburner/Bladeburner/IAction";
-  import { IPerson } from "bitburner/PersonObjects/IPerson";
+declare module 'bb-lib/Bladeburner/Action' {
+  import { IReviverValue } from "bb-lib/utils/JSONReviver";
+  import { IBladeburner } from "bb-lib/Bladeburner/IBladeburner";
+  import { IAction, ISuccessChanceParams } from "bb-lib/Bladeburner/IAction";
+  import { IPerson } from "bb-lib/PersonObjects/IPerson";
   class StatsMultiplier {
       [key: string]: number;
       hack: number;
@@ -792,9 +792,9 @@ declare module 'bitburner/Bladeburner/Action' {
   export {};
 
 }
-declare module 'bitburner/Bladeburner/ActionIdentifier' {
-  import { IActionIdentifier } from "bitburner/Bladeburner/IActionIdentifier";
-  import { IReviverValue } from "bitburner/utils/JSONReviver";
+declare module 'bb-lib/Bladeburner/ActionIdentifier' {
+  import { IActionIdentifier } from "bb-lib/Bladeburner/IActionIdentifier";
+  import { IReviverValue } from "bb-lib/utils/JSONReviver";
   interface IParams {
       name?: string;
       type?: number;
@@ -809,9 +809,9 @@ declare module 'bitburner/Bladeburner/ActionIdentifier' {
   export {};
 
 }
-declare module 'bitburner/Bladeburner/BlackOperation' {
-  import { Operation, IOperationParams } from "bitburner/Bladeburner/Operation";
-  import { IReviverValue } from "bitburner/utils/JSONReviver";
+declare module 'bb-lib/Bladeburner/BlackOperation' {
+  import { Operation, IOperationParams } from "bb-lib/Bladeburner/Operation";
+  import { IReviverValue } from "bb-lib/utils/JSONReviver";
   export class BlackOperation extends Operation {
       constructor(params?: IOperationParams | null);
       getActionTimePenalty(): number;
@@ -822,27 +822,27 @@ declare module 'bitburner/Bladeburner/BlackOperation' {
   }
 
 }
-declare module 'bitburner/Bladeburner/BlackOperations' {
-  import { BlackOperation } from "bitburner/Bladeburner/BlackOperation";
-  import { IMap } from "bitburner/types";
+declare module 'bb-lib/Bladeburner/BlackOperations' {
+  import { BlackOperation } from "bb-lib/Bladeburner/BlackOperation";
+  import { IMap } from "bb-lib/types";
   export const BlackOperations: IMap<BlackOperation>;
 
 }
-declare module 'bitburner/Bladeburner/Bladeburner' {
-  import { IReviverValue } from "bitburner/utils/JSONReviver";
-  import { IBladeburner } from "bitburner/Bladeburner/IBladeburner";
-  import { IActionIdentifier } from "bitburner/Bladeburner/IActionIdentifier";
-  import { BlackOperation } from "bitburner/Bladeburner/BlackOperation";
-  import { Operation } from "bitburner/Bladeburner/Operation";
-  import { Contract } from "bitburner/Bladeburner/Contract";
-  import { Skill } from "bitburner/Bladeburner/Skill";
-  import { City } from "bitburner/Bladeburner/City";
-  import { IAction } from "bitburner/Bladeburner/IAction";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { ITaskTracker } from "bitburner/PersonObjects/ITaskTracker";
-  import { IPerson } from "bitburner/PersonObjects/IPerson";
-  import { IRouter } from "bitburner/ui/Router";
-  import { WorkerScript } from "bitburner/Netscript/WorkerScript";
+declare module 'bb-lib/Bladeburner/Bladeburner' {
+  import { IReviverValue } from "bb-lib/utils/JSONReviver";
+  import { IBladeburner } from "bb-lib/Bladeburner/IBladeburner";
+  import { IActionIdentifier } from "bb-lib/Bladeburner/IActionIdentifier";
+  import { BlackOperation } from "bb-lib/Bladeburner/BlackOperation";
+  import { Operation } from "bb-lib/Bladeburner/Operation";
+  import { Contract } from "bb-lib/Bladeburner/Contract";
+  import { Skill } from "bb-lib/Bladeburner/Skill";
+  import { City } from "bb-lib/Bladeburner/City";
+  import { IAction } from "bb-lib/Bladeburner/IAction";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { ITaskTracker } from "bb-lib/PersonObjects/ITaskTracker";
+  import { IPerson } from "bb-lib/PersonObjects/IPerson";
+  import { IRouter } from "bb-lib/ui/Router";
+  import { WorkerScript } from "bb-lib/Netscript/WorkerScript";
   interface BlackOpsAttempt {
       error?: string;
       isAvailable?: boolean;
@@ -967,8 +967,8 @@ declare module 'bitburner/Bladeburner/Bladeburner' {
   export {};
 
 }
-declare module 'bitburner/Bladeburner/City' {
-  import { IReviverValue } from "bitburner/utils/JSONReviver";
+declare module 'bb-lib/Bladeburner/City' {
+  import { IReviverValue } from "bb-lib/utils/JSONReviver";
   interface IChangePopulationByCountParams {
       estChange: number;
       estOffset: number;
@@ -1034,10 +1034,10 @@ declare module 'bitburner/Bladeburner/City' {
   export {};
 
 }
-declare module 'bitburner/Bladeburner/Contract' {
-  import { IBladeburner } from "bitburner/Bladeburner/IBladeburner";
-  import { Action, IActionParams } from "bitburner/Bladeburner/Action";
-  import { IReviverValue } from "bitburner/utils/JSONReviver";
+declare module 'bb-lib/Bladeburner/Contract' {
+  import { IBladeburner } from "bb-lib/Bladeburner/IBladeburner";
+  import { Action, IActionParams } from "bb-lib/Bladeburner/Action";
+  import { IReviverValue } from "bb-lib/utils/JSONReviver";
   export class Contract extends Action {
       constructor(params?: IActionParams | null);
       getActionTypeSkillSuccessBonus(inst: IBladeburner): number;
@@ -1046,7 +1046,7 @@ declare module 'bitburner/Bladeburner/Contract' {
   }
 
 }
-declare module 'bitburner/Bladeburner/data/ActionTypes' {
+declare module 'bb-lib/Bladeburner/data/ActionTypes' {
   export const ActionTypes: {
       [key: string]: number;
       Idle: number;
@@ -1064,7 +1064,7 @@ declare module 'bitburner/Bladeburner/data/ActionTypes' {
   };
 
 }
-declare module 'bitburner/Bladeburner/data/BlackOperationNames' {
+declare module 'bb-lib/Bladeburner/data/BlackOperationNames' {
   export enum BlackOperationNames {
       OperationTyphoon = "Operation Typhoon",
       OperationZero = "Operation Zero",
@@ -1090,7 +1090,7 @@ declare module 'bitburner/Bladeburner/data/BlackOperationNames' {
   }
 
 }
-declare module 'bitburner/Bladeburner/data/BlackOperations' {
+declare module 'bb-lib/Bladeburner/data/BlackOperations' {
   /// <reference types="react" />
   interface IBlackOp {
       desc: JSX.Element;
@@ -1101,7 +1101,7 @@ declare module 'bitburner/Bladeburner/data/BlackOperations' {
   export {};
 
 }
-declare module 'bitburner/Bladeburner/data/Constants' {
+declare module 'bb-lib/Bladeburner/data/Constants' {
   export const BladeburnerConstants: {
       CityNames: string[];
       CyclesPerSecond: number;
@@ -1133,7 +1133,7 @@ declare module 'bitburner/Bladeburner/data/Constants' {
   };
 
 }
-declare module 'bitburner/Bladeburner/data/Contracts' {
+declare module 'bb-lib/Bladeburner/data/Contracts' {
   /// <reference types="react" />
   interface IContract {
       desc: JSX.Element;
@@ -1144,9 +1144,9 @@ declare module 'bitburner/Bladeburner/data/Contracts' {
   export {};
 
 }
-declare module 'bitburner/Bladeburner/data/GeneralActions' {
+declare module 'bb-lib/Bladeburner/data/GeneralActions' {
   /// <reference types="react" />
-  import { WorkStats } from "bitburner/Work/WorkStats";
+  import { WorkStats } from "bb-lib/Work/WorkStats";
   interface IGeneral {
       desc: JSX.Element;
       exp: WorkStats;
@@ -1157,7 +1157,7 @@ declare module 'bitburner/Bladeburner/data/GeneralActions' {
   export {};
 
 }
-declare module 'bitburner/Bladeburner/data/Growths' {
+declare module 'bb-lib/Bladeburner/data/Growths' {
   export const Growths: {
       [key: string]: (() => number) | undefined;
       ["Tracking"]: () => number;
@@ -1172,7 +1172,7 @@ declare module 'bitburner/Bladeburner/data/Growths' {
   };
 
 }
-declare module 'bitburner/Bladeburner/data/Help' {
+declare module 'bb-lib/Bladeburner/data/Help' {
   export const ConsoleHelpText: {
       [key: string]: string[];
       helpList: string[];
@@ -1187,13 +1187,13 @@ declare module 'bitburner/Bladeburner/data/Help' {
   };
 
 }
-declare module 'bitburner/Bladeburner/data/Icons' {
+declare module 'bb-lib/Bladeburner/data/Icons' {
   /// <reference types="react" />
   export const stealthIcon: JSX.Element;
   export const killIcon: JSX.Element;
 
 }
-declare module 'bitburner/Bladeburner/data/Operations' {
+declare module 'bb-lib/Bladeburner/data/Operations' {
   /// <reference types="react" />
   interface IOperation {
       desc: JSX.Element;
@@ -1204,7 +1204,7 @@ declare module 'bitburner/Bladeburner/data/Operations' {
   export {};
 
 }
-declare module 'bitburner/Bladeburner/data/SkillNames' {
+declare module 'bb-lib/Bladeburner/data/SkillNames' {
   export const SkillNames: {
       BladesIntuition: string;
       Cloak: string;
@@ -1223,16 +1223,16 @@ declare module 'bitburner/Bladeburner/data/SkillNames' {
   };
 
 }
-declare module 'bitburner/Bladeburner/GeneralActions' {
-  import { Action } from "bitburner/Bladeburner/Action";
-  import { IMap } from "bitburner/types";
+declare module 'bb-lib/Bladeburner/GeneralActions' {
+  import { Action } from "bb-lib/Bladeburner/Action";
+  import { IMap } from "bb-lib/types";
   export const GeneralActions: IMap<Action>;
 
 }
-declare module 'bitburner/Bladeburner/IAction' {
-  import { IReviverValue } from "bitburner/utils/JSONReviver";
-  import { IPerson } from "bitburner/PersonObjects/IPerson";
-  import { IBladeburner } from "bitburner/Bladeburner/IBladeburner";
+declare module 'bb-lib/Bladeburner/IAction' {
+  import { IReviverValue } from "bb-lib/utils/JSONReviver";
+  import { IPerson } from "bb-lib/PersonObjects/IPerson";
+  import { IBladeburner } from "bb-lib/Bladeburner/IBladeburner";
   interface IStatsMultiplier {
       [key: string]: number;
       hack: number;
@@ -1287,25 +1287,25 @@ declare module 'bitburner/Bladeburner/IAction' {
   export {};
 
 }
-declare module 'bitburner/Bladeburner/IActionIdentifier' {
+declare module 'bb-lib/Bladeburner/IActionIdentifier' {
   export interface IActionIdentifier {
       name: string;
       type: number;
   }
 
 }
-declare module 'bitburner/Bladeburner/IBladeburner' {
-  import { IActionIdentifier } from "bitburner/Bladeburner/IActionIdentifier";
-  import { City } from "bitburner/Bladeburner/City";
-  import { Skill } from "bitburner/Bladeburner/Skill";
-  import { IAction } from "bitburner/Bladeburner/IAction";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { IPerson } from "bitburner/PersonObjects/IPerson";
-  import { ITaskTracker } from "bitburner/PersonObjects/ITaskTracker";
-  import { IRouter } from "bitburner/ui/Router";
-  import { WorkerScript } from "bitburner/Netscript/WorkerScript";
-  import { Contract } from "bitburner/Bladeburner/Contract";
-  import { Operation } from "bitburner/Bladeburner/Operation";
+declare module 'bb-lib/Bladeburner/IBladeburner' {
+  import { IActionIdentifier } from "bb-lib/Bladeburner/IActionIdentifier";
+  import { City } from "bb-lib/Bladeburner/City";
+  import { Skill } from "bb-lib/Bladeburner/Skill";
+  import { IAction } from "bb-lib/Bladeburner/IAction";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { IPerson } from "bb-lib/PersonObjects/IPerson";
+  import { ITaskTracker } from "bb-lib/PersonObjects/ITaskTracker";
+  import { IRouter } from "bb-lib/ui/Router";
+  import { WorkerScript } from "bb-lib/Netscript/WorkerScript";
+  import { Contract } from "bb-lib/Bladeburner/Contract";
+  import { Operation } from "bb-lib/Bladeburner/Operation";
   export interface IBladeburner {
       numHosp: number;
       moneyLost: number;
@@ -1408,10 +1408,10 @@ declare module 'bitburner/Bladeburner/IBladeburner' {
   }
 
 }
-declare module 'bitburner/Bladeburner/Operation' {
-  import { IBladeburner } from "bitburner/Bladeburner/IBladeburner";
-  import { Action, IActionParams } from "bitburner/Bladeburner/Action";
-  import { IReviverValue } from "bitburner/utils/JSONReviver";
+declare module 'bb-lib/Bladeburner/Operation' {
+  import { IBladeburner } from "bb-lib/Bladeburner/IBladeburner";
+  import { Action, IActionParams } from "bb-lib/Bladeburner/Action";
+  import { IReviverValue } from "bb-lib/utils/JSONReviver";
   export interface IOperationParams extends IActionParams {
       reqdRank?: number;
       teamCount?: number;
@@ -1428,7 +1428,7 @@ declare module 'bitburner/Bladeburner/Operation' {
   }
 
 }
-declare module 'bitburner/Bladeburner/Skill' {
+declare module 'bb-lib/Bladeburner/Skill' {
   interface ISkillParams {
       name: string;
       desc: string;
@@ -1489,16 +1489,16 @@ declare module 'bitburner/Bladeburner/Skill' {
   export {};
 
 }
-declare module 'bitburner/Bladeburner/Skills' {
-  import { Skill } from "bitburner/Bladeburner/Skill";
-  import { IMap } from "bitburner/types";
+declare module 'bb-lib/Bladeburner/Skills' {
+  import { Skill } from "bb-lib/Bladeburner/Skill";
+  import { IMap } from "bb-lib/types";
   export const Skills: IMap<Skill>;
 
 }
-declare module 'bitburner/Bladeburner/ui/ActionLevel' {
+declare module 'bb-lib/Bladeburner/ui/ActionLevel' {
   import React from "react";
-  import { IAction } from "bitburner/Bladeburner/IAction";
-  import { IBladeburner } from "bitburner/Bladeburner/IBladeburner";
+  import { IAction } from "bb-lib/Bladeburner/IAction";
+  import { IBladeburner } from "bb-lib/Bladeburner/IBladeburner";
   interface IProps {
       action: IAction;
       isActive: boolean;
@@ -1509,10 +1509,10 @@ declare module 'bitburner/Bladeburner/ui/ActionLevel' {
   export {};
 
 }
-declare module 'bitburner/Bladeburner/ui/AllPages' {
+declare module 'bb-lib/Bladeburner/ui/AllPages' {
   import React from "react";
-  import { IBladeburner } from "bitburner/Bladeburner/IBladeburner";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
+  import { IBladeburner } from "bb-lib/Bladeburner/IBladeburner";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
   interface IProps {
       bladeburner: IBladeburner;
       player: IPlayer;
@@ -1521,9 +1521,9 @@ declare module 'bitburner/Bladeburner/ui/AllPages' {
   export {};
 
 }
-declare module 'bitburner/Bladeburner/ui/Autolevel' {
+declare module 'bb-lib/Bladeburner/ui/Autolevel' {
   import React from "react";
-  import { IAction } from "bitburner/Bladeburner/IAction";
+  import { IAction } from "bb-lib/Bladeburner/IAction";
   interface IProps {
       action: IAction;
       rerender: () => void;
@@ -1532,11 +1532,11 @@ declare module 'bitburner/Bladeburner/ui/Autolevel' {
   export {};
 
 }
-declare module 'bitburner/Bladeburner/ui/BlackOpElem' {
+declare module 'bb-lib/Bladeburner/ui/BlackOpElem' {
   import React from "react";
-  import { IBladeburner } from "bitburner/Bladeburner/IBladeburner";
-  import { BlackOperation } from "bitburner/Bladeburner/BlackOperation";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
+  import { IBladeburner } from "bb-lib/Bladeburner/IBladeburner";
+  import { BlackOperation } from "bb-lib/Bladeburner/BlackOperation";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
   interface IProps {
       bladeburner: IBladeburner;
       player: IPlayer;
@@ -1546,10 +1546,10 @@ declare module 'bitburner/Bladeburner/ui/BlackOpElem' {
   export {};
 
 }
-declare module 'bitburner/Bladeburner/ui/BlackOpList' {
+declare module 'bb-lib/Bladeburner/ui/BlackOpList' {
   import React from "react";
-  import { IBladeburner } from "bitburner/Bladeburner/IBladeburner";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
+  import { IBladeburner } from "bb-lib/Bladeburner/IBladeburner";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
   interface IProps {
       bladeburner: IBladeburner;
       player: IPlayer;
@@ -1558,10 +1558,10 @@ declare module 'bitburner/Bladeburner/ui/BlackOpList' {
   export {};
 
 }
-declare module 'bitburner/Bladeburner/ui/BlackOpPage' {
+declare module 'bb-lib/Bladeburner/ui/BlackOpPage' {
   import * as React from "react";
-  import { IBladeburner } from "bitburner/Bladeburner/IBladeburner";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
+  import { IBladeburner } from "bb-lib/Bladeburner/IBladeburner";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
   interface IProps {
       bladeburner: IBladeburner;
       player: IPlayer;
@@ -1570,20 +1570,20 @@ declare module 'bitburner/Bladeburner/ui/BlackOpPage' {
   export {};
 
 }
-declare module 'bitburner/Bladeburner/ui/BladeburnerCinematic' {
+declare module 'bb-lib/Bladeburner/ui/BladeburnerCinematic' {
   import React from "react";
   export function BladeburnerCinematic(): React.ReactElement;
 
 }
-declare module 'bitburner/Bladeburner/ui/BladeburnerRoot' {
+declare module 'bb-lib/Bladeburner/ui/BladeburnerRoot' {
   import React from "react";
   export function BladeburnerRoot(): React.ReactElement;
 
 }
-declare module 'bitburner/Bladeburner/ui/Console' {
+declare module 'bb-lib/Bladeburner/ui/Console' {
   import React from "react";
-  import { IBladeburner } from "bitburner/Bladeburner/IBladeburner";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
+  import { IBladeburner } from "bb-lib/Bladeburner/IBladeburner";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
   interface IProps {
       bladeburner: IBladeburner;
       player: IPlayer;
@@ -1592,11 +1592,11 @@ declare module 'bitburner/Bladeburner/ui/Console' {
   export {};
 
 }
-declare module 'bitburner/Bladeburner/ui/ContractElem' {
+declare module 'bb-lib/Bladeburner/ui/ContractElem' {
   import React from "react";
-  import { IBladeburner } from "bitburner/Bladeburner/IBladeburner";
-  import { IAction } from "bitburner/Bladeburner/IAction";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
+  import { IBladeburner } from "bb-lib/Bladeburner/IBladeburner";
+  import { IAction } from "bb-lib/Bladeburner/IAction";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
   interface IProps {
       bladeburner: IBladeburner;
       player: IPlayer;
@@ -1606,10 +1606,10 @@ declare module 'bitburner/Bladeburner/ui/ContractElem' {
   export {};
 
 }
-declare module 'bitburner/Bladeburner/ui/ContractList' {
+declare module 'bb-lib/Bladeburner/ui/ContractList' {
   import React from "react";
-  import { IBladeburner } from "bitburner/Bladeburner/IBladeburner";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
+  import { IBladeburner } from "bb-lib/Bladeburner/IBladeburner";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
   interface IProps {
       bladeburner: IBladeburner;
       player: IPlayer;
@@ -1618,10 +1618,10 @@ declare module 'bitburner/Bladeburner/ui/ContractList' {
   export {};
 
 }
-declare module 'bitburner/Bladeburner/ui/ContractPage' {
+declare module 'bb-lib/Bladeburner/ui/ContractPage' {
   import * as React from "react";
-  import { IBladeburner } from "bitburner/Bladeburner/IBladeburner";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
+  import { IBladeburner } from "bb-lib/Bladeburner/IBladeburner";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
   interface IProps {
       bladeburner: IBladeburner;
       player: IPlayer;
@@ -1630,11 +1630,11 @@ declare module 'bitburner/Bladeburner/ui/ContractPage' {
   export {};
 
 }
-declare module 'bitburner/Bladeburner/ui/GeneralActionElem' {
+declare module 'bb-lib/Bladeburner/ui/GeneralActionElem' {
   import React from "react";
-  import { IBladeburner } from "bitburner/Bladeburner/IBladeburner";
-  import { IAction } from "bitburner/Bladeburner/IAction";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
+  import { IBladeburner } from "bb-lib/Bladeburner/IBladeburner";
+  import { IAction } from "bb-lib/Bladeburner/IAction";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
   interface IProps {
       bladeburner: IBladeburner;
       player: IPlayer;
@@ -1644,10 +1644,10 @@ declare module 'bitburner/Bladeburner/ui/GeneralActionElem' {
   export {};
 
 }
-declare module 'bitburner/Bladeburner/ui/GeneralActionList' {
+declare module 'bb-lib/Bladeburner/ui/GeneralActionList' {
   import React from "react";
-  import { IBladeburner } from "bitburner/Bladeburner/IBladeburner";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
+  import { IBladeburner } from "bb-lib/Bladeburner/IBladeburner";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
   interface IProps {
       bladeburner: IBladeburner;
       player: IPlayer;
@@ -1656,10 +1656,10 @@ declare module 'bitburner/Bladeburner/ui/GeneralActionList' {
   export {};
 
 }
-declare module 'bitburner/Bladeburner/ui/GeneralActionPage' {
+declare module 'bb-lib/Bladeburner/ui/GeneralActionPage' {
   import * as React from "react";
-  import { IBladeburner } from "bitburner/Bladeburner/IBladeburner";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
+  import { IBladeburner } from "bb-lib/Bladeburner/IBladeburner";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
   interface IProps {
       bladeburner: IBladeburner;
       player: IPlayer;
@@ -1668,16 +1668,16 @@ declare module 'bitburner/Bladeburner/ui/GeneralActionPage' {
   export {};
 
 }
-declare module 'bitburner/Bladeburner/ui/KillIcon' {
+declare module 'bb-lib/Bladeburner/ui/KillIcon' {
   import React from "react";
   export function KillIcon(): React.ReactElement;
 
 }
-declare module 'bitburner/Bladeburner/ui/OperationElem' {
+declare module 'bb-lib/Bladeburner/ui/OperationElem' {
   import React from "react";
-  import { IBladeburner } from "bitburner/Bladeburner/IBladeburner";
-  import { Operation } from "bitburner/Bladeburner/Operation";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
+  import { IBladeburner } from "bb-lib/Bladeburner/IBladeburner";
+  import { Operation } from "bb-lib/Bladeburner/Operation";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
   interface IProps {
       bladeburner: IBladeburner;
       player: IPlayer;
@@ -1687,10 +1687,10 @@ declare module 'bitburner/Bladeburner/ui/OperationElem' {
   export {};
 
 }
-declare module 'bitburner/Bladeburner/ui/OperationList' {
+declare module 'bb-lib/Bladeburner/ui/OperationList' {
   import React from "react";
-  import { IBladeburner } from "bitburner/Bladeburner/IBladeburner";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
+  import { IBladeburner } from "bb-lib/Bladeburner/IBladeburner";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
   interface IProps {
       bladeburner: IBladeburner;
       player: IPlayer;
@@ -1699,10 +1699,10 @@ declare module 'bitburner/Bladeburner/ui/OperationList' {
   export {};
 
 }
-declare module 'bitburner/Bladeburner/ui/OperationPage' {
+declare module 'bb-lib/Bladeburner/ui/OperationPage' {
   import * as React from "react";
-  import { IBladeburner } from "bitburner/Bladeburner/IBladeburner";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
+  import { IBladeburner } from "bb-lib/Bladeburner/IBladeburner";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
   interface IProps {
       bladeburner: IBladeburner;
       player: IPlayer;
@@ -1711,10 +1711,10 @@ declare module 'bitburner/Bladeburner/ui/OperationPage' {
   export {};
 
 }
-declare module 'bitburner/Bladeburner/ui/SkillElem' {
+declare module 'bb-lib/Bladeburner/ui/SkillElem' {
   import React from "react";
-  import { IBladeburner } from "bitburner/Bladeburner/IBladeburner";
-  import { Skill } from "bitburner/Bladeburner/Skill";
+  import { IBladeburner } from "bb-lib/Bladeburner/IBladeburner";
+  import { Skill } from "bb-lib/Bladeburner/Skill";
   interface IProps {
       skill: Skill;
       bladeburner: IBladeburner;
@@ -1724,9 +1724,9 @@ declare module 'bitburner/Bladeburner/ui/SkillElem' {
   export {};
 
 }
-declare module 'bitburner/Bladeburner/ui/SkillList' {
+declare module 'bb-lib/Bladeburner/ui/SkillList' {
   import * as React from "react";
-  import { IBladeburner } from "bitburner/Bladeburner/IBladeburner";
+  import { IBladeburner } from "bb-lib/Bladeburner/IBladeburner";
   interface IProps {
       bladeburner: IBladeburner;
       onUpgrade: () => void;
@@ -1735,9 +1735,9 @@ declare module 'bitburner/Bladeburner/ui/SkillList' {
   export {};
 
 }
-declare module 'bitburner/Bladeburner/ui/SkillPage' {
+declare module 'bb-lib/Bladeburner/ui/SkillPage' {
   import React from "react";
-  import { IBladeburner } from "bitburner/Bladeburner/IBladeburner";
+  import { IBladeburner } from "bb-lib/Bladeburner/IBladeburner";
   interface IProps {
       bladeburner: IBladeburner;
   }
@@ -1745,9 +1745,9 @@ declare module 'bitburner/Bladeburner/ui/SkillPage' {
   export {};
 
 }
-declare module 'bitburner/Bladeburner/ui/StartButton' {
+declare module 'bb-lib/Bladeburner/ui/StartButton' {
   import React from "react";
-  import { IBladeburner } from "bitburner/Bladeburner/IBladeburner";
+  import { IBladeburner } from "bb-lib/Bladeburner/IBladeburner";
   interface IProps {
       bladeburner: IBladeburner;
       type: number;
@@ -1758,11 +1758,11 @@ declare module 'bitburner/Bladeburner/ui/StartButton' {
   export {};
 
 }
-declare module 'bitburner/Bladeburner/ui/Stats' {
+declare module 'bb-lib/Bladeburner/ui/Stats' {
   import React from "react";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { IRouter } from "bitburner/ui/Router";
-  import { IBladeburner } from "bitburner/Bladeburner/IBladeburner";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { IRouter } from "bb-lib/ui/Router";
+  import { IBladeburner } from "bb-lib/Bladeburner/IBladeburner";
   interface IProps {
       bladeburner: IBladeburner;
       router: IRouter;
@@ -1772,15 +1772,15 @@ declare module 'bitburner/Bladeburner/ui/Stats' {
   export {};
 
 }
-declare module 'bitburner/Bladeburner/ui/StealthIcon' {
+declare module 'bb-lib/Bladeburner/ui/StealthIcon' {
   import React from "react";
   export function StealthIcon(): React.ReactElement;
 
 }
-declare module 'bitburner/Bladeburner/ui/SuccessChance' {
+declare module 'bb-lib/Bladeburner/ui/SuccessChance' {
   import React from "react";
-  import { IAction } from "bitburner/Bladeburner/IAction";
-  import { IBladeburner } from "bitburner/Bladeburner/IBladeburner";
+  import { IAction } from "bb-lib/Bladeburner/IAction";
+  import { IBladeburner } from "bb-lib/Bladeburner/IBladeburner";
   interface IProps {
       bladeburner: IBladeburner;
       action: IAction;
@@ -1789,10 +1789,10 @@ declare module 'bitburner/Bladeburner/ui/SuccessChance' {
   export {};
 
 }
-declare module 'bitburner/Bladeburner/ui/TeamSizeButton' {
+declare module 'bb-lib/Bladeburner/ui/TeamSizeButton' {
   import React from "react";
-  import { Operation } from "bitburner/Bladeburner/Operation";
-  import { IBladeburner } from "bitburner/Bladeburner/IBladeburner";
+  import { Operation } from "bb-lib/Bladeburner/Operation";
+  import { IBladeburner } from "bb-lib/Bladeburner/IBladeburner";
   interface IProps {
       action: Operation;
       bladeburner: IBladeburner;
@@ -1801,10 +1801,10 @@ declare module 'bitburner/Bladeburner/ui/TeamSizeButton' {
   export {};
 
 }
-declare module 'bitburner/Bladeburner/ui/TeamSizeModal' {
+declare module 'bb-lib/Bladeburner/ui/TeamSizeModal' {
   import React from "react";
-  import { Action } from "bitburner/Bladeburner/Action";
-  import { IBladeburner } from "bitburner/Bladeburner/IBladeburner";
+  import { Action } from "bb-lib/Bladeburner/Action";
+  import { IBladeburner } from "bb-lib/Bladeburner/IBladeburner";
   interface IProps {
       bladeburner: IBladeburner;
       action: Action;
@@ -1815,9 +1815,9 @@ declare module 'bitburner/Bladeburner/ui/TeamSizeModal' {
   export {};
 
 }
-declare module 'bitburner/Bladeburner/ui/TravelModal' {
+declare module 'bb-lib/Bladeburner/ui/TravelModal' {
   import React from "react";
-  import { IBladeburner } from "bitburner/Bladeburner/IBladeburner";
+  import { IBladeburner } from "bb-lib/Bladeburner/IBladeburner";
   interface IProps {
       bladeburner: IBladeburner;
       open: boolean;
@@ -1827,12 +1827,12 @@ declare module 'bitburner/Bladeburner/ui/TravelModal' {
   export {};
 
 }
-declare module 'bitburner/Casino/Blackjack' {
+declare module 'bb-lib/Casino/Blackjack' {
   import * as React from "react";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { Game } from "bitburner/Casino/Game";
-  import { Deck } from "bitburner/Casino/CardDeck/Deck";
-  import { Hand } from "bitburner/Casino/CardDeck/Hand";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { Game } from "bb-lib/Casino/Game";
+  import { Deck } from "bb-lib/Casino/CardDeck/Deck";
+  import { Hand } from "bb-lib/Casino/CardDeck/Hand";
   export const DECK_COUNT = 5;
   enum Result {
       Pending = "",
@@ -1874,7 +1874,7 @@ declare module 'bitburner/Casino/Blackjack' {
   export {};
 
 }
-declare module 'bitburner/Casino/CardDeck/Card' {
+declare module 'bb-lib/Casino/CardDeck/Card' {
   export enum Suit {
       Clubs = "clubs",
       Diamonds = "diamonds",
@@ -1891,8 +1891,8 @@ declare module 'bitburner/Casino/CardDeck/Card' {
   }
 
 }
-declare module 'bitburner/Casino/CardDeck/Deck' {
-  import { Card } from "bitburner/Casino/CardDeck/Card";
+declare module 'bb-lib/Casino/CardDeck/Deck' {
+  import { Card } from "bb-lib/Casino/CardDeck/Card";
   export class Deck {
       private numDecks;
       private cards;
@@ -1906,13 +1906,13 @@ declare module 'bitburner/Casino/CardDeck/Deck' {
   }
 
 }
-declare module 'bitburner/Casino/CardDeck/Hand' {
+declare module 'bb-lib/Casino/CardDeck/Hand' {
   /**
    * Represents a Hand of cards.
    *
    * This class is IMMUTABLE
    */
-  import { Card } from "bitburner/Casino/CardDeck/Card";
+  import { Card } from "bb-lib/Casino/CardDeck/Card";
   export class Hand {
       readonly cards: readonly Card[];
       constructor(cards: readonly Card[]);
@@ -1921,9 +1921,9 @@ declare module 'bitburner/Casino/CardDeck/Hand' {
   }
 
 }
-declare module 'bitburner/Casino/CardDeck/ReactCard' {
+declare module 'bb-lib/Casino/CardDeck/ReactCard' {
   import { FC } from "react";
-  import { Card } from "bitburner/Casino/CardDeck/Card";
+  import { Card } from "bb-lib/Casino/CardDeck/Card";
   type Props = {
       card: Card;
       hidden?: boolean;
@@ -1932,14 +1932,14 @@ declare module 'bitburner/Casino/CardDeck/ReactCard' {
   export {};
 
 }
-declare module 'bitburner/Casino/CoinFlip' {
+declare module 'bb-lib/Casino/CoinFlip' {
   /**
    * React Subcomponent for displaying a location's UI, when that location is a gym
    *
    * This subcomponent renders all of the buttons for training at the gym
    */
   import React from "react";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
   type IProps = {
       p: IPlayer;
   };
@@ -1947,9 +1947,9 @@ declare module 'bitburner/Casino/CoinFlip' {
   export {};
 
 }
-declare module 'bitburner/Casino/Game' {
+declare module 'bb-lib/Casino/Game' {
   import * as React from "react";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
   export function win(p: IPlayer, n: number): void;
   export function reachedLimit(p: IPlayer): boolean;
   export class Game<T, U> extends React.Component<T, U> {
@@ -1958,7 +1958,7 @@ declare module 'bitburner/Casino/Game' {
   }
 
 }
-declare module 'bitburner/Casino/RNG' {
+declare module 'bb-lib/Casino/RNG' {
   interface RNG {
       random(): number;
   }
@@ -1985,9 +1985,9 @@ declare module 'bitburner/Casino/RNG' {
   export {};
 
 }
-declare module 'bitburner/Casino/Roulette' {
+declare module 'bb-lib/Casino/Roulette' {
   import React from "react";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
   type IProps = {
       p: IPlayer;
   };
@@ -1995,9 +1995,9 @@ declare module 'bitburner/Casino/Roulette' {
   export {};
 
 }
-declare module 'bitburner/Casino/SlotMachine' {
+declare module 'bb-lib/Casino/SlotMachine' {
   import React from "react";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
   type IProps = {
       p: IPlayer;
   };
@@ -2005,12 +2005,12 @@ declare module 'bitburner/Casino/SlotMachine' {
   export {};
 
 }
-declare module 'bitburner/Casino/utils' {
+declare module 'bb-lib/Casino/utils' {
   import * as React from "react";
   export function trusted(f: () => void): (event: React.MouseEvent<HTMLElement, MouseEvent>) => void;
 
 }
-declare module 'bitburner/CodingContractGenerator' {
+declare module 'bb-lib/CodingContractGenerator' {
   export function generateRandomContract(): void;
   export function generateRandomContractOnHome(): void;
   interface IGenerateContractParams {
@@ -2022,10 +2022,10 @@ declare module 'bitburner/CodingContractGenerator' {
   export {};
 
 }
-declare module 'bitburner/CodingContracts' {
-  import { DescriptionFunc, GeneratorFunc, SolverFunc } from "bitburner/data/codingcontracttypes";
-  import { IMap } from "bitburner/types";
-  import { IReviverValue } from "bitburner/utils/JSONReviver";
+declare module 'bb-lib/CodingContracts' {
+  import { DescriptionFunc, GeneratorFunc, SolverFunc } from "bb-lib/data/codingcontracttypes";
+  import { IMap } from "bb-lib/types";
+  import { IReviverValue } from "bb-lib/utils/JSONReviver";
   class CodingContractType {
       /**
        * Function that generates a description of the problem
@@ -2111,18 +2111,18 @@ declare module 'bitburner/CodingContracts' {
   export {};
 
 }
-declare module 'bitburner/Company/Companies' {
-  import { Company } from "bitburner/Company/Company";
-  import { IMap } from "bitburner/types";
+declare module 'bb-lib/Company/Companies' {
+  import { Company } from "bb-lib/Company/Company";
+  import { IMap } from "bb-lib/types";
   export let Companies: IMap<Company>;
   export function initCompanies(): void;
   export function loadCompanies(saveString: string): void;
 
 }
-declare module 'bitburner/Company/Company' {
-  import { CompanyPosition } from "bitburner/Company/CompanyPosition";
-  import { IMap } from "bitburner/types";
-  import { IReviverValue } from "bitburner/utils/JSONReviver";
+declare module 'bb-lib/Company/Company' {
+  import { CompanyPosition } from "bb-lib/Company/CompanyPosition";
+  import { IMap } from "bb-lib/types";
+  import { IReviverValue } from "bb-lib/utils/JSONReviver";
   export interface IConstructorParams {
       name: string;
       info: string;
@@ -2196,7 +2196,7 @@ declare module 'bitburner/Company/Company' {
   }
 
 }
-declare module 'bitburner/Company/CompanyPosition' {
+declare module 'bb-lib/Company/CompanyPosition' {
   export interface IConstructorParams {
       name: string;
       nextPosition: string | null;
@@ -2286,18 +2286,18 @@ declare module 'bitburner/Company/CompanyPosition' {
   }
 
 }
-declare module 'bitburner/Company/CompanyPositions' {
-  import { CompanyPosition } from "bitburner/Company/CompanyPosition";
-  import { IMap } from "bitburner/types";
+declare module 'bb-lib/Company/CompanyPositions' {
+  import { CompanyPosition } from "bb-lib/Company/CompanyPosition";
+  import { IMap } from "bb-lib/types";
   export const CompanyPositions: IMap<CompanyPosition>;
 
 }
-declare module 'bitburner/Company/data/CompaniesMetadata' {
-  import { IConstructorParams } from "bitburner/Company/Company";
+declare module 'bb-lib/Company/data/CompaniesMetadata' {
+  import { IConstructorParams } from "bb-lib/Company/Company";
   export const companiesMetadata: IConstructorParams[];
 
 }
-declare module 'bitburner/Company/data/companypositionnames' {
+declare module 'bb-lib/Company/data/companypositionnames' {
   export const SoftwareCompanyPositions: string[];
   export const ITCompanyPositions: string[];
   export const SecurityEngineerCompanyPositions: string[];
@@ -2311,28 +2311,28 @@ declare module 'bitburner/Company/data/companypositionnames' {
   export const PartTimeCompanyPositions: string[];
 
 }
-declare module 'bitburner/Company/data/CompanyPositionsMetadata' {
-  import { IConstructorParams } from "bitburner/Company/CompanyPosition";
+declare module 'bb-lib/Company/data/CompanyPositionsMetadata' {
+  import { IConstructorParams } from "bb-lib/Company/CompanyPosition";
   export const companyPositionMetadata: IConstructorParams[];
 
 }
-declare module 'bitburner/Company/GetJobRequirementText' {
-  import { Company } from "bitburner/Company/Company";
-  import { CompanyPosition } from "bitburner/Company/CompanyPosition";
+declare module 'bb-lib/Company/GetJobRequirementText' {
+  import { Company } from "bb-lib/Company/Company";
+  import { CompanyPosition } from "bb-lib/Company/CompanyPosition";
   /**
    * Returns a string with the given CompanyPosition's stat requirements
    */
   export function getJobRequirementText(company: Company, pos: CompanyPosition, tooltiptext?: boolean): string;
 
 }
-declare module 'bitburner/Company/GetNextCompanyPosition' {
-  import { CompanyPosition } from "bitburner/Company/CompanyPosition";
+declare module 'bb-lib/Company/GetNextCompanyPosition' {
+  import { CompanyPosition } from "bb-lib/Company/CompanyPosition";
   export function getNextCompanyPositionHelper(currPos: CompanyPosition | null): CompanyPosition | null;
 
 }
-declare module 'bitburner/Company/ui/QuitJobModal' {
+declare module 'bb-lib/Company/ui/QuitJobModal' {
   import React from "react";
-  import { Company } from "bitburner/Company/Company";
+  import { Company } from "bb-lib/Company/Company";
   interface IProps {
       open: boolean;
       onClose: () => void;
@@ -2344,7 +2344,7 @@ declare module 'bitburner/Company/ui/QuitJobModal' {
   export {};
 
 }
-declare module 'bitburner/Constants' {
+declare module 'bb-lib/Constants' {
   /**
    * Generic Game Constants
    *
@@ -2437,17 +2437,17 @@ declare module 'bitburner/Constants' {
   };
 
 }
-declare module 'bitburner/Corporation/Actions' {
+declare module 'bb-lib/Corporation/Actions' {
   import { IPlayer } from "src/PersonObjects/IPlayer";
-  import { ICorporation } from "bitburner/Corporation/ICorporation";
-  import { IIndustry } from "bitburner/Corporation/IIndustry";
-  import { Industry } from "bitburner/Corporation/Industry";
-  import { OfficeSpace } from "bitburner/Corporation/OfficeSpace";
-  import { Material } from "bitburner/Corporation/Material";
-  import { Product } from "bitburner/Corporation/Product";
-  import { Warehouse } from "bitburner/Corporation/Warehouse";
-  import { CorporationUnlockUpgrade } from "bitburner/Corporation/data/CorporationUnlockUpgrades";
-  import { CorporationUpgrade } from "bitburner/Corporation/data/CorporationUpgrades";
+  import { ICorporation } from "bb-lib/Corporation/ICorporation";
+  import { IIndustry } from "bb-lib/Corporation/IIndustry";
+  import { Industry } from "bb-lib/Corporation/Industry";
+  import { OfficeSpace } from "bb-lib/Corporation/OfficeSpace";
+  import { Material } from "bb-lib/Corporation/Material";
+  import { Product } from "bb-lib/Corporation/Product";
+  import { Warehouse } from "bb-lib/Corporation/Warehouse";
+  import { CorporationUnlockUpgrade } from "bb-lib/Corporation/data/CorporationUnlockUpgrades";
+  import { CorporationUpgrade } from "bb-lib/Corporation/data/CorporationUpgrades";
   export function NewIndustry(corporation: ICorporation, industry: string, name: string): void;
   export function NewCity(corporation: ICorporation, division: IIndustry, city: string): void;
   export function UnlockUpgrade(corporation: ICorporation, upgrade: CorporationUnlockUpgrade): void;
@@ -2482,13 +2482,13 @@ declare module 'bitburner/Corporation/Actions' {
   export function SetProductMarketTA2(product: Product, on: boolean): void;
 
 }
-declare module 'bitburner/Corporation/Corporation' {
-  import { CorporationState } from "bitburner/Corporation/CorporationState";
-  import { CorporationUnlockUpgrade } from "bitburner/Corporation/data/CorporationUnlockUpgrades";
-  import { CorporationUpgrade } from "bitburner/Corporation/data/CorporationUpgrades";
-  import { Industry } from "bitburner/Corporation/Industry";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { IReviverValue } from "bitburner/utils/JSONReviver";
+declare module 'bb-lib/Corporation/Corporation' {
+  import { CorporationState } from "bb-lib/Corporation/CorporationState";
+  import { CorporationUnlockUpgrade } from "bb-lib/Corporation/data/CorporationUnlockUpgrades";
+  import { CorporationUpgrade } from "bb-lib/Corporation/data/CorporationUpgrades";
+  import { Industry } from "bb-lib/Corporation/Industry";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { IReviverValue } from "bb-lib/utils/JSONReviver";
   interface IParams {
       name?: string;
   }
@@ -2553,8 +2553,8 @@ declare module 'bitburner/Corporation/Corporation' {
   export {};
 
 }
-declare module 'bitburner/Corporation/CorporationState' {
-  import { IReviverValue } from "bitburner/utils/JSONReviver";
+declare module 'bb-lib/Corporation/CorporationState' {
+  import { IReviverValue } from "bb-lib/utils/JSONReviver";
   export class CorporationState {
       state: number;
       getState(): string;
@@ -2564,13 +2564,13 @@ declare module 'bitburner/Corporation/CorporationState' {
   }
 
 }
-declare module 'bitburner/Corporation/data/BaseResearchTree' {
-  import { ResearchTree } from "bitburner/Corporation/ResearchTree";
+declare module 'bb-lib/Corporation/data/BaseResearchTree' {
+  import { ResearchTree } from "bb-lib/Corporation/ResearchTree";
   export function getBaseResearchTreeCopy(): ResearchTree;
   export function getProductIndustryResearchTreeCopy(): ResearchTree;
 
 }
-declare module 'bitburner/Corporation/data/Constants' {
+declare module 'bb-lib/Corporation/data/Constants' {
   export const CorporationConstants: {
       INITIALSHARES: number;
       SHARESPERPRICEUPDATE: number;
@@ -2606,7 +2606,7 @@ declare module 'bitburner/Corporation/data/Constants' {
   };
 
 }
-declare module 'bitburner/Corporation/data/CorporationUnlockUpgrades' {
+declare module 'bb-lib/Corporation/data/CorporationUnlockUpgrades' {
   export interface CorporationUnlockUpgrade {
       index: number;
       price: number;
@@ -2627,7 +2627,7 @@ declare module 'bitburner/Corporation/data/CorporationUnlockUpgrades' {
   export const CorporationUnlockUpgrades: Record<CorporationUnlockUpgradeIndex, CorporationUnlockUpgrade>;
 
 }
-declare module 'bitburner/Corporation/data/CorporationUpgrades' {
+declare module 'bb-lib/Corporation/data/CorporationUpgrades' {
   export interface CorporationUpgrade {
       index: number;
       basePrice: number;
@@ -2651,15 +2651,15 @@ declare module 'bitburner/Corporation/data/CorporationUpgrades' {
   export const CorporationUpgrades: Record<CorporationUpgradeIndex, CorporationUpgrade>;
 
 }
-declare module 'bitburner/Corporation/data/ResearchMetadata' {
-  import { IConstructorParams } from "bitburner/Corporation/Research";
+declare module 'bb-lib/Corporation/data/ResearchMetadata' {
+  import { IConstructorParams } from "bb-lib/Corporation/Research";
   export const researchMetadata: IConstructorParams[];
 
 }
-declare module 'bitburner/Corporation/Employee' {
-  import { IReviverValue } from "bitburner/utils/JSONReviver";
-  import { ICorporation } from "bitburner/Corporation/ICorporation";
-  import { IIndustry } from "bitburner/Corporation/IIndustry";
+declare module 'bb-lib/Corporation/Employee' {
+  import { IReviverValue } from "bb-lib/utils/JSONReviver";
+  import { ICorporation } from "bb-lib/Corporation/ICorporation";
+  import { IIndustry } from "bb-lib/Corporation/IIndustry";
   interface IParams {
       name?: string;
       morale?: number;
@@ -2697,12 +2697,12 @@ declare module 'bitburner/Corporation/Employee' {
   export {};
 
 }
-declare module 'bitburner/Corporation/EmployeePositions' {
-  import { IMap } from "bitburner/types";
+declare module 'bb-lib/Corporation/EmployeePositions' {
+  import { IMap } from "bb-lib/types";
   export const EmployeePositions: IMap<string>;
 
 }
-declare module 'bitburner/Corporation/Export' {
+declare module 'bb-lib/Corporation/Export' {
   export interface Export {
       ind: string;
       city: string;
@@ -2710,13 +2710,13 @@ declare module 'bitburner/Corporation/Export' {
   }
 
 }
-declare module 'bitburner/Corporation/ICorporation' {
-  import { Industry } from "bitburner/Corporation/Industry";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { CorporationUnlockUpgrade } from "bitburner/Corporation/data/CorporationUnlockUpgrades";
-  import { CorporationUpgrade } from "bitburner/Corporation/data/CorporationUpgrades";
-  import { CorporationState } from "bitburner/Corporation/CorporationState";
-  import { IReviverValue } from "bitburner/utils/JSONReviver";
+declare module 'bb-lib/Corporation/ICorporation' {
+  import { Industry } from "bb-lib/Corporation/Industry";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { CorporationUnlockUpgrade } from "bb-lib/Corporation/data/CorporationUnlockUpgrades";
+  import { CorporationUpgrade } from "bb-lib/Corporation/data/CorporationUpgrades";
+  import { CorporationState } from "bb-lib/Corporation/CorporationState";
+  import { IReviverValue } from "bb-lib/utils/JSONReviver";
   export interface ICorporation {
       name: string;
       divisions: Industry[];
@@ -2768,13 +2768,13 @@ declare module 'bitburner/Corporation/ICorporation' {
   }
 
 }
-declare module 'bitburner/Corporation/IIndustry' {
-  import { Material } from "bitburner/Corporation/Material";
-  import { Warehouse } from "bitburner/Corporation/Warehouse";
-  import { ICorporation } from "bitburner/Corporation/ICorporation";
-  import { OfficeSpace } from "bitburner/Corporation/OfficeSpace";
-  import { Product } from "bitburner/Corporation/Product";
-  import { IReviverValue } from "bitburner/utils/JSONReviver";
+declare module 'bb-lib/Corporation/IIndustry' {
+  import { Material } from "bb-lib/Corporation/Material";
+  import { Warehouse } from "bb-lib/Corporation/Warehouse";
+  import { ICorporation } from "bb-lib/Corporation/ICorporation";
+  import { OfficeSpace } from "bb-lib/Corporation/OfficeSpace";
+  import { Product } from "bb-lib/Corporation/Product";
+  import { IReviverValue } from "bb-lib/utils/JSONReviver";
   export interface IIndustry {
       name: string;
       type: string;
@@ -2853,14 +2853,14 @@ declare module 'bitburner/Corporation/IIndustry' {
   }
 
 }
-declare module 'bitburner/Corporation/Industry' {
-  import { IReviverValue } from "bitburner/utils/JSONReviver";
-  import { Material } from "bitburner/Corporation/Material";
-  import { OfficeSpace } from "bitburner/Corporation/OfficeSpace";
-  import { Product } from "bitburner/Corporation/Product";
-  import { Warehouse } from "bitburner/Corporation/Warehouse";
-  import { ICorporation } from "bitburner/Corporation/ICorporation";
-  import { IIndustry } from "bitburner/Corporation/IIndustry";
+declare module 'bb-lib/Corporation/Industry' {
+  import { IReviverValue } from "bb-lib/utils/JSONReviver";
+  import { Material } from "bb-lib/Corporation/Material";
+  import { OfficeSpace } from "bb-lib/Corporation/OfficeSpace";
+  import { Product } from "bb-lib/Corporation/Product";
+  import { Warehouse } from "bb-lib/Corporation/Warehouse";
+  import { ICorporation } from "bb-lib/Corporation/ICorporation";
+  import { IIndustry } from "bb-lib/Corporation/IIndustry";
   interface IParams {
       name?: string;
       corp?: ICorporation;
@@ -2953,10 +2953,10 @@ declare module 'bitburner/Corporation/Industry' {
   export {};
 
 }
-declare module 'bitburner/Corporation/IndustryData' {
+declare module 'bb-lib/Corporation/IndustryData' {
   import React from "react";
-  import { ResearchTree } from "bitburner/Corporation/ResearchTree";
-  import { ICorporation } from "bitburner/Corporation/ICorporation";
+  import { ResearchTree } from "bb-lib/Corporation/ResearchTree";
+  import { ICorporation } from "bb-lib/Corporation/ICorporation";
   interface IIndustryMap<T> {
       [key: string]: T | undefined;
       Energy: T;
@@ -2982,9 +2982,9 @@ declare module 'bitburner/Corporation/IndustryData' {
   export {};
 
 }
-declare module 'bitburner/Corporation/Material' {
-  import { IReviverValue } from "bitburner/utils/JSONReviver";
-  import { Export } from "bitburner/Corporation/Export";
+declare module 'bb-lib/Corporation/Material' {
+  import { IReviverValue } from "bb-lib/utils/JSONReviver";
+  import { Export } from "bb-lib/Corporation/Export";
   interface IConstructorParams {
       name?: string;
   }
@@ -3022,16 +3022,16 @@ declare module 'bitburner/Corporation/Material' {
   export {};
 
 }
-declare module 'bitburner/Corporation/MaterialSizes' {
-  import { IMap } from "bitburner/types";
+declare module 'bb-lib/Corporation/MaterialSizes' {
+  import { IMap } from "bb-lib/types";
   export const MaterialSizes: IMap<number>;
 
 }
-declare module 'bitburner/Corporation/OfficeSpace' {
-  import { IReviverValue } from "bitburner/utils/JSONReviver";
-  import { Employee } from "bitburner/Corporation/Employee";
-  import { IIndustry } from "bitburner/Corporation/IIndustry";
-  import { ICorporation } from "bitburner/Corporation/ICorporation";
+declare module 'bb-lib/Corporation/OfficeSpace' {
+  import { IReviverValue } from "bb-lib/utils/JSONReviver";
+  import { Employee } from "bb-lib/Corporation/Employee";
+  import { IIndustry } from "bb-lib/Corporation/IIndustry";
+  import { ICorporation } from "bb-lib/Corporation/ICorporation";
   interface IParams {
       loc?: string;
       size?: number;
@@ -3079,10 +3079,10 @@ declare module 'bitburner/Corporation/OfficeSpace' {
   export {};
 
 }
-declare module 'bitburner/Corporation/Product' {
-  import { IIndustry } from "bitburner/Corporation/IIndustry";
-  import { IMap } from "bitburner/types";
-  import { IReviverValue } from "bitburner/utils/JSONReviver";
+declare module 'bb-lib/Corporation/Product' {
+  import { IIndustry } from "bb-lib/Corporation/IIndustry";
+  import { IMap } from "bb-lib/types";
+  import { IReviverValue } from "bb-lib/utils/JSONReviver";
   interface IConstructorParams {
       name?: string;
       demand?: number;
@@ -3143,8 +3143,8 @@ declare module 'bitburner/Corporation/Product' {
   export {};
 
 }
-declare module 'bitburner/Corporation/ProductRatingWeights' {
-  import { IMap } from "bitburner/types";
+declare module 'bb-lib/Corporation/ProductRatingWeights' {
+  import { IMap } from "bb-lib/types";
   export interface IProductRatingWeight {
       Aesthetics?: number;
       Durability?: number;
@@ -3156,7 +3156,7 @@ declare module 'bitburner/Corporation/ProductRatingWeights' {
   export const ProductRatingWeights: IMap<any>;
 
 }
-declare module 'bitburner/Corporation/Research' {
+declare module 'bb-lib/Corporation/Research' {
   export interface IConstructorParams {
       name: string;
       cost: number;
@@ -3190,14 +3190,14 @@ declare module 'bitburner/Corporation/Research' {
   }
 
 }
-declare module 'bitburner/Corporation/ResearchMap' {
-  import { Research } from "bitburner/Corporation/Research";
-  import { IMap } from "bitburner/types";
+declare module 'bb-lib/Corporation/ResearchMap' {
+  import { Research } from "bb-lib/Corporation/Research";
+  import { IMap } from "bb-lib/types";
   export const ResearchMap: IMap<Research>;
 
 }
-declare module 'bitburner/Corporation/ResearchTree' {
-  import { IMap } from "bitburner/types";
+declare module 'bb-lib/Corporation/ResearchTree' {
+  import { IMap } from "bb-lib/types";
   interface IConstructorParams {
       children?: Node[];
       cost: number;
@@ -3237,7 +3237,7 @@ declare module 'bitburner/Corporation/ResearchTree' {
   export {};
 
 }
-declare module 'bitburner/Corporation/ui/CityTabs' {
+declare module 'bb-lib/Corporation/ui/CityTabs' {
   import React from "react";
   interface IProps {
       city: string;
@@ -3247,10 +3247,10 @@ declare module 'bitburner/Corporation/ui/CityTabs' {
   export {};
 
 }
-declare module 'bitburner/Corporation/ui/Context' {
+declare module 'bb-lib/Corporation/ui/Context' {
   import React from "react";
-  import { ICorporation } from "bitburner/Corporation/ICorporation";
-  import { IIndustry } from "bitburner/Corporation/IIndustry";
+  import { ICorporation } from "bb-lib/Corporation/ICorporation";
+  import { IIndustry } from "bb-lib/Corporation/IIndustry";
   export const Context: {
       Corporation: React.Context<ICorporation>;
       Division: React.Context<IIndustry>;
@@ -3259,12 +3259,12 @@ declare module 'bitburner/Corporation/ui/Context' {
   export const useDivision: () => IIndustry;
 
 }
-declare module 'bitburner/Corporation/ui/CorporationRoot' {
+declare module 'bb-lib/Corporation/ui/CorporationRoot' {
   import React from "react";
   export function CorporationRoot(): React.ReactElement;
 
 }
-declare module 'bitburner/Corporation/ui/ExpandIndustryTab' {
+declare module 'bb-lib/Corporation/ui/ExpandIndustryTab' {
   import React from "react";
   interface IProps {
       setDivisionName: (name: string) => void;
@@ -3273,7 +3273,7 @@ declare module 'bitburner/Corporation/ui/ExpandIndustryTab' {
   export {};
 
 }
-declare module 'bitburner/Corporation/ui/ExpandNewCity' {
+declare module 'bb-lib/Corporation/ui/ExpandNewCity' {
   import React from "react";
   interface IProps {
       cityStateSetter: (city: string) => void;
@@ -3282,15 +3282,15 @@ declare module 'bitburner/Corporation/ui/ExpandNewCity' {
   export {};
 
 }
-declare module 'bitburner/Corporation/ui/Helpers' {
-  import { IIndustry } from "bitburner/Corporation/IIndustry";
+declare module 'bb-lib/Corporation/ui/Helpers' {
+  import { IIndustry } from "bb-lib/Corporation/IIndustry";
   export function isRelevantMaterial(matName: string, division: IIndustry): boolean;
 
 }
-declare module 'bitburner/Corporation/ui/Industry' {
+declare module 'bb-lib/Corporation/ui/Industry' {
   import React from "react";
-  import { Warehouse } from "bitburner/Corporation/Warehouse";
-  import { OfficeSpace } from "bitburner/Corporation/OfficeSpace";
+  import { Warehouse } from "bb-lib/Corporation/Warehouse";
+  import { OfficeSpace } from "bb-lib/Corporation/OfficeSpace";
   interface IProps {
       city: string;
       warehouse: Warehouse | 0;
@@ -3301,9 +3301,9 @@ declare module 'bitburner/Corporation/ui/Industry' {
   export {};
 
 }
-declare module 'bitburner/Corporation/ui/IndustryOffice' {
+declare module 'bb-lib/Corporation/ui/IndustryOffice' {
   import React from "react";
-  import { OfficeSpace } from "bitburner/Corporation/OfficeSpace";
+  import { OfficeSpace } from "bb-lib/Corporation/OfficeSpace";
   interface IProps {
       office: OfficeSpace;
       rerender: () => void;
@@ -3312,7 +3312,7 @@ declare module 'bitburner/Corporation/ui/IndustryOffice' {
   export {};
 
 }
-declare module 'bitburner/Corporation/ui/IndustryOverview' {
+declare module 'bb-lib/Corporation/ui/IndustryOverview' {
   import React from "react";
   interface IProps {
       rerender: () => void;
@@ -3321,9 +3321,9 @@ declare module 'bitburner/Corporation/ui/IndustryOverview' {
   export {};
 
 }
-declare module 'bitburner/Corporation/ui/IndustryProductEquation' {
+declare module 'bb-lib/Corporation/ui/IndustryProductEquation' {
   import React from "react";
-  import { IIndustry } from "bitburner/Corporation/IIndustry";
+  import { IIndustry } from "bb-lib/Corporation/IIndustry";
   interface IProps {
       division: IIndustry;
   }
@@ -3331,12 +3331,12 @@ declare module 'bitburner/Corporation/ui/IndustryProductEquation' {
   export {};
 
 }
-declare module 'bitburner/Corporation/ui/IndustryWarehouse' {
+declare module 'bb-lib/Corporation/ui/IndustryWarehouse' {
   import React from "react";
-  import { Warehouse } from "bitburner/Corporation/Warehouse";
-  import { ICorporation } from "bitburner/Corporation/ICorporation";
-  import { IIndustry } from "bitburner/Corporation/IIndustry";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
+  import { Warehouse } from "bb-lib/Corporation/Warehouse";
+  import { ICorporation } from "bb-lib/Corporation/ICorporation";
+  import { IIndustry } from "bb-lib/Corporation/IIndustry";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
   interface IProps {
       corp: ICorporation;
       division: IIndustry;
@@ -3349,9 +3349,9 @@ declare module 'bitburner/Corporation/ui/IndustryWarehouse' {
   export {};
 
 }
-declare module 'bitburner/Corporation/ui/LevelableUpgrade' {
+declare module 'bb-lib/Corporation/ui/LevelableUpgrade' {
   import React from "react";
-  import { CorporationUpgrade } from "bitburner/Corporation/data/CorporationUpgrades";
+  import { CorporationUpgrade } from "bb-lib/Corporation/data/CorporationUpgrades";
   interface IProps {
       upgrade: CorporationUpgrade;
       rerender: () => void;
@@ -3360,7 +3360,7 @@ declare module 'bitburner/Corporation/ui/LevelableUpgrade' {
   export {};
 
 }
-declare module 'bitburner/Corporation/ui/MainPanel' {
+declare module 'bb-lib/Corporation/ui/MainPanel' {
   import React from "react";
   interface IProps {
       divisionName: string;
@@ -3370,10 +3370,10 @@ declare module 'bitburner/Corporation/ui/MainPanel' {
   export {};
 
 }
-declare module 'bitburner/Corporation/ui/MaterialElem' {
+declare module 'bb-lib/Corporation/ui/MaterialElem' {
   import React from "react";
-  import { Material } from "bitburner/Corporation/Material";
-  import { Warehouse } from "bitburner/Corporation/Warehouse";
+  import { Material } from "bb-lib/Corporation/Material";
+  import { Warehouse } from "bb-lib/Corporation/Warehouse";
   interface IMaterialProps {
       warehouse: Warehouse;
       city: string;
@@ -3384,7 +3384,7 @@ declare module 'bitburner/Corporation/ui/MaterialElem' {
   export {};
 
 }
-declare module 'bitburner/Corporation/ui/modals/BribeFactionModal' {
+declare module 'bb-lib/Corporation/ui/modals/BribeFactionModal' {
   import React from "react";
   interface IProps {
       open: boolean;
@@ -3394,7 +3394,7 @@ declare module 'bitburner/Corporation/ui/modals/BribeFactionModal' {
   export {};
 
 }
-declare module 'bitburner/Corporation/ui/modals/BuybackSharesModal' {
+declare module 'bb-lib/Corporation/ui/modals/BuybackSharesModal' {
   import React from "react";
   interface IProps {
       open: boolean;
@@ -3405,9 +3405,9 @@ declare module 'bitburner/Corporation/ui/modals/BuybackSharesModal' {
   export {};
 
 }
-declare module 'bitburner/Corporation/ui/modals/CancelProductModal' {
+declare module 'bb-lib/Corporation/ui/modals/CancelProductModal' {
   import React from "react";
-  import { Product } from "bitburner/Corporation/Product";
+  import { Product } from "bb-lib/Corporation/Product";
   interface IProps {
       open: boolean;
       onClose: () => void;
@@ -3418,7 +3418,7 @@ declare module 'bitburner/Corporation/ui/modals/CancelProductModal' {
   export {};
 
 }
-declare module 'bitburner/Corporation/ui/modals/CreateCorporationModal' {
+declare module 'bb-lib/Corporation/ui/modals/CreateCorporationModal' {
   import React from "react";
   interface IProps {
       open: boolean;
@@ -3428,9 +3428,9 @@ declare module 'bitburner/Corporation/ui/modals/CreateCorporationModal' {
   export {};
 
 }
-declare module 'bitburner/Corporation/ui/modals/DiscontinueProductModal' {
+declare module 'bb-lib/Corporation/ui/modals/DiscontinueProductModal' {
   import React from "react";
-  import { Product } from "bitburner/Corporation/Product";
+  import { Product } from "bb-lib/Corporation/Product";
   interface IProps {
       open: boolean;
       onClose: () => void;
@@ -3441,9 +3441,9 @@ declare module 'bitburner/Corporation/ui/modals/DiscontinueProductModal' {
   export {};
 
 }
-declare module 'bitburner/Corporation/ui/modals/ExportModal' {
+declare module 'bb-lib/Corporation/ui/modals/ExportModal' {
   import React from "react";
-  import { Material } from "bitburner/Corporation/Material";
+  import { Material } from "bb-lib/Corporation/Material";
   interface IProps {
       open: boolean;
       onClose: () => void;
@@ -3453,7 +3453,7 @@ declare module 'bitburner/Corporation/ui/modals/ExportModal' {
   export {};
 
 }
-declare module 'bitburner/Corporation/ui/modals/FindInvestorsModal' {
+declare module 'bb-lib/Corporation/ui/modals/FindInvestorsModal' {
   import React from "react";
   interface IProps {
       open: boolean;
@@ -3464,7 +3464,7 @@ declare module 'bitburner/Corporation/ui/modals/FindInvestorsModal' {
   export {};
 
 }
-declare module 'bitburner/Corporation/ui/modals/GoPublicModal' {
+declare module 'bb-lib/Corporation/ui/modals/GoPublicModal' {
   import React from "react";
   interface IProps {
       open: boolean;
@@ -3475,7 +3475,7 @@ declare module 'bitburner/Corporation/ui/modals/GoPublicModal' {
   export {};
 
 }
-declare module 'bitburner/Corporation/ui/modals/IssueDividendsModal' {
+declare module 'bb-lib/Corporation/ui/modals/IssueDividendsModal' {
   import React from "react";
   interface IProps {
       open: boolean;
@@ -3485,7 +3485,7 @@ declare module 'bitburner/Corporation/ui/modals/IssueDividendsModal' {
   export {};
 
 }
-declare module 'bitburner/Corporation/ui/modals/IssueNewSharesModal' {
+declare module 'bb-lib/Corporation/ui/modals/IssueNewSharesModal' {
   import React from "react";
   interface IProps {
       open: boolean;
@@ -3495,9 +3495,9 @@ declare module 'bitburner/Corporation/ui/modals/IssueNewSharesModal' {
   export {};
 
 }
-declare module 'bitburner/Corporation/ui/modals/LimitMaterialProductionModal' {
+declare module 'bb-lib/Corporation/ui/modals/LimitMaterialProductionModal' {
   import React from "react";
-  import { Material } from "bitburner/Corporation/Material";
+  import { Material } from "bb-lib/Corporation/Material";
   interface IProps {
       open: boolean;
       onClose: () => void;
@@ -3507,9 +3507,9 @@ declare module 'bitburner/Corporation/ui/modals/LimitMaterialProductionModal' {
   export {};
 
 }
-declare module 'bitburner/Corporation/ui/modals/LimitProductProductionModal' {
+declare module 'bb-lib/Corporation/ui/modals/LimitProductProductionModal' {
   import React from "react";
-  import { Product } from "bitburner/Corporation/Product";
+  import { Product } from "bb-lib/Corporation/Product";
   interface IProps {
       open: boolean;
       onClose: () => void;
@@ -3520,7 +3520,7 @@ declare module 'bitburner/Corporation/ui/modals/LimitProductProductionModal' {
   export {};
 
 }
-declare module 'bitburner/Corporation/ui/modals/MakeProductModal' {
+declare module 'bb-lib/Corporation/ui/modals/MakeProductModal' {
   import React from "react";
   interface IProps {
       open: boolean;
@@ -3530,9 +3530,9 @@ declare module 'bitburner/Corporation/ui/modals/MakeProductModal' {
   export {};
 
 }
-declare module 'bitburner/Corporation/ui/modals/MaterialMarketTaModal' {
+declare module 'bb-lib/Corporation/ui/modals/MaterialMarketTaModal' {
   import React from "react";
-  import { Material } from "bitburner/Corporation/Material";
+  import { Material } from "bb-lib/Corporation/Material";
   interface IProps {
       open: boolean;
       onClose: () => void;
@@ -3542,9 +3542,9 @@ declare module 'bitburner/Corporation/ui/modals/MaterialMarketTaModal' {
   export {};
 
 }
-declare module 'bitburner/Corporation/ui/modals/ProductMarketTaModal' {
+declare module 'bb-lib/Corporation/ui/modals/ProductMarketTaModal' {
   import React from "react";
-  import { Product } from "bitburner/Corporation/Product";
+  import { Product } from "bb-lib/Corporation/Product";
   interface IProps {
       open: boolean;
       onClose: () => void;
@@ -3554,10 +3554,10 @@ declare module 'bitburner/Corporation/ui/modals/ProductMarketTaModal' {
   export {};
 
 }
-declare module 'bitburner/Corporation/ui/modals/PurchaseMaterialModal' {
+declare module 'bb-lib/Corporation/ui/modals/PurchaseMaterialModal' {
   import React from "react";
-  import { Warehouse } from "bitburner/Corporation/Warehouse";
-  import { Material } from "bitburner/Corporation/Material";
+  import { Warehouse } from "bb-lib/Corporation/Warehouse";
+  import { Material } from "bb-lib/Corporation/Material";
   interface IProps {
       open: boolean;
       onClose: () => void;
@@ -3569,9 +3569,9 @@ declare module 'bitburner/Corporation/ui/modals/PurchaseMaterialModal' {
   export {};
 
 }
-declare module 'bitburner/Corporation/ui/modals/ResearchModal' {
+declare module 'bb-lib/Corporation/ui/modals/ResearchModal' {
   import React from "react";
-  import { IIndustry } from "bitburner/Corporation/IIndustry";
+  import { IIndustry } from "bb-lib/Corporation/IIndustry";
   interface IProps {
       open: boolean;
       onClose: () => void;
@@ -3581,9 +3581,9 @@ declare module 'bitburner/Corporation/ui/modals/ResearchModal' {
   export {};
 
 }
-declare module 'bitburner/Corporation/ui/modals/SellMaterialModal' {
+declare module 'bb-lib/Corporation/ui/modals/SellMaterialModal' {
   import React from "react";
-  import { Material } from "bitburner/Corporation/Material";
+  import { Material } from "bb-lib/Corporation/Material";
   interface IProps {
       open: boolean;
       onClose: () => void;
@@ -3593,9 +3593,9 @@ declare module 'bitburner/Corporation/ui/modals/SellMaterialModal' {
   export {};
 
 }
-declare module 'bitburner/Corporation/ui/modals/SellProductModal' {
+declare module 'bb-lib/Corporation/ui/modals/SellProductModal' {
   import React from "react";
-  import { Product } from "bitburner/Corporation/Product";
+  import { Product } from "bb-lib/Corporation/Product";
   interface IProps {
       open: boolean;
       onClose: () => void;
@@ -3606,7 +3606,7 @@ declare module 'bitburner/Corporation/ui/modals/SellProductModal' {
   export {};
 
 }
-declare module 'bitburner/Corporation/ui/modals/SellSharesModal' {
+declare module 'bb-lib/Corporation/ui/modals/SellSharesModal' {
   import React from "react";
   interface IProps {
       open: boolean;
@@ -3617,9 +3617,9 @@ declare module 'bitburner/Corporation/ui/modals/SellSharesModal' {
   export {};
 
 }
-declare module 'bitburner/Corporation/ui/modals/SmartSupplyModal' {
+declare module 'bb-lib/Corporation/ui/modals/SmartSupplyModal' {
   import React from "react";
-  import { Warehouse } from "bitburner/Corporation/Warehouse";
+  import { Warehouse } from "bb-lib/Corporation/Warehouse";
   interface IProps {
       open: boolean;
       onClose: () => void;
@@ -3629,9 +3629,9 @@ declare module 'bitburner/Corporation/ui/modals/SmartSupplyModal' {
   export {};
 
 }
-declare module 'bitburner/Corporation/ui/modals/ThrowPartyModal' {
+declare module 'bb-lib/Corporation/ui/modals/ThrowPartyModal' {
   import React from "react";
-  import { OfficeSpace } from "bitburner/Corporation/OfficeSpace";
+  import { OfficeSpace } from "bb-lib/Corporation/OfficeSpace";
   interface IProps {
       open: boolean;
       onClose: () => void;
@@ -3642,9 +3642,9 @@ declare module 'bitburner/Corporation/ui/modals/ThrowPartyModal' {
   export {};
 
 }
-declare module 'bitburner/Corporation/ui/modals/UpgradeOfficeSizeModal' {
+declare module 'bb-lib/Corporation/ui/modals/UpgradeOfficeSizeModal' {
   import React from "react";
-  import { OfficeSpace } from "bitburner/Corporation/OfficeSpace";
+  import { OfficeSpace } from "bb-lib/Corporation/OfficeSpace";
   interface IProps {
       open: boolean;
       onClose: () => void;
@@ -3655,9 +3655,9 @@ declare module 'bitburner/Corporation/ui/modals/UpgradeOfficeSizeModal' {
   export {};
 
 }
-declare module 'bitburner/Corporation/ui/MoneyCost' {
+declare module 'bb-lib/Corporation/ui/MoneyCost' {
   import * as React from "react";
-  import { ICorporation } from "bitburner/Corporation/ICorporation";
+  import { ICorporation } from "bb-lib/Corporation/ICorporation";
   interface IProps {
       money: number;
       corp: ICorporation;
@@ -3666,7 +3666,7 @@ declare module 'bitburner/Corporation/ui/MoneyCost' {
   export {};
 
 }
-declare module 'bitburner/Corporation/ui/Overview' {
+declare module 'bb-lib/Corporation/ui/Overview' {
   import React from "react";
   interface IProps {
       rerender: () => void;
@@ -3675,9 +3675,9 @@ declare module 'bitburner/Corporation/ui/Overview' {
   export {};
 
 }
-declare module 'bitburner/Corporation/ui/ProductElem' {
+declare module 'bb-lib/Corporation/ui/ProductElem' {
   import React from "react";
-  import { Product } from "bitburner/Corporation/Product";
+  import { Product } from "bb-lib/Corporation/Product";
   interface IProductProps {
       city: string;
       product: Product;
@@ -3687,9 +3687,9 @@ declare module 'bitburner/Corporation/ui/ProductElem' {
   export {};
 
 }
-declare module 'bitburner/Corporation/ui/UnlockUpgrade' {
+declare module 'bb-lib/Corporation/ui/UnlockUpgrade' {
   import React from "react";
-  import { CorporationUnlockUpgrade } from "bitburner/Corporation/data/CorporationUnlockUpgrades";
+  import { CorporationUnlockUpgrade } from "bb-lib/Corporation/data/CorporationUnlockUpgrades";
   interface IProps {
       upgradeData: CorporationUnlockUpgrade;
       rerender: () => void;
@@ -3698,12 +3698,12 @@ declare module 'bitburner/Corporation/ui/UnlockUpgrade' {
   export {};
 
 }
-declare module 'bitburner/Corporation/Warehouse' {
-  import { Material } from "bitburner/Corporation/Material";
-  import { ICorporation } from "bitburner/Corporation/ICorporation";
-  import { IIndustry } from "bitburner/Corporation/IIndustry";
-  import { IMap } from "bitburner/types";
-  import { IReviverValue } from "bitburner/utils/JSONReviver";
+declare module 'bb-lib/Corporation/Warehouse' {
+  import { Material } from "bb-lib/Corporation/Material";
+  import { ICorporation } from "bb-lib/Corporation/ICorporation";
+  import { IIndustry } from "bb-lib/Corporation/IIndustry";
+  import { IMap } from "bb-lib/types";
+  import { IReviverValue } from "bb-lib/utils/JSONReviver";
   interface IConstructorParams {
       corp?: ICorporation;
       industry?: IIndustry;
@@ -3730,9 +3730,9 @@ declare module 'bitburner/Corporation/Warehouse' {
   export {};
 
 }
-declare module 'bitburner/CotMG/ActiveFragment' {
-  import { Fragment } from "bitburner/CotMG/Fragment";
-  import { IReviverValue } from "bitburner/utils/JSONReviver";
+declare module 'bb-lib/CotMG/ActiveFragment' {
+  import { Fragment } from "bb-lib/CotMG/Fragment";
+  import { IReviverValue } from "bb-lib/utils/JSONReviver";
   export interface IActiveFragmentParams {
       x: number;
       y: number;
@@ -3763,7 +3763,7 @@ declare module 'bitburner/CotMG/ActiveFragment' {
   }
 
 }
-declare module 'bitburner/CotMG/data/Constants' {
+declare module 'bb-lib/CotMG/data/Constants' {
   export const StanekConstants: {
       RAMBonus: number;
       BaseSize: number;
@@ -3771,7 +3771,7 @@ declare module 'bitburner/CotMG/data/Constants' {
   };
 
 }
-declare module 'bitburner/CotMG/data/Shapes' {
+declare module 'bb-lib/CotMG/data/Shapes' {
   export const Shapes: {
       O: boolean[][];
       I: boolean[][];
@@ -3783,9 +3783,9 @@ declare module 'bitburner/CotMG/data/Shapes' {
   };
 
 }
-declare module 'bitburner/CotMG/DummyGift' {
-  import { ActiveFragment } from "bitburner/CotMG/ActiveFragment";
-  import { IStaneksGift } from "bitburner/CotMG/IStaneksGift";
+declare module 'bb-lib/CotMG/DummyGift' {
+  import { ActiveFragment } from "bb-lib/CotMG/ActiveFragment";
+  import { IStaneksGift } from "bb-lib/CotMG/IStaneksGift";
   export class DummyGift implements IStaneksGift {
       storedCycles: number;
       fragments: ActiveFragment[];
@@ -3810,12 +3810,12 @@ declare module 'bitburner/CotMG/DummyGift' {
   }
 
 }
-declare module 'bitburner/CotMG/formulas/effect' {
+declare module 'bb-lib/CotMG/formulas/effect' {
   export function CalculateEffect(highestCharge: number, numCharge: number, power: number, boost: number): number;
 
 }
-declare module 'bitburner/CotMG/Fragment' {
-  import { FragmentType } from "bitburner/CotMG/FragmentType";
+declare module 'bb-lib/CotMG/Fragment' {
+  import { FragmentType } from "bb-lib/CotMG/FragmentType";
   export const Fragments: Fragment[];
   export class Fragment {
       id: number;
@@ -3835,7 +3835,7 @@ declare module 'bitburner/CotMG/Fragment' {
   export const DeleteFragment: Fragment;
 
 }
-declare module 'bitburner/CotMG/FragmentType' {
+declare module 'bb-lib/CotMG/FragmentType' {
   export enum FragmentType {
       None = 0,
       Delete = 1,
@@ -3860,18 +3860,18 @@ declare module 'bitburner/CotMG/FragmentType' {
   export function Effect(tpe: FragmentType): string;
 
 }
-declare module 'bitburner/CotMG/Helper' {
-  import { IStaneksGift } from "bitburner/CotMG/IStaneksGift";
+declare module 'bb-lib/CotMG/Helper' {
+  import { IStaneksGift } from "bb-lib/CotMG/IStaneksGift";
   export let staneksGift: IStaneksGift;
   export function loadStaneksGift(saveString: string): void;
   export function zeros(width: number, height: number): number[][];
   export function calculateGrid(gift: IStaneksGift): number[][];
 
 }
-declare module 'bitburner/CotMG/IStaneksGift' {
-  import { ActiveFragment } from "bitburner/CotMG/ActiveFragment";
-  import { Fragment } from "bitburner/CotMG/Fragment";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
+declare module 'bb-lib/CotMG/IStaneksGift' {
+  import { ActiveFragment } from "bb-lib/CotMG/ActiveFragment";
+  import { Fragment } from "bb-lib/CotMG/Fragment";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
   export interface IStaneksGift {
       storedCycles: number;
       fragments: ActiveFragment[];
@@ -3893,12 +3893,12 @@ declare module 'bitburner/CotMG/IStaneksGift' {
   }
 
 }
-declare module 'bitburner/CotMG/StaneksGift' {
-  import { Fragment } from "bitburner/CotMG/Fragment";
-  import { ActiveFragment } from "bitburner/CotMG/ActiveFragment";
-  import { IStaneksGift } from "bitburner/CotMG/IStaneksGift";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { IReviverValue } from "bitburner/utils/JSONReviver";
+declare module 'bb-lib/CotMG/StaneksGift' {
+  import { Fragment } from "bb-lib/CotMG/Fragment";
+  import { ActiveFragment } from "bb-lib/CotMG/ActiveFragment";
+  import { IStaneksGift } from "bb-lib/CotMG/IStaneksGift";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { IReviverValue } from "bb-lib/utils/JSONReviver";
   export class StaneksGift implements IStaneksGift {
       storedCycles: number;
       fragments: ActiveFragment[];
@@ -3931,14 +3931,14 @@ declare module 'bitburner/CotMG/StaneksGift' {
   }
 
 }
-declare module 'bitburner/CotMG/StaneksGiftEvents' {
-  import { EventEmitter } from "bitburner/utils/EventEmitter";
+declare module 'bb-lib/CotMG/StaneksGiftEvents' {
+  import { EventEmitter } from "bb-lib/utils/EventEmitter";
   export const StaneksGiftEvents: EventEmitter<[]>;
 
 }
-declare module 'bitburner/CotMG/ui/ActiveFragmentSummary' {
+declare module 'bb-lib/CotMG/ui/ActiveFragmentSummary' {
   import React from "react";
-  import { IStaneksGift } from "bitburner/CotMG/IStaneksGift";
+  import { IStaneksGift } from "bb-lib/CotMG/IStaneksGift";
   type IProps = {
       gift: IStaneksGift;
   };
@@ -3946,7 +3946,7 @@ declare module 'bitburner/CotMG/ui/ActiveFragmentSummary' {
   export {};
 
 }
-declare module 'bitburner/CotMG/ui/Cell' {
+declare module 'bb-lib/CotMG/ui/Cell' {
   import * as React from "react";
   import { TableCellProps } from "@mui/material";
   export const TableCell: React.FC<TableCellProps>;
@@ -3959,9 +3959,9 @@ declare module 'bitburner/CotMG/ui/Cell' {
   export {};
 
 }
-declare module 'bitburner/CotMG/ui/DummyGrid' {
+declare module 'bb-lib/CotMG/ui/DummyGrid' {
   import * as React from "react";
-  import { ActiveFragment } from "bitburner/CotMG/ActiveFragment";
+  import { ActiveFragment } from "bb-lib/CotMG/ActiveFragment";
   interface IProps {
       width: number;
       height: number;
@@ -3971,10 +3971,10 @@ declare module 'bitburner/CotMG/ui/DummyGrid' {
   export {};
 
 }
-declare module 'bitburner/CotMG/ui/FragmentInspector' {
+declare module 'bb-lib/CotMG/ui/FragmentInspector' {
   import React from "react";
-  import { ActiveFragment } from "bitburner/CotMG/ActiveFragment";
-  import { IStaneksGift } from "bitburner/CotMG/IStaneksGift";
+  import { ActiveFragment } from "bb-lib/CotMG/ActiveFragment";
+  import { IStaneksGift } from "bb-lib/CotMG/IStaneksGift";
   type IProps = {
       gift: IStaneksGift;
       fragment: ActiveFragment | undefined;
@@ -3985,7 +3985,7 @@ declare module 'bitburner/CotMG/ui/FragmentInspector' {
   export {};
 
 }
-declare module 'bitburner/CotMG/ui/FragmentPreview' {
+declare module 'bb-lib/CotMG/ui/FragmentPreview' {
   import * as React from "react";
   type IProps = {
       width: number;
@@ -3996,10 +3996,10 @@ declare module 'bitburner/CotMG/ui/FragmentPreview' {
   export {};
 
 }
-declare module 'bitburner/CotMG/ui/FragmentSelector' {
+declare module 'bb-lib/CotMG/ui/FragmentSelector' {
   import React from "react";
-  import { Fragment } from "bitburner/CotMG/Fragment";
-  import { IStaneksGift } from "bitburner/CotMG/IStaneksGift";
+  import { Fragment } from "bb-lib/CotMG/Fragment";
+  import { IStaneksGift } from "bb-lib/CotMG/IStaneksGift";
   type IProps = {
       gift: IStaneksGift;
       selectFragment: (fragment: Fragment) => void;
@@ -4008,9 +4008,9 @@ declare module 'bitburner/CotMG/ui/FragmentSelector' {
   export {};
 
 }
-declare module 'bitburner/CotMG/ui/Grid' {
+declare module 'bb-lib/CotMG/ui/Grid' {
   import * as React from "react";
-  import { IStaneksGift } from "bitburner/CotMG/IStaneksGift";
+  import { IStaneksGift } from "bb-lib/CotMG/IStaneksGift";
   interface IProps {
       width: number;
       height: number;
@@ -4023,9 +4023,9 @@ declare module 'bitburner/CotMG/ui/Grid' {
   export {};
 
 }
-declare module 'bitburner/CotMG/ui/MainBoard' {
+declare module 'bb-lib/CotMG/ui/MainBoard' {
   import * as React from "react";
-  import { IStaneksGift } from "bitburner/CotMG/IStaneksGift";
+  import { IStaneksGift } from "bb-lib/CotMG/IStaneksGift";
   interface IProps {
       gift: IStaneksGift;
   }
@@ -4033,9 +4033,9 @@ declare module 'bitburner/CotMG/ui/MainBoard' {
   export {};
 
 }
-declare module 'bitburner/CotMG/ui/StaneksGiftRoot' {
+declare module 'bb-lib/CotMG/ui/StaneksGiftRoot' {
   import React from "react";
-  import { IStaneksGift } from "bitburner/CotMG/IStaneksGift";
+  import { IStaneksGift } from "bb-lib/CotMG/IStaneksGift";
   type IProps = {
       staneksGift: IStaneksGift;
   };
@@ -4043,11 +4043,11 @@ declare module 'bitburner/CotMG/ui/StaneksGiftRoot' {
   export {};
 
 }
-declare module 'bitburner/Crime/Crime' {
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { IPerson } from "bitburner/PersonObjects/IPerson";
-  import { WorkerScript } from "bitburner/Netscript/WorkerScript";
-  import { CrimeType } from "bitburner/utils/WorkType";
+declare module 'bb-lib/Crime/Crime' {
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { IPerson } from "bb-lib/PersonObjects/IPerson";
+  import { WorkerScript } from "bb-lib/Netscript/WorkerScript";
+  import { CrimeType } from "bb-lib/utils/WorkType";
   interface IConstructorParams {
       hacking_success_weight?: number;
       strength_success_weight?: number;
@@ -4093,20 +4093,20 @@ declare module 'bitburner/Crime/Crime' {
   export {};
 
 }
-declare module 'bitburner/Crime/CrimeHelpers' {
-  import { Crime } from "bitburner/Crime/Crime";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
+declare module 'bb-lib/Crime/CrimeHelpers' {
+  import { Crime } from "bb-lib/Crime/Crime";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
   export function determineCrimeSuccess(p: IPlayer, type: string): boolean;
   export function findCrime(roughName: string): Crime | null;
 
 }
-declare module 'bitburner/Crime/Crimes' {
-  import { Crime } from "bitburner/Crime/Crime";
-  import { IMap } from "bitburner/types";
+declare module 'bb-lib/Crime/Crimes' {
+  import { Crime } from "bb-lib/Crime/Crime";
+  import { IMap } from "bb-lib/types";
   export const Crimes: IMap<Crime>;
 
 }
-declare module 'bitburner/Crime/formulas/crime' {
+declare module 'bb-lib/Crime/formulas/crime' {
   export interface ICrime {
       hacking_success_weight: number;
       strength_success_weight: number;
@@ -4129,14 +4129,14 @@ declare module 'bitburner/Crime/formulas/crime' {
   export function calculateCrimeSuccessChance(crime: ICrime, person: IPerson): number;
 
 }
-declare module 'bitburner/DarkWeb/DarkWeb' {
+declare module 'bb-lib/DarkWeb/DarkWeb' {
   export function checkIfConnectedToDarkweb(): void;
   export function listAllDarkwebItems(): void;
   export function buyDarkwebItem(itemName: string): void;
   export function buyAllDarkwebItems(): void;
 
 }
-declare module 'bitburner/DarkWeb/DarkWebItem' {
+declare module 'bb-lib/DarkWeb/DarkWebItem' {
   export class DarkWebItem {
       program: string;
       price: number;
@@ -4145,13 +4145,13 @@ declare module 'bitburner/DarkWeb/DarkWebItem' {
   }
 
 }
-declare module 'bitburner/DarkWeb/DarkWebItems' {
-  import { DarkWebItem } from "bitburner/DarkWeb/DarkWebItem";
-  import { IMap } from "bitburner/types";
+declare module 'bb-lib/DarkWeb/DarkWebItems' {
+  import { DarkWebItem } from "bb-lib/DarkWeb/DarkWebItem";
+  import { IMap } from "bb-lib/types";
   export const DarkWebItems: IMap<DarkWebItem>;
 
 }
-declare module 'bitburner/data/codingcontracttypes' {
+declare module 'bb-lib/data/codingcontracttypes' {
   export type GeneratorFunc = () => unknown;
   export type SolverFunc = (data: unknown, answer: string) => boolean;
   export type DescriptionFunc = (data: unknown) => string;
@@ -4167,16 +4167,16 @@ declare module 'bitburner/data/codingcontracttypes' {
   export {};
 
 }
-declare module 'bitburner/db' {
+declare module 'bb-lib/db' {
   export function load(): Promise<string>;
   export function save(saveString: string): Promise<void>;
   export function deleteGame(): Promise<void>;
 
 }
-declare module 'bitburner/DevMenu/ui/Achievements' {
+declare module 'bb-lib/DevMenu/ui/Achievements' {
   import React from "react";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { IEngine } from "bitburner/IEngine";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { IEngine } from "bb-lib/IEngine";
   interface IProps {
       player: IPlayer;
       engine: IEngine;
@@ -4185,7 +4185,7 @@ declare module 'bitburner/DevMenu/ui/Achievements' {
   export {};
 
 }
-declare module 'bitburner/DevMenu/ui/Adjuster' {
+declare module 'bb-lib/DevMenu/ui/Adjuster' {
   import React from "react";
   interface IProps {
       label: string;
@@ -4199,9 +4199,9 @@ declare module 'bitburner/DevMenu/ui/Adjuster' {
   export {};
 
 }
-declare module 'bitburner/DevMenu/ui/Augmentations' {
+declare module 'bb-lib/DevMenu/ui/Augmentations' {
   import React from "react";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
   interface IProps {
       player: IPlayer;
   }
@@ -4209,9 +4209,9 @@ declare module 'bitburner/DevMenu/ui/Augmentations' {
   export {};
 
 }
-declare module 'bitburner/DevMenu/ui/Bladeburner' {
+declare module 'bb-lib/DevMenu/ui/Bladeburner' {
   import React from "react";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
   interface IProps {
       player: IPlayer;
   }
@@ -4219,19 +4219,19 @@ declare module 'bitburner/DevMenu/ui/Bladeburner' {
   export {};
 
 }
-declare module 'bitburner/DevMenu/ui/CodingContracts' {
+declare module 'bb-lib/DevMenu/ui/CodingContracts' {
   import React from "react";
   export function CodingContracts(): React.ReactElement;
 
 }
-declare module 'bitburner/DevMenu/ui/Companies' {
+declare module 'bb-lib/DevMenu/ui/Companies' {
   import React from "react";
   export function Companies(): React.ReactElement;
 
 }
-declare module 'bitburner/DevMenu/ui/Corporation' {
+declare module 'bb-lib/DevMenu/ui/Corporation' {
   import React from "react";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
   interface IProps {
       player: IPlayer;
   }
@@ -4239,10 +4239,10 @@ declare module 'bitburner/DevMenu/ui/Corporation' {
   export {};
 
 }
-declare module 'bitburner/DevMenu/ui/Entropy' {
+declare module 'bb-lib/DevMenu/ui/Entropy' {
   import React from "react";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { IEngine } from "bitburner/IEngine";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { IEngine } from "bb-lib/IEngine";
   interface IProps {
       player: IPlayer;
       engine: IEngine;
@@ -4251,9 +4251,9 @@ declare module 'bitburner/DevMenu/ui/Entropy' {
   export {};
 
 }
-declare module 'bitburner/DevMenu/ui/Factions' {
+declare module 'bb-lib/DevMenu/ui/Factions' {
   import React from "react";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
   interface IProps {
       player: IPlayer;
   }
@@ -4261,9 +4261,9 @@ declare module 'bitburner/DevMenu/ui/Factions' {
   export {};
 
 }
-declare module 'bitburner/DevMenu/ui/Gang' {
+declare module 'bb-lib/DevMenu/ui/Gang' {
   import React from "react";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
   interface IProps {
       player: IPlayer;
   }
@@ -4271,10 +4271,10 @@ declare module 'bitburner/DevMenu/ui/Gang' {
   export {};
 
 }
-declare module 'bitburner/DevMenu/ui/General' {
+declare module 'bb-lib/DevMenu/ui/General' {
   import React from "react";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { IRouter } from "bitburner/ui/Router";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { IRouter } from "bb-lib/ui/Router";
   interface IProps {
       player: IPlayer;
       router: IRouter;
@@ -4283,9 +4283,9 @@ declare module 'bitburner/DevMenu/ui/General' {
   export {};
 
 }
-declare module 'bitburner/DevMenu/ui/Programs' {
+declare module 'bb-lib/DevMenu/ui/Programs' {
   import React from "react";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
   interface IProps {
       player: IPlayer;
   }
@@ -4293,19 +4293,19 @@ declare module 'bitburner/DevMenu/ui/Programs' {
   export {};
 
 }
-declare module 'bitburner/DevMenu/ui/SaveFile' {
+declare module 'bb-lib/DevMenu/ui/SaveFile' {
   import React from "react";
   export function SaveFile(): React.ReactElement;
 
 }
-declare module 'bitburner/DevMenu/ui/Servers' {
+declare module 'bb-lib/DevMenu/ui/Servers' {
   import React from "react";
   export function Servers(): React.ReactElement;
 
 }
-declare module 'bitburner/DevMenu/ui/Sleeves' {
+declare module 'bb-lib/DevMenu/ui/Sleeves' {
   import React from "react";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
   interface IProps {
       player: IPlayer;
   }
@@ -4313,9 +4313,9 @@ declare module 'bitburner/DevMenu/ui/Sleeves' {
   export {};
 
 }
-declare module 'bitburner/DevMenu/ui/SourceFiles' {
+declare module 'bb-lib/DevMenu/ui/SourceFiles' {
   import React from "react";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
   interface IProps {
       player: IPlayer;
   }
@@ -4323,14 +4323,14 @@ declare module 'bitburner/DevMenu/ui/SourceFiles' {
   export {};
 
 }
-declare module 'bitburner/DevMenu/ui/Stanek' {
+declare module 'bb-lib/DevMenu/ui/Stanek' {
   import React from "react";
   export function Stanek(): React.ReactElement;
 
 }
-declare module 'bitburner/DevMenu/ui/Stats' {
+declare module 'bb-lib/DevMenu/ui/Stats' {
   import React from "react";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
   interface IProps {
       player: IPlayer;
   }
@@ -4338,15 +4338,15 @@ declare module 'bitburner/DevMenu/ui/Stats' {
   export {};
 
 }
-declare module 'bitburner/DevMenu/ui/StockMarket' {
+declare module 'bb-lib/DevMenu/ui/StockMarket' {
   import React from "react";
   export function StockMarket(): React.ReactElement;
 
 }
-declare module 'bitburner/DevMenu/ui/TimeSkip' {
+declare module 'bb-lib/DevMenu/ui/TimeSkip' {
   import React from "react";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { IEngine } from "bitburner/IEngine";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { IEngine } from "bb-lib/IEngine";
   interface IProps {
       player: IPlayer;
       engine: IEngine;
@@ -4355,10 +4355,10 @@ declare module 'bitburner/DevMenu/ui/TimeSkip' {
   export {};
 
 }
-declare module 'bitburner/DevMenu' {
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { IEngine } from "bitburner/IEngine";
-  import { IRouter } from "bitburner/ui/Router";
+declare module 'bb-lib/DevMenu' {
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { IEngine } from "bb-lib/IEngine";
+  import { IRouter } from "bb-lib/ui/Router";
   import React from "react";
   interface IProps {
       player: IPlayer;
@@ -4369,7 +4369,7 @@ declare module 'bitburner/DevMenu' {
   export {};
 
 }
-declare module 'bitburner/Diagnostic/FileDiagnosticModal' {
+declare module 'bb-lib/Diagnostic/FileDiagnosticModal' {
   import React from "react";
   interface IProps {
       open: boolean;
@@ -4379,10 +4379,10 @@ declare module 'bitburner/Diagnostic/FileDiagnosticModal' {
   export {};
 
 }
-declare module 'bitburner/Electron' {
-  import { ToastVariant } from "bitburner/ui/React/Snackbar";
-  import { IReturnStatus } from "bitburner/types";
-  import { ImportPlayerData, SaveData } from "bitburner/SaveObject";
+declare module 'bb-lib/Electron' {
+  import { ToastVariant } from "bb-lib/ui/React/Snackbar";
+  import { IReturnStatus } from "bb-lib/types";
+  import { ImportPlayerData, SaveData } from "bb-lib/SaveObject";
   interface IReturnWebStatus extends IReturnStatus {
       data?: Record<string, unknown>;
   }
@@ -4422,7 +4422,7 @@ declare module 'bitburner/Electron' {
   export {};
 
 }
-declare module 'bitburner/engine' {
+declare module 'bb-lib/engine' {
   const Engine: {
       _lastUpdate: number;
       updateGame: (numCycles?: number) => void;
@@ -4450,11 +4450,11 @@ declare module 'bitburner/engine' {
   export { Engine };
 
 }
-declare module 'bitburner/Exploits/applyExploits' {
+declare module 'bb-lib/Exploits/applyExploits' {
   export function applyExploit(): void;
 
 }
-declare module 'bitburner/Exploits/Exploit' {
+declare module 'bb-lib/Exploits/Exploit' {
   export enum Exploit {
       Bypass = "Bypass",
       PrototypeTampering = "PrototypeTampering",
@@ -4472,24 +4472,24 @@ declare module 'bitburner/Exploits/Exploit' {
   export function sanitizeExploits(exploits: Exploit[]): Exploit[];
 
 }
-declare module 'bitburner/Exploits/loops' {
+declare module 'bb-lib/Exploits/loops' {
   export function startExploits(): void;
 
 }
-declare module 'bitburner/Exploits/Unclickable' {
+declare module 'bb-lib/Exploits/Unclickable' {
   import React from "react";
   export function Unclickable(): React.ReactElement;
 
 }
-declare module 'bitburner/ExportBonus' {
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
+declare module 'bb-lib/ExportBonus' {
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
   export let LastExportBonus: number;
   export function canGetBonus(): boolean;
   export function onExport(p: IPlayer): void;
   export function setLastExportBonus(unixTime: number): void;
 
 }
-declare module 'bitburner/Faction/data/FactionNames' {
+declare module 'bb-lib/Faction/data/FactionNames' {
   export enum FactionNames {
       Illuminati = "Illuminati",
       Daedalus = "Daedalus",
@@ -4528,9 +4528,9 @@ declare module 'bitburner/Faction/data/FactionNames' {
   }
 
 }
-declare module 'bitburner/Faction/Faction' {
-  import { FactionInfo } from "bitburner/Faction/FactionInfo";
-  import { IReviverValue } from "bitburner/utils/JSONReviver";
+declare module 'bb-lib/Faction/Faction' {
+  import { FactionInfo } from "bb-lib/Faction/FactionInfo";
+  import { IReviverValue } from "bb-lib/utils/JSONReviver";
   export class Faction {
       /**
        * Flag signalling whether the player has already received an invitation
@@ -4576,10 +4576,10 @@ declare module 'bitburner/Faction/Faction' {
   }
 
 }
-declare module 'bitburner/Faction/FactionHelpers' {
-  import { Augmentation } from "bitburner/Augmentation/Augmentation";
-  import { Faction } from "bitburner/Faction/Faction";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
+declare module 'bb-lib/Faction/FactionHelpers' {
+  import { Augmentation } from "bb-lib/Augmentation/Augmentation";
+  import { Faction } from "bb-lib/Faction/Faction";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
   export function inviteToFaction(faction: Faction): void;
   export function joinFaction(faction: Faction): void;
   export function hasAugmentationPrereqs(aug: Augmentation): boolean;
@@ -4588,9 +4588,9 @@ declare module 'bitburner/Faction/FactionHelpers' {
   export const getFactionAugmentationsFiltered: (player: IPlayer, faction: Faction) => string[];
 
 }
-declare module 'bitburner/Faction/FactionInfo' {
+declare module 'bb-lib/Faction/FactionInfo' {
   import React from "react";
-  import { IMap } from "bitburner/types";
+  import { IMap } from "bb-lib/types";
   interface FactionInfoParams {
       infoText?: JSX.Element;
       enemies?: string[];
@@ -4647,32 +4647,32 @@ declare module 'bitburner/Faction/FactionInfo' {
   export {};
 
 }
-declare module 'bitburner/Faction/Factions' {
+declare module 'bb-lib/Faction/Factions' {
   /**
    * Initialization and manipulation of the Factions object, which stores data
    * about all Factions in the game
    */
-  import { Faction } from "bitburner/Faction/Faction";
-  import { IMap } from "bitburner/types";
+  import { Faction } from "bb-lib/Faction/Faction";
+  import { IMap } from "bb-lib/types";
   export let Factions: IMap<Faction>;
   export function loadFactions(saveString: string): void;
   export function factionExists(name: string): boolean;
   export function initFactions(): void;
 
 }
-declare module 'bitburner/Faction/formulas/donation' {
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
+declare module 'bb-lib/Faction/formulas/donation' {
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
   export function repFromDonation(amt: number, player: IPlayer): number;
 
 }
-declare module 'bitburner/Faction/formulas/favor' {
+declare module 'bb-lib/Faction/formulas/favor' {
   export function favorToRep(f: number): number;
   export function repToFavor(r: number): number;
 
 }
-declare module 'bitburner/Faction/ui/AugmentationsPage' {
+declare module 'bb-lib/Faction/ui/AugmentationsPage' {
   import React from "react";
-  import { Faction } from "bitburner/Faction/Faction";
+  import { Faction } from "bb-lib/Faction/Faction";
   type IProps = {
       faction: Faction;
       routeToMainPage: () => void;
@@ -4681,7 +4681,7 @@ declare module 'bitburner/Faction/ui/AugmentationsPage' {
   export {};
 
 }
-declare module 'bitburner/Faction/ui/CreateGangModal' {
+declare module 'bb-lib/Faction/ui/CreateGangModal' {
   /**
    * React Component for the popup used to create a new gang.
    */
@@ -4695,13 +4695,13 @@ declare module 'bitburner/Faction/ui/CreateGangModal' {
   export {};
 
 }
-declare module 'bitburner/Faction/ui/DonateOption' {
+declare module 'bb-lib/Faction/ui/DonateOption' {
   /**
    * React component for a donate option on the Faction UI
    */
   import React from "react";
-  import { Faction } from "bitburner/Faction/Faction";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
+  import { Faction } from "bb-lib/Faction/Faction";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
   type IProps = {
       faction: Faction;
       disabled: boolean;
@@ -4713,14 +4713,14 @@ declare module 'bitburner/Faction/ui/DonateOption' {
   export {};
 
 }
-declare module 'bitburner/Faction/ui/FactionRoot' {
+declare module 'bb-lib/Faction/ui/FactionRoot' {
   /**
    * Root React Component for displaying a Faction's UI.
    * This is the component for displaying a single faction's UI, not the list of all
    * accessible factions
    */
   import React from "react";
-  import { Faction } from "bitburner/Faction/Faction";
+  import { Faction } from "bb-lib/Faction/Faction";
   type IProps = {
       faction: Faction;
       augPage: boolean;
@@ -4729,10 +4729,10 @@ declare module 'bitburner/Faction/ui/FactionRoot' {
   export {};
 
 }
-declare module 'bitburner/Faction/ui/FactionsRoot' {
+declare module 'bb-lib/Faction/ui/FactionsRoot' {
   import React from "react";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { IRouter } from "bitburner/ui/Router";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { IRouter } from "bb-lib/ui/Router";
   export const InvitationsSeen: string[];
   interface IProps {
       player: IPlayer;
@@ -4742,9 +4742,9 @@ declare module 'bitburner/Faction/ui/FactionsRoot' {
   export {};
 
 }
-declare module 'bitburner/Faction/ui/GangButton' {
+declare module 'bb-lib/Faction/ui/GangButton' {
   import React from "react";
-  import { Faction } from "bitburner/Faction/Faction";
+  import { Faction } from "bb-lib/Faction/Faction";
   type IProps = {
       faction: Faction;
   };
@@ -4752,14 +4752,14 @@ declare module 'bitburner/Faction/ui/GangButton' {
   export {};
 
 }
-declare module 'bitburner/Faction/ui/Info' {
+declare module 'bb-lib/Faction/ui/Info' {
   /**
    * React component for general information about the faction. This includes the
    * factions "motto", reputation, favor, and gameplay instructions
    */
   import React from "react";
-  import { Faction } from "bitburner/Faction/Faction";
-  import { FactionInfo } from "bitburner/Faction/FactionInfo";
+  import { Faction } from "bb-lib/Faction/Faction";
+  import { FactionInfo } from "bb-lib/Faction/FactionInfo";
   type IProps = {
       faction: Faction;
       factionInfo: FactionInfo;
@@ -4768,15 +4768,15 @@ declare module 'bitburner/Faction/ui/Info' {
   export {};
 
 }
-declare module 'bitburner/Faction/ui/InvitationModal' {
+declare module 'bb-lib/Faction/ui/InvitationModal' {
   import React from "react";
-  import { Faction } from "bitburner/Faction/Faction";
-  import { EventEmitter } from "bitburner/utils/EventEmitter";
+  import { Faction } from "bb-lib/Faction/Faction";
+  import { EventEmitter } from "bb-lib/utils/EventEmitter";
   export const InvitationEvent: EventEmitter<[Faction]>;
   export function InvitationModal(): React.ReactElement;
 
 }
-declare module 'bitburner/Faction/ui/Option' {
+declare module 'bb-lib/Faction/ui/Option' {
   /**
    * React component for a selectable option on the Faction UI. These
    * options including working for the faction, hacking missions, purchasing
@@ -4792,7 +4792,7 @@ declare module 'bitburner/Faction/ui/Option' {
   export {};
 
 }
-declare module 'bitburner/GameOptions/GameOptionsTab' {
+declare module 'bb-lib/GameOptions/GameOptionsTab' {
   export enum GameOptionsTab {
       SYSTEM = 0,
       INTERFACE = 1,
@@ -4802,7 +4802,7 @@ declare module 'bitburner/GameOptions/GameOptionsTab' {
   }
 
 }
-declare module 'bitburner/GameOptions/ui/ConnectionBauble' {
+declare module 'bb-lib/GameOptions/ui/ConnectionBauble' {
   import React from "react";
   interface baubleProps {
       isConnected: () => boolean;
@@ -4811,7 +4811,7 @@ declare module 'bitburner/GameOptions/ui/ConnectionBauble' {
   export {};
 
 }
-declare module 'bitburner/GameOptions/ui/GameOptionsPage' {
+declare module 'bb-lib/GameOptions/ui/GameOptionsPage' {
   import React from "react";
   interface IProps {
       children: React.ReactNode;
@@ -4821,10 +4821,10 @@ declare module 'bitburner/GameOptions/ui/GameOptionsPage' {
   export {};
 
 }
-declare module 'bitburner/GameOptions/ui/GameOptionsRoot' {
+declare module 'bb-lib/GameOptions/ui/GameOptionsRoot' {
   import React from "react";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { IRouter } from "bitburner/ui/Router";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { IRouter } from "bb-lib/ui/Router";
   interface IProps {
       player: IPlayer;
       router: IRouter;
@@ -4837,11 +4837,11 @@ declare module 'bitburner/GameOptions/ui/GameOptionsRoot' {
   export {};
 
 }
-declare module 'bitburner/GameOptions/ui/GameOptionsSidebar' {
+declare module 'bb-lib/GameOptions/ui/GameOptionsSidebar' {
   import { default as React } from "react";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { IRouter } from "bitburner/ui/Router";
-  import { GameOptionsTab } from "bitburner/GameOptions/GameOptionsTab";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { IRouter } from "bb-lib/ui/Router";
+  import { GameOptionsTab } from "bb-lib/GameOptions/GameOptionsTab";
   interface IProps {
       tab: GameOptionsTab;
       setTab: (tab: GameOptionsTab) => void;
@@ -4856,22 +4856,22 @@ declare module 'bitburner/GameOptions/ui/GameOptionsSidebar' {
   export {};
 
 }
-declare module 'bitburner/GameOptions/ui/GameplayPage' {
+declare module 'bb-lib/GameOptions/ui/GameplayPage' {
   import React from "react";
   export const GameplayPage: () => React.ReactElement;
 
 }
-declare module 'bitburner/GameOptions/ui/InterfacePage' {
+declare module 'bb-lib/GameOptions/ui/InterfacePage' {
   import React from "react";
   export const InterfacePage: () => React.ReactElement;
 
 }
-declare module 'bitburner/GameOptions/ui/MiscPage' {
+declare module 'bb-lib/GameOptions/ui/MiscPage' {
   import React from "react";
   export const MiscPage: () => React.ReactElement;
 
 }
-declare module 'bitburner/GameOptions/ui/OptionsSlider' {
+declare module 'bb-lib/GameOptions/ui/OptionsSlider' {
   import React from "react";
   interface IProps {
       initialValue: number;
@@ -4887,17 +4887,17 @@ declare module 'bitburner/GameOptions/ui/OptionsSlider' {
   export {};
 
 }
-declare module 'bitburner/GameOptions/ui/RemoteAPIPage' {
+declare module 'bb-lib/GameOptions/ui/RemoteAPIPage' {
   import React from "react";
   export const RemoteAPIPage: () => React.ReactElement;
 
 }
-declare module 'bitburner/GameOptions/ui/SystemPage' {
+declare module 'bb-lib/GameOptions/ui/SystemPage' {
   import React from "react";
   export const SystemPage: () => React.ReactElement;
 
 }
-declare module 'bitburner/Gang/AllGangs' {
+declare module 'bb-lib/Gang/AllGangs' {
   interface GangTerritory {
       power: number;
       territory: number;
@@ -4910,7 +4910,7 @@ declare module 'bitburner/Gang/AllGangs' {
   export {};
 
 }
-declare module 'bitburner/Gang/data/Constants' {
+declare module 'bb-lib/Gang/data/Constants' {
   export const GangConstants: {
       GangRespectToReputationRatio: number;
       MaximumGangMembers: number;
@@ -4921,14 +4921,14 @@ declare module 'bitburner/Gang/data/Constants' {
   };
 
 }
-declare module 'bitburner/Gang/data/power' {
+declare module 'bb-lib/Gang/data/power' {
   export const PowerMultiplier: {
       [key: string]: number | undefined;
   };
 
 }
-declare module 'bitburner/Gang/data/tasks' {
-  import { ITaskParams } from "bitburner/Gang/ITaskParams";
+declare module 'bb-lib/Gang/data/tasks' {
+  import { ITaskParams } from "bb-lib/Gang/ITaskParams";
   /**
    * Defines the parameters that can be used to initialize and describe a GangMemberTask
    * (defined in Gang.js)
@@ -4964,7 +4964,7 @@ declare module 'bitburner/Gang/data/tasks' {
   export {};
 
 }
-declare module 'bitburner/Gang/data/upgrades' {
+declare module 'bb-lib/Gang/data/upgrades' {
   export interface IMults {
       hack?: number;
       str?: number;
@@ -4998,9 +4998,9 @@ declare module 'bitburner/Gang/data/upgrades' {
   export {};
 
 }
-declare module 'bitburner/Gang/formulas/formulas' {
-  import { GangMember } from "bitburner/Gang/GangMember";
-  import { GangMemberTask } from "bitburner/Gang/GangMemberTask";
+declare module 'bb-lib/Gang/formulas/formulas' {
+  import { GangMember } from "bb-lib/Gang/GangMember";
+  import { GangMemberTask } from "bb-lib/Gang/GangMemberTask";
   export interface FormulaGang {
       respect: number;
       territory: number;
@@ -5014,19 +5014,19 @@ declare module 'bitburner/Gang/formulas/formulas' {
   export function calculateAscensionMult(points: number): number;
 
 }
-declare module 'bitburner/Gang/Gang' {
+declare module 'bb-lib/Gang/Gang' {
   /**
    * TODO
    * Add police clashes
    * balance point to keep them from running out of control
    */
-  import { IReviverValue } from "bitburner/utils/JSONReviver";
-  import { GangMemberUpgrade } from "bitburner/Gang/GangMemberUpgrade";
-  import { IAscensionResult } from "bitburner/Gang/IAscensionResult";
-  import { GangMember } from "bitburner/Gang/GangMember";
-  import { WorkerScript } from "bitburner/Netscript/WorkerScript";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { IGang } from "bitburner/Gang/IGang";
+  import { IReviverValue } from "bb-lib/utils/JSONReviver";
+  import { GangMemberUpgrade } from "bb-lib/Gang/GangMemberUpgrade";
+  import { IAscensionResult } from "bb-lib/Gang/IAscensionResult";
+  import { GangMember } from "bb-lib/Gang/GangMember";
+  import { WorkerScript } from "bb-lib/Netscript/WorkerScript";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { IGang } from "bb-lib/Gang/IGang";
   export class Gang implements IGang {
       facName: string;
       members: GangMember[];
@@ -5070,13 +5070,13 @@ declare module 'bitburner/Gang/Gang' {
   }
 
 }
-declare module 'bitburner/Gang/GangMember' {
-  import { GangMemberTask } from "bitburner/Gang/GangMemberTask";
-  import { GangMemberUpgrade } from "bitburner/Gang/GangMemberUpgrade";
-  import { IAscensionResult } from "bitburner/Gang/IAscensionResult";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { IGang } from "bitburner/Gang/IGang";
-  import { IReviverValue } from "bitburner/utils/JSONReviver";
+declare module 'bb-lib/Gang/GangMember' {
+  import { GangMemberTask } from "bb-lib/Gang/GangMemberTask";
+  import { GangMemberUpgrade } from "bb-lib/Gang/GangMemberUpgrade";
+  import { IAscensionResult } from "bb-lib/Gang/IAscensionResult";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { IGang } from "bb-lib/Gang/IGang";
+  import { IReviverValue } from "bb-lib/utils/JSONReviver";
   interface IMults {
       hack: number;
       str: number;
@@ -5149,8 +5149,8 @@ declare module 'bitburner/Gang/GangMember' {
   export {};
 
 }
-declare module 'bitburner/Gang/GangMemberTask' {
-  import { ITaskParams, ITerritory } from "bitburner/Gang/ITaskParams";
+declare module 'bb-lib/Gang/GangMemberTask' {
+  import { ITaskParams, ITerritory } from "bb-lib/Gang/ITaskParams";
   export class GangMemberTask {
       name: string;
       desc: string;
@@ -5171,15 +5171,15 @@ declare module 'bitburner/Gang/GangMemberTask' {
   }
 
 }
-declare module 'bitburner/Gang/GangMemberTasks' {
-  import { GangMemberTask } from "bitburner/Gang/GangMemberTask";
+declare module 'bb-lib/Gang/GangMemberTasks' {
+  import { GangMemberTask } from "bb-lib/Gang/GangMemberTask";
   export const GangMemberTasks: {
       [key: string]: GangMemberTask;
   };
 
 }
-declare module 'bitburner/Gang/GangMemberUpgrade' {
-  import { IMults, UpgradeType } from "bitburner/Gang/data/upgrades";
+declare module 'bb-lib/Gang/GangMemberUpgrade' {
+  import { IMults, UpgradeType } from "bb-lib/Gang/data/upgrades";
   export class GangMemberUpgrade {
       name: string;
       cost: number;
@@ -5192,14 +5192,14 @@ declare module 'bitburner/Gang/GangMemberUpgrade' {
   }
 
 }
-declare module 'bitburner/Gang/GangMemberUpgrades' {
-  import { GangMemberUpgrade } from "bitburner/Gang/GangMemberUpgrade";
+declare module 'bb-lib/Gang/GangMemberUpgrades' {
+  import { GangMemberUpgrade } from "bb-lib/Gang/GangMemberUpgrade";
   export const GangMemberUpgrades: {
       [key: string]: GangMemberUpgrade;
   };
 
 }
-declare module 'bitburner/Gang/IAscensionResult' {
+declare module 'bb-lib/Gang/IAscensionResult' {
   export interface IAscensionResult {
       respect: number;
       hack: number;
@@ -5211,12 +5211,12 @@ declare module 'bitburner/Gang/IAscensionResult' {
   }
 
 }
-declare module 'bitburner/Gang/IGang' {
-  import { GangMemberUpgrade } from "bitburner/Gang/GangMemberUpgrade";
-  import { GangMember } from "bitburner/Gang/GangMember";
-  import { WorkerScript } from "bitburner/Netscript/WorkerScript";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { IAscensionResult } from "bitburner/Gang/IAscensionResult";
+declare module 'bb-lib/Gang/IGang' {
+  import { GangMemberUpgrade } from "bb-lib/Gang/GangMemberUpgrade";
+  import { GangMember } from "bb-lib/Gang/GangMember";
+  import { WorkerScript } from "bb-lib/Netscript/WorkerScript";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { IAscensionResult } from "bb-lib/Gang/IAscensionResult";
   import { IReviverValue } from "src/utils/JSONReviver";
   export interface IGang {
       facName: string;
@@ -5253,7 +5253,7 @@ declare module 'bitburner/Gang/IGang' {
   }
 
 }
-declare module 'bitburner/Gang/ITaskParams' {
+declare module 'bb-lib/Gang/ITaskParams' {
   export interface ITerritory {
       money: number;
       respect: number;
@@ -5274,13 +5274,13 @@ declare module 'bitburner/Gang/ITaskParams' {
   }
 
 }
-declare module 'bitburner/Gang/ui/AscensionModal' {
+declare module 'bb-lib/Gang/ui/AscensionModal' {
   /**
    * React Component for the content of the popup before the player confirms the
    * ascension of a gang member.
    */
   import React from "react";
-  import { GangMember } from "bitburner/Gang/GangMember";
+  import { GangMember } from "bb-lib/Gang/GangMember";
   interface IProps {
       open: boolean;
       onClose: () => void;
@@ -5291,12 +5291,12 @@ declare module 'bitburner/Gang/ui/AscensionModal' {
   export {};
 
 }
-declare module 'bitburner/Gang/ui/BonusTime' {
+declare module 'bb-lib/Gang/ui/BonusTime' {
   /**
    * React Component for displaying the bonus time remaining.
    */
   import * as React from "react";
-  import { Gang } from "bitburner/Gang/Gang";
+  import { Gang } from "bb-lib/Gang/Gang";
   interface IProps {
       gang: Gang;
   }
@@ -5304,16 +5304,16 @@ declare module 'bitburner/Gang/ui/BonusTime' {
   export {};
 
 }
-declare module 'bitburner/Gang/ui/Context' {
+declare module 'bb-lib/Gang/ui/Context' {
   import React from "react";
-  import { IGang } from "bitburner/Gang/IGang";
+  import { IGang } from "bb-lib/Gang/IGang";
   export const Context: {
       Gang: React.Context<IGang>;
   };
   export const useGang: () => IGang;
 
 }
-declare module 'bitburner/Gang/ui/EquipmentsSubpage' {
+declare module 'bb-lib/Gang/ui/EquipmentsSubpage' {
   /**
    * React Component for the popup that manages gang members upgrades
    */
@@ -5321,12 +5321,12 @@ declare module 'bitburner/Gang/ui/EquipmentsSubpage' {
   export function EquipmentsSubpage(): React.ReactElement;
 
 }
-declare module 'bitburner/Gang/ui/GangMemberCard' {
+declare module 'bb-lib/Gang/ui/GangMemberCard' {
   /**
    * React Component for a gang member on the management subpage.
    */
   import React from "react";
-  import { GangMember } from "bitburner/Gang/GangMember";
+  import { GangMember } from "bb-lib/Gang/GangMember";
   interface IProps {
       member: GangMember;
   }
@@ -5334,13 +5334,13 @@ declare module 'bitburner/Gang/ui/GangMemberCard' {
   export {};
 
 }
-declare module 'bitburner/Gang/ui/GangMemberCardContent' {
+declare module 'bb-lib/Gang/ui/GangMemberCardContent' {
   /**
    * React Component for the content of the accordion of gang members on the
    * management subpage.
    */
   import React from "react";
-  import { GangMember } from "bitburner/Gang/GangMember";
+  import { GangMember } from "bb-lib/Gang/GangMember";
   interface IProps {
       member: GangMember;
   }
@@ -5348,7 +5348,7 @@ declare module 'bitburner/Gang/ui/GangMemberCardContent' {
   export {};
 
 }
-declare module 'bitburner/Gang/ui/GangMemberList' {
+declare module 'bb-lib/Gang/ui/GangMemberList' {
   /**
    * React Component for the list of gang members on the management subpage.
    */
@@ -5356,13 +5356,13 @@ declare module 'bitburner/Gang/ui/GangMemberList' {
   export function GangMemberList(): React.ReactElement;
 
 }
-declare module 'bitburner/Gang/ui/GangMemberStats' {
+declare module 'bb-lib/Gang/ui/GangMemberStats' {
   /**
    * React Component for the first part of a gang member details.
    * Contains skills and exp.
    */
   import React from "react";
-  import { GangMember } from "bitburner/Gang/GangMember";
+  import { GangMember } from "bb-lib/Gang/GangMember";
   interface IProps {
       member: GangMember;
   }
@@ -5370,7 +5370,7 @@ declare module 'bitburner/Gang/ui/GangMemberStats' {
   export {};
 
 }
-declare module 'bitburner/Gang/ui/GangRoot' {
+declare module 'bb-lib/Gang/ui/GangRoot' {
   /**
    * React Component for all the gang stuff.
    */
@@ -5378,7 +5378,7 @@ declare module 'bitburner/Gang/ui/GangRoot' {
   export function GangRoot(): React.ReactElement;
 
 }
-declare module 'bitburner/Gang/ui/GangStats' {
+declare module 'bb-lib/Gang/ui/GangStats' {
   /**
    * React Component for the stats related to the gang, like total respect and
    * money per second.
@@ -5387,7 +5387,7 @@ declare module 'bitburner/Gang/ui/GangStats' {
   export function GangStats(): React.ReactElement;
 
 }
-declare module 'bitburner/Gang/ui/ManagementSubpage' {
+declare module 'bb-lib/Gang/ui/ManagementSubpage' {
   /**
    * React Component for the subpage that manages gang members, the main page.
    */
@@ -5395,7 +5395,7 @@ declare module 'bitburner/Gang/ui/ManagementSubpage' {
   export function ManagementSubpage(): React.ReactElement;
 
 }
-declare module 'bitburner/Gang/ui/RecruitButton' {
+declare module 'bb-lib/Gang/ui/RecruitButton' {
   /**
    * React Component for the recruitment button and text on the gang main page.
    */
@@ -5407,7 +5407,7 @@ declare module 'bitburner/Gang/ui/RecruitButton' {
   export {};
 
 }
-declare module 'bitburner/Gang/ui/RecruitModal' {
+declare module 'bb-lib/Gang/ui/RecruitModal' {
   /**
    * React Component for the popup used to recruit new gang members.
    */
@@ -5421,13 +5421,13 @@ declare module 'bitburner/Gang/ui/RecruitModal' {
   export {};
 
 }
-declare module 'bitburner/Gang/ui/TaskDescription' {
+declare module 'bb-lib/Gang/ui/TaskDescription' {
   /**
    * React Component for left side of the gang member accordion, contains the
    * description of the task that member is currently doing.
    */
   import React from "react";
-  import { GangMember } from "bitburner/Gang/GangMember";
+  import { GangMember } from "bb-lib/Gang/GangMember";
   interface IProps {
       member: GangMember;
   }
@@ -5435,13 +5435,13 @@ declare module 'bitburner/Gang/ui/TaskDescription' {
   export {};
 
 }
-declare module 'bitburner/Gang/ui/TaskSelector' {
+declare module 'bb-lib/Gang/ui/TaskSelector' {
   /**
    * React Component for the middle part of the gang member accordion. Contains
    * the task selector as well as some stats.
    */
   import React from "react";
-  import { GangMember } from "bitburner/Gang/GangMember";
+  import { GangMember } from "bb-lib/Gang/GangMember";
   interface IProps {
       member: GangMember;
       onTaskChange: () => void;
@@ -5450,7 +5450,7 @@ declare module 'bitburner/Gang/ui/TaskSelector' {
   export {};
 
 }
-declare module 'bitburner/Gang/ui/TerritoryInfoModal' {
+declare module 'bb-lib/Gang/ui/TerritoryInfoModal' {
   import React from "react";
   interface IProps {
       open: boolean;
@@ -5460,7 +5460,7 @@ declare module 'bitburner/Gang/ui/TerritoryInfoModal' {
   export {};
 
 }
-declare module 'bitburner/Gang/ui/TerritorySubpage' {
+declare module 'bb-lib/Gang/ui/TerritorySubpage' {
   /**
    * React Component for the territory subpage.
    */
@@ -5468,24 +5468,24 @@ declare module 'bitburner/Gang/ui/TerritorySubpage' {
   export function TerritorySubpage(): React.ReactElement;
 
 }
-declare module 'bitburner/Hacking/netscriptCanHack' {
+declare module 'bb-lib/Hacking/netscriptCanHack' {
   /**
    * Functions used to determine whether the target can be hacked (or grown/weakened).
    * Meant to be used for Netscript implementation
    *
    * The returned status object's message should be used for logging in Netscript
    */
-  import { IReturnStatus } from "bitburner/types";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { Server } from "bitburner/Server/Server";
+  import { IReturnStatus } from "bb-lib/types";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { Server } from "bb-lib/Server/Server";
   export function netscriptCanHack(server: Server, p: IPlayer): IReturnStatus;
   export function netscriptCanGrow(server: Server): IReturnStatus;
   export function netscriptCanWeaken(server: Server): IReturnStatus;
 
 }
-declare module 'bitburner/Hacking' {
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { Server } from "bitburner/Server/Server";
+declare module 'bb-lib/Hacking' {
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { Server } from "bb-lib/Server/Server";
   /**
    * Returns the chance the player has to successfully hack a server
    */
@@ -5514,7 +5514,7 @@ declare module 'bitburner/Hacking' {
   export function calculateWeakenTime(server: Server, player: IPlayer): number;
 
 }
-declare module 'bitburner/Hacknet/data/Constants' {
+declare module 'bb-lib/Hacknet/data/Constants' {
   export const HacknetNodeConstants: {
       MoneyGainPerLevel: number;
       BaseCost: number;
@@ -5555,12 +5555,12 @@ declare module 'bitburner/Hacknet/data/Constants' {
   };
 
 }
-declare module 'bitburner/Hacknet/data/HashUpgradesMetadata' {
-  import { IConstructorParams } from "bitburner/Hacknet/HashUpgrade";
+declare module 'bb-lib/Hacknet/data/HashUpgradesMetadata' {
+  import { IConstructorParams } from "bb-lib/Hacknet/HashUpgrade";
   export const HashUpgradesMetadata: IConstructorParams[];
 
 }
-declare module 'bitburner/Hacknet/formulas/HacknetNodes' {
+declare module 'bb-lib/Hacknet/formulas/HacknetNodes' {
   export function calculateMoneyGainRate(level: number, ram: number, cores: number, mult: number): number;
   export function calculateLevelUpgradeCost(startingLevel: number, extraLevels?: number, costMult?: number): number;
   export function calculateRamUpgradeCost(startingRam: number, extraLevels?: number, costMult?: number): number;
@@ -5568,7 +5568,7 @@ declare module 'bitburner/Hacknet/formulas/HacknetNodes' {
   export function calculateNodeCost(n: number, mult?: number): number;
 
 }
-declare module 'bitburner/Hacknet/formulas/HacknetServers' {
+declare module 'bb-lib/Hacknet/formulas/HacknetServers' {
   export function calculateHashGainRate(level: number, ramUsed: number, maxRam: number, cores: number, mult: number): number;
   export function calculateLevelUpgradeCost(startingLevel: number, extraLevels?: number, costMult?: number): number;
   export function calculateRamUpgradeCost(startingRam: number, extraLevels?: number, costMult?: number): number;
@@ -5577,7 +5577,7 @@ declare module 'bitburner/Hacknet/formulas/HacknetServers' {
   export function calculateServerCost(n: number, mult?: number): number;
 
 }
-declare module 'bitburner/Hacknet/HacknetHelpers' {
+declare module 'bb-lib/Hacknet/HacknetHelpers' {
   /**
    * Generic helper/utility functions for the Hacknet mechanic:
    *  - Purchase nodes/upgrades
@@ -5588,9 +5588,9 @@ declare module 'bitburner/Hacknet/HacknetHelpers' {
    *
    * TODO Should probably split the different types of functions into their own modules
    */
-  import { HacknetNode } from "bitburner/Hacknet/HacknetNode";
-  import { HacknetServer } from "bitburner/Hacknet/HacknetServer";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
+  import { HacknetNode } from "bb-lib/Hacknet/HacknetNode";
+  import { HacknetServer } from "bb-lib/Hacknet/HacknetServer";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
   export function hasHacknetServers(player: IPlayer): boolean;
   export function purchaseHacknet(player: IPlayer): number;
   export function hasMaxNumberHacknetServers(player: IPlayer): boolean;
@@ -5609,16 +5609,16 @@ declare module 'bitburner/Hacknet/HacknetHelpers' {
   export function purchaseHashUpgrade(player: IPlayer, upgName: string, upgTarget: string, count?: number): boolean;
 
 }
-declare module 'bitburner/Hacknet/HacknetNode' {
+declare module 'bb-lib/Hacknet/HacknetNode' {
   /**
    * Hacknet Node Class
    *
    * Hacknet Nodes are specialized machines that passively earn the player money over time.
    * They can be upgraded to increase their production
    */
-  import { IHacknetNode } from "bitburner/Hacknet/IHacknetNode";
-  import { IReviverValue } from "bitburner/utils/JSONReviver";
-  import { ObjectValidator } from "bitburner/utils/Validator";
+  import { IHacknetNode } from "bb-lib/Hacknet/IHacknetNode";
+  import { IReviverValue } from "bb-lib/utils/JSONReviver";
+  import { ObjectValidator } from "bb-lib/utils/Validator";
   export class HacknetNode implements IHacknetNode {
       static validationData: ObjectValidator<HacknetNode>;
       cores: number;
@@ -5648,12 +5648,12 @@ declare module 'bitburner/Hacknet/HacknetNode' {
   }
 
 }
-declare module 'bitburner/Hacknet/HacknetServer' {
-  import { IHacknetNode } from "bitburner/Hacknet/IHacknetNode";
-  import { BaseServer } from "bitburner/Server/BaseServer";
-  import { RunningScript } from "bitburner/Script/RunningScript";
-  import { IReviverValue } from "bitburner/utils/JSONReviver";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
+declare module 'bb-lib/Hacknet/HacknetServer' {
+  import { IHacknetNode } from "bb-lib/Hacknet/IHacknetNode";
+  import { BaseServer } from "bb-lib/Server/BaseServer";
+  import { RunningScript } from "bb-lib/Script/RunningScript";
+  import { IReviverValue } from "bb-lib/utils/JSONReviver";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
   interface IConstructorParams {
       adminRights?: boolean;
       hostname: string;
@@ -5691,10 +5691,10 @@ declare module 'bitburner/Hacknet/HacknetServer' {
   export {};
 
 }
-declare module 'bitburner/Hacknet/HashManager' {
-  import { HashUpgrade } from "bitburner/Hacknet/HashUpgrade";
-  import { IMap } from "bitburner/types";
-  import { IReviverValue } from "bitburner/utils/JSONReviver";
+declare module 'bb-lib/Hacknet/HashManager' {
+  import { HashUpgrade } from "bb-lib/Hacknet/HashUpgrade";
+  import { IMap } from "bb-lib/types";
+  import { IReviverValue } from "bb-lib/utils/JSONReviver";
   export class HashManager {
       capacity: number;
       hashes: number;
@@ -5739,7 +5739,7 @@ declare module 'bitburner/Hacknet/HashManager' {
   }
 
 }
-declare module 'bitburner/Hacknet/HashUpgrade' {
+declare module 'bb-lib/Hacknet/HashUpgrade' {
   /// <reference types="react" />
   /**
    * Object representing an upgrade that can be purchased with hashes
@@ -5783,17 +5783,17 @@ declare module 'bitburner/Hacknet/HashUpgrade' {
   }
 
 }
-declare module 'bitburner/Hacknet/HashUpgrades' {
+declare module 'bb-lib/Hacknet/HashUpgrades' {
   /**
    * Map of all Hash Upgrades
    * Key = Hash name, Value = HashUpgrade object
    */
-  import { HashUpgrade } from "bitburner/Hacknet/HashUpgrade";
-  import { IMap } from "bitburner/types";
+  import { HashUpgrade } from "bb-lib/Hacknet/HashUpgrade";
+  import { IMap } from "bb-lib/types";
   export const HashUpgrades: IMap<HashUpgrade>;
 
 }
-declare module 'bitburner/Hacknet/IHacknetNode' {
+declare module 'bb-lib/Hacknet/IHacknetNode' {
   export interface IHacknetNode {
       cores: number;
       level: number;
@@ -5807,7 +5807,7 @@ declare module 'bitburner/Hacknet/IHacknetNode' {
   }
 
 }
-declare module 'bitburner/Hacknet/ui/GeneralInfo' {
+declare module 'bb-lib/Hacknet/ui/GeneralInfo' {
   /**
    * React Component for the Hacknet Node UI
    *
@@ -5821,14 +5821,14 @@ declare module 'bitburner/Hacknet/ui/GeneralInfo' {
   export {};
 
 }
-declare module 'bitburner/Hacknet/ui/HacknetNodeElem' {
+declare module 'bb-lib/Hacknet/ui/HacknetNodeElem' {
   /**
    * React Component for the Hacknet Node UI.
    * This Component displays the panel for a single Hacknet Node
    */
   import React from "react";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { HacknetNode } from "bitburner/Hacknet/HacknetNode";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { HacknetNode } from "bb-lib/Hacknet/HacknetNode";
   interface IProps {
       node: HacknetNode;
       purchaseMultiplier: number | "MAX";
@@ -5839,12 +5839,12 @@ declare module 'bitburner/Hacknet/ui/HacknetNodeElem' {
   export {};
 
 }
-declare module 'bitburner/Hacknet/ui/HacknetRoot' {
+declare module 'bb-lib/Hacknet/ui/HacknetRoot' {
   /**
    * Root React Component for the Hacknet Node UI
    */
   import React from "react";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
   interface IProps {
       player: IPlayer;
   }
@@ -5852,14 +5852,14 @@ declare module 'bitburner/Hacknet/ui/HacknetRoot' {
   export {};
 
 }
-declare module 'bitburner/Hacknet/ui/HacknetServerElem' {
+declare module 'bb-lib/Hacknet/ui/HacknetServerElem' {
   /**
    * React Component for the Hacknet Node UI.
    * This Component displays the panel for a single Hacknet Node
    */
   import React from "react";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { HacknetServer } from "bitburner/Hacknet/HacknetServer";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { HacknetServer } from "bb-lib/Hacknet/HacknetServer";
   interface IProps {
       node: HacknetServer;
       purchaseMultiplier: number | string;
@@ -5870,11 +5870,11 @@ declare module 'bitburner/Hacknet/ui/HacknetServerElem' {
   export {};
 
 }
-declare module 'bitburner/Hacknet/ui/HacknetUpgradeElem' {
+declare module 'bb-lib/Hacknet/ui/HacknetUpgradeElem' {
   import React from "react";
-  import { HashManager } from "bitburner/Hacknet/HashManager";
-  import { HashUpgrade } from "bitburner/Hacknet/HashUpgrade";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
+  import { HashManager } from "bb-lib/Hacknet/HashManager";
+  import { HashUpgrade } from "bb-lib/Hacknet/HashUpgrade";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
   interface IProps {
       player: IPlayer;
       hashManager: HashManager;
@@ -5885,7 +5885,7 @@ declare module 'bitburner/Hacknet/ui/HacknetUpgradeElem' {
   export {};
 
 }
-declare module 'bitburner/Hacknet/ui/HashUpgradeModal' {
+declare module 'bb-lib/Hacknet/ui/HashUpgradeModal' {
   /**
    * Create the pop-up for purchasing upgrades with hashes
    */
@@ -5898,7 +5898,7 @@ declare module 'bitburner/Hacknet/ui/HashUpgradeModal' {
   export {};
 
 }
-declare module 'bitburner/Hacknet/ui/MultiplierButtons' {
+declare module 'bb-lib/Hacknet/ui/MultiplierButtons' {
   /**
    * React Component for the Multiplier buttons on the Hacknet page.
    * These buttons let the player control how many Nodes/Upgrades they're
@@ -5913,7 +5913,7 @@ declare module 'bitburner/Hacknet/ui/MultiplierButtons' {
   export {};
 
 }
-declare module 'bitburner/Hacknet/ui/PlayerInfo' {
+declare module 'bb-lib/Hacknet/ui/PlayerInfo' {
   /**
    * React Component for displaying Player info and stats on the Hacknet Node UI.
    * This includes:
@@ -5921,7 +5921,7 @@ declare module 'bitburner/Hacknet/ui/PlayerInfo' {
    * - Player's production from Hacknet Nodes
    */
   import React from "react";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
   interface IProps {
       totalProduction: number;
       player: IPlayer;
@@ -5930,7 +5930,7 @@ declare module 'bitburner/Hacknet/ui/PlayerInfo' {
   export {};
 
 }
-declare module 'bitburner/Hacknet/ui/PurchaseButton' {
+declare module 'bb-lib/Hacknet/ui/PurchaseButton' {
   /**
    * React Component for the button that is used to purchase new Hacknet Nodes
    */
@@ -5944,17 +5944,17 @@ declare module 'bitburner/Hacknet/ui/PurchaseButton' {
   export {};
 
 }
-declare module 'bitburner/hash/hash' {
+declare module 'bb-lib/hash/hash' {
   export function hash(): string;
 
 }
-declare module 'bitburner/Hospital/Hospital' {
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
+declare module 'bb-lib/Hospital/Hospital' {
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
   export function getHospitalizationCost(p: IPlayer): number;
   export function calculateHospitalizationCost(p: IPlayer, damage: number): number;
 
 }
-declare module 'bitburner/IEngine' {
+declare module 'bb-lib/IEngine' {
   /**
    * TypeScript interface for the game engine (engine.js), which can't be converted
    * to TypeScript at the moment
@@ -5985,54 +5985,54 @@ declare module 'bitburner/IEngine' {
   }
 
 }
-declare module 'bitburner/index' {
+declare module 'bb-lib/index' {
   export {};
 
 }
-declare module 'bitburner/Infiltration/formulas/game' {
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
+declare module 'bb-lib/Infiltration/formulas/game' {
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
   export function calculateDifficulty(player: IPlayer, startingSecurityLevel: number): number;
   export function calculateReward(player: IPlayer, startingSecurityLevel: number): number;
 
 }
-declare module 'bitburner/Infiltration/formulas/victory' {
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { Faction } from "bitburner/Faction/Faction";
+declare module 'bb-lib/Infiltration/formulas/victory' {
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { Faction } from "bb-lib/Faction/Faction";
   export function calculateSellInformationCashReward(player: IPlayer, reward: number, maxLevel: number, difficulty: number): number;
   export function calculateTradeInformationRepReward(player: IPlayer, reward: number, maxLevel: number, difficulty: number): number;
   export function calculateInfiltratorsRepReward(player: IPlayer, faction: Faction, difficulty: number): number;
 
 }
-declare module 'bitburner/Infiltration/ui/BackwardGame' {
+declare module 'bb-lib/Infiltration/ui/BackwardGame' {
   import React from "react";
-  import { IMinigameProps } from "bitburner/Infiltration/ui/IMinigameProps";
+  import { IMinigameProps } from "bb-lib/Infiltration/ui/IMinigameProps";
   export function BackwardGame(props: IMinigameProps): React.ReactElement;
 
 }
-declare module 'bitburner/Infiltration/ui/BlinkingCursor' {
+declare module 'bb-lib/Infiltration/ui/BlinkingCursor' {
   import React from "react";
   export function BlinkingCursor(): React.ReactElement;
 
 }
-declare module 'bitburner/Infiltration/ui/BracketGame' {
+declare module 'bb-lib/Infiltration/ui/BracketGame' {
   import React from "react";
-  import { IMinigameProps } from "bitburner/Infiltration/ui/IMinigameProps";
+  import { IMinigameProps } from "bb-lib/Infiltration/ui/IMinigameProps";
   export function BracketGame(props: IMinigameProps): React.ReactElement;
 
 }
-declare module 'bitburner/Infiltration/ui/BribeGame' {
+declare module 'bb-lib/Infiltration/ui/BribeGame' {
   import React from "react";
-  import { IMinigameProps } from "bitburner/Infiltration/ui/IMinigameProps";
+  import { IMinigameProps } from "bb-lib/Infiltration/ui/IMinigameProps";
   export function BribeGame(props: IMinigameProps): React.ReactElement;
 
 }
-declare module 'bitburner/Infiltration/ui/CheatCodeGame' {
+declare module 'bb-lib/Infiltration/ui/CheatCodeGame' {
   import React from "react";
-  import { IMinigameProps } from "bitburner/Infiltration/ui/IMinigameProps";
+  import { IMinigameProps } from "bb-lib/Infiltration/ui/IMinigameProps";
   export function CheatCodeGame(props: IMinigameProps): React.ReactElement;
 
 }
-declare module 'bitburner/Infiltration/ui/Countdown' {
+declare module 'bb-lib/Infiltration/ui/Countdown' {
   import React from "react";
   interface IProps {
       onFinish: () => void;
@@ -6041,13 +6041,13 @@ declare module 'bitburner/Infiltration/ui/Countdown' {
   export {};
 
 }
-declare module 'bitburner/Infiltration/ui/Cyberpunk2077Game' {
+declare module 'bb-lib/Infiltration/ui/Cyberpunk2077Game' {
   import React from "react";
-  import { IMinigameProps } from "bitburner/Infiltration/ui/IMinigameProps";
+  import { IMinigameProps } from "bb-lib/Infiltration/ui/IMinigameProps";
   export function Cyberpunk2077Game(props: IMinigameProps): React.ReactElement;
 
 }
-declare module 'bitburner/Infiltration/ui/Difficulty' {
+declare module 'bb-lib/Infiltration/ui/Difficulty' {
   interface DifficultySetting {
       [key: string]: number;
   }
@@ -6061,7 +6061,7 @@ declare module 'bitburner/Infiltration/ui/Difficulty' {
   export {};
 
 }
-declare module 'bitburner/Infiltration/ui/Game' {
+declare module 'bb-lib/Infiltration/ui/Game' {
   import React from "react";
   interface IProps {
       StartingDifficulty: number;
@@ -6073,7 +6073,7 @@ declare module 'bitburner/Infiltration/ui/Game' {
   export {};
 
 }
-declare module 'bitburner/Infiltration/ui/GameTimer' {
+declare module 'bb-lib/Infiltration/ui/GameTimer' {
   import React from "react";
   interface IProps {
       millis: number;
@@ -6084,7 +6084,7 @@ declare module 'bitburner/Infiltration/ui/GameTimer' {
   export {};
 
 }
-declare module 'bitburner/Infiltration/ui/IMinigameProps' {
+declare module 'bb-lib/Infiltration/ui/IMinigameProps' {
   export interface IMinigameProps {
       onSuccess: () => void;
       onFailure: (options?: {
@@ -6095,9 +6095,9 @@ declare module 'bitburner/Infiltration/ui/IMinigameProps' {
   }
 
 }
-declare module 'bitburner/Infiltration/ui/InfiltrationRoot' {
+declare module 'bb-lib/Infiltration/ui/InfiltrationRoot' {
   import React from "react";
-  import { Location } from "bitburner/Locations/Location";
+  import { Location } from "bb-lib/Locations/Location";
   interface IProps {
       location: Location;
   }
@@ -6105,9 +6105,9 @@ declare module 'bitburner/Infiltration/ui/InfiltrationRoot' {
   export {};
 
 }
-declare module 'bitburner/Infiltration/ui/Intro' {
+declare module 'bb-lib/Infiltration/ui/Intro' {
   import React from "react";
-  import { Location } from "bitburner/Locations/Location";
+  import { Location } from "bb-lib/Locations/Location";
   interface IProps {
       Location: Location;
       Difficulty: number;
@@ -6119,7 +6119,7 @@ declare module 'bitburner/Infiltration/ui/Intro' {
   export {};
 
 }
-declare module 'bitburner/Infiltration/ui/KeyHandler' {
+declare module 'bb-lib/Infiltration/ui/KeyHandler' {
   import React from "react";
   interface IProps {
       onKeyDown: (this: Document, event: KeyboardEvent) => void;
@@ -6131,19 +6131,19 @@ declare module 'bitburner/Infiltration/ui/KeyHandler' {
   export {};
 
 }
-declare module 'bitburner/Infiltration/ui/MinesweeperGame' {
+declare module 'bb-lib/Infiltration/ui/MinesweeperGame' {
   import React from "react";
-  import { IMinigameProps } from "bitburner/Infiltration/ui/IMinigameProps";
+  import { IMinigameProps } from "bb-lib/Infiltration/ui/IMinigameProps";
   export function MinesweeperGame(props: IMinigameProps): React.ReactElement;
 
 }
-declare module 'bitburner/Infiltration/ui/SlashGame' {
+declare module 'bb-lib/Infiltration/ui/SlashGame' {
   import React from "react";
-  import { IMinigameProps } from "bitburner/Infiltration/ui/IMinigameProps";
+  import { IMinigameProps } from "bb-lib/Infiltration/ui/IMinigameProps";
   export function SlashGame(props: IMinigameProps): React.ReactElement;
 
 }
-declare module 'bitburner/Infiltration/ui/Victory' {
+declare module 'bb-lib/Infiltration/ui/Victory' {
   import React from "react";
   interface IProps {
       StartingDifficulty: number;
@@ -6155,13 +6155,13 @@ declare module 'bitburner/Infiltration/ui/Victory' {
   export {};
 
 }
-declare module 'bitburner/Infiltration/ui/WireCuttingGame' {
+declare module 'bb-lib/Infiltration/ui/WireCuttingGame' {
   import React from "react";
-  import { IMinigameProps } from "bitburner/Infiltration/ui/IMinigameProps";
+  import { IMinigameProps } from "bb-lib/Infiltration/ui/IMinigameProps";
   export function WireCuttingGame(props: IMinigameProps): React.ReactElement;
 
 }
-declare module 'bitburner/Infiltration/utils' {
+declare module 'bb-lib/Infiltration/utils' {
   export function random(min: number, max: number): number;
   export const upArrowSymbol = "\u2191";
   export const downArrowSymbol = "\u2193";
@@ -6171,7 +6171,7 @@ declare module 'bitburner/Infiltration/utils' {
   export function getInverseArrow(event: KeyboardEvent): string;
 
 }
-declare module 'bitburner/InteractiveTutorial' {
+declare module 'bb-lib/InteractiveTutorial' {
   enum iTutorialSteps {
       Start = 0,
       NSSelection = 1,
@@ -6249,17 +6249,17 @@ declare module 'bitburner/InteractiveTutorial' {
   export { iTutorialSteps, iTutorialEnd, iTutorialStart, iTutorialNextStep, ITutorial, iTutorialPrevStep };
 
 }
-declare module 'bitburner/lib' {
-  import { NewIndustry } from 'bitburner/Corporation/Actions';
+declare module 'bb-lib/lib' {
+  import { NewIndustry } from 'bb-lib/Corporation/Actions';
   export { NewIndustry };
 
 }
-declare module 'bitburner/Literature/data/LiteratureNames' {
-  import { IMap } from "bitburner/types";
+declare module 'bb-lib/Literature/data/LiteratureNames' {
+  import { IMap } from "bb-lib/types";
   export const LiteratureNames: IMap<string>;
 
 }
-declare module 'bitburner/Literature/Literature' {
+declare module 'bb-lib/Literature/Literature' {
   /**
    * Lore / world building literature files that can be found on servers.
    * These files can be read by the player
@@ -6272,32 +6272,32 @@ declare module 'bitburner/Literature/Literature' {
   }
 
 }
-declare module 'bitburner/Literature/LiteratureHelpers' {
+declare module 'bb-lib/Literature/LiteratureHelpers' {
   export function showLiterature(fn: string): void;
 
 }
-declare module 'bitburner/Literature/Literatures' {
-  import { Literature } from "bitburner/Literature/Literature";
-  import { IMap } from "bitburner/types";
+declare module 'bb-lib/Literature/Literatures' {
+  import { Literature } from "bb-lib/Literature/Literature";
+  import { IMap } from "bb-lib/types";
   export const Literatures: IMap<Literature>;
 
 }
-declare module 'bitburner/Locations/Cities' {
+declare module 'bb-lib/Locations/Cities' {
   /**
    * Map of all Cities in the game
    * Key = City Name, Value = City object
    */
-  import { City } from "bitburner/Locations/City";
-  import { IMap } from "bitburner/types";
+  import { City } from "bb-lib/Locations/City";
+  import { IMap } from "bb-lib/types";
   export const Cities: IMap<City>;
 
 }
-declare module 'bitburner/Locations/City' {
+declare module 'bb-lib/Locations/City' {
   /**
    * Class representing a City in the game
    */
-  import { CityName } from "bitburner/Locations/data/CityNames";
-  import { LocationName } from "bitburner/Locations/data/LocationNames";
+  import { CityName } from "bb-lib/Locations/data/CityNames";
+  import { LocationName } from "bb-lib/Locations/data/LocationNames";
   export class City {
       /**
        * List of all locations in this city
@@ -6316,12 +6316,12 @@ declare module 'bitburner/Locations/City' {
   }
 
 }
-declare module 'bitburner/Locations/createCityMap' {
-  import { IMap } from "bitburner/types";
+declare module 'bb-lib/Locations/createCityMap' {
+  import { IMap } from "bb-lib/types";
   export function createCityMap<T>(initValue: T): IMap<T>;
 
 }
-declare module 'bitburner/Locations/data/CityNames' {
+declare module 'bb-lib/Locations/data/CityNames' {
   /**
    * All possible Cities in the game. Names only, not actual "City" object
    * Implemented as an enum for typing purposes
@@ -6336,7 +6336,7 @@ declare module 'bitburner/Locations/data/CityNames' {
   }
 
 }
-declare module 'bitburner/Locations/data/LocationNames' {
+declare module 'bb-lib/Locations/data/LocationNames' {
   /**
    * Names of all locations
    */
@@ -6400,18 +6400,18 @@ declare module 'bitburner/Locations/data/LocationNames' {
   }
 
 }
-declare module 'bitburner/Locations/data/LocationsMetadata' {
-  import { IConstructorParams } from "bitburner/Locations/Location";
+declare module 'bb-lib/Locations/data/LocationsMetadata' {
+  import { IConstructorParams } from "bb-lib/Locations/Location";
   export const LocationsMetadata: IConstructorParams[];
 
 }
-declare module 'bitburner/Locations/Location' {
+declare module 'bb-lib/Locations/Location' {
   /**
    * Class representing a visitable location in the world
    */
-  import { CityName } from "bitburner/Locations/data/CityNames";
-  import { LocationName } from "bitburner/Locations/data/LocationNames";
-  import { LocationType } from "bitburner/Locations/LocationTypeEnum";
+  import { CityName } from "bb-lib/Locations/data/CityNames";
+  import { LocationName } from "bb-lib/Locations/data/LocationNames";
+  import { LocationType } from "bb-lib/Locations/LocationTypeEnum";
   interface IInfiltrationMetadata {
       maxClearanceLevel: number;
       startingSecurityLevel: number;
@@ -6469,14 +6469,14 @@ declare module 'bitburner/Locations/Location' {
   export {};
 
 }
-declare module 'bitburner/Locations/Locations' {
-  import { Location } from "bitburner/Locations/Location";
-  import { IMap } from "bitburner/types";
+declare module 'bb-lib/Locations/Locations' {
+  import { Location } from "bb-lib/Locations/Location";
+  import { IMap } from "bb-lib/types";
   export const Locations: IMap<Location>;
 
 }
-declare module 'bitburner/Locations/LocationsHelpers' {
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
+declare module 'bb-lib/Locations/LocationsHelpers' {
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
   /**
    * Attempt to purchase a TOR router
    * @param {IPlayer} p - Player object
@@ -6484,7 +6484,7 @@ declare module 'bitburner/Locations/LocationsHelpers' {
   export function purchaseTorRouter(p: IPlayer): void;
 
 }
-declare module 'bitburner/Locations/LocationTypeEnum' {
+declare module 'bb-lib/Locations/LocationTypeEnum' {
   /**
    * Enum defining the different types of possible locations
    */
@@ -6502,13 +6502,13 @@ declare module 'bitburner/Locations/LocationTypeEnum' {
   }
 
 }
-declare module 'bitburner/Locations/ui/ApplyToJobButton' {
+declare module 'bb-lib/Locations/ui/ApplyToJobButton' {
   /**
    * React Component for a button that's used to apply for a job
    */
   import * as React from "react";
-  import { Company } from "bitburner/Company/Company";
-  import { CompanyPosition } from "bitburner/Company/CompanyPosition";
+  import { Company } from "bb-lib/Company/Company";
+  import { CompanyPosition } from "bb-lib/Company/CompanyPosition";
   type IProps = {
       company: Company;
       entryPosType: CompanyPosition;
@@ -6519,14 +6519,14 @@ declare module 'bitburner/Locations/ui/ApplyToJobButton' {
   export {};
 
 }
-declare module 'bitburner/Locations/ui/CasinoLocation' {
+declare module 'bb-lib/Locations/ui/CasinoLocation' {
   /**
    * React Subcomponent for displaying a location's UI, when that location is a gym
    *
    * This subcomponent renders all of the buttons for training at the gym
    */
   import React from "react";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
   type IProps = {
       p: IPlayer;
   };
@@ -6534,7 +6534,7 @@ declare module 'bitburner/Locations/ui/CasinoLocation' {
   export {};
 
 }
-declare module 'bitburner/Locations/ui/City' {
+declare module 'bb-lib/Locations/ui/City' {
   /**
    * React Component for displaying a City's UI.
    * This UI shows all of the available locations in the city, and lets the player
@@ -6544,14 +6544,14 @@ declare module 'bitburner/Locations/ui/City' {
   export function LocationCity(): React.ReactElement;
 
 }
-declare module 'bitburner/Locations/ui/CompanyLocation' {
+declare module 'bb-lib/Locations/ui/CompanyLocation' {
   /**
    * React Subcomponent for displaying a location's UI, when that location is a company
    *
    * This subcomponent renders all of the buttons for applying to jobs at a company
    */
   import React from "react";
-  import { LocationName } from "bitburner/Locations/data/LocationNames";
+  import { LocationName } from "bb-lib/Locations/data/LocationNames";
   type IProps = {
       locName: LocationName;
   };
@@ -6559,9 +6559,9 @@ declare module 'bitburner/Locations/ui/CompanyLocation' {
   export {};
 
 }
-declare module 'bitburner/Locations/ui/CoresButton' {
+declare module 'bb-lib/Locations/ui/CoresButton' {
   import React from "react";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
   type IProps = {
       p: IPlayer;
       rerender: () => void;
@@ -6570,7 +6570,7 @@ declare module 'bitburner/Locations/ui/CoresButton' {
   export {};
 
 }
-declare module 'bitburner/Locations/ui/GenericLocation' {
+declare module 'bb-lib/Locations/ui/GenericLocation' {
   /**
    * React Component for displaying a location's UI
    *
@@ -6578,7 +6578,7 @@ declare module 'bitburner/Locations/ui/GenericLocation' {
    * location that is being rendered and then creates the proper component(s) for that.
    */
   import * as React from "react";
-  import { Location } from "bitburner/Locations/Location";
+  import { Location } from "bb-lib/Locations/Location";
   type IProps = {
       loc: Location;
   };
@@ -6586,16 +6586,16 @@ declare module 'bitburner/Locations/ui/GenericLocation' {
   export {};
 
 }
-declare module 'bitburner/Locations/ui/GymLocation' {
+declare module 'bb-lib/Locations/ui/GymLocation' {
   /**
    * React Subcomponent for displaying a location's UI, when that location is a gym
    *
    * This subcomponent renders all of the buttons for training at the gym
    */
   import * as React from "react";
-  import { Location } from "bitburner/Locations/Location";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { IRouter } from "bitburner/ui/Router";
+  import { Location } from "bb-lib/Locations/Location";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { IRouter } from "bb-lib/ui/Router";
   type IProps = {
       loc: Location;
       p: IPlayer;
@@ -6605,14 +6605,14 @@ declare module 'bitburner/Locations/ui/GymLocation' {
   export {};
 
 }
-declare module 'bitburner/Locations/ui/HospitalLocation' {
+declare module 'bb-lib/Locations/ui/HospitalLocation' {
   /**
    * React Subcomponent for displaying a location's UI, when that location is a hospital
    *
    * This subcomponent renders all of the buttons for hospital options
    */
   import * as React from "react";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
   type IProps = {
       p: IPlayer;
   };
@@ -6634,7 +6634,7 @@ declare module 'bitburner/Locations/ui/HospitalLocation' {
   export {};
 
 }
-declare module 'bitburner/Locations/ui/PurchaseServerModal' {
+declare module 'bb-lib/Locations/ui/PurchaseServerModal' {
   /**
    * React Component for the popup used to purchase a new server.
    */
@@ -6650,9 +6650,9 @@ declare module 'bitburner/Locations/ui/PurchaseServerModal' {
   export {};
 
 }
-declare module 'bitburner/Locations/ui/RamButton' {
+declare module 'bb-lib/Locations/ui/RamButton' {
   import React from "react";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
   type IProps = {
       p: IPlayer;
       rerender: () => void;
@@ -6661,7 +6661,7 @@ declare module 'bitburner/Locations/ui/RamButton' {
   export {};
 
 }
-declare module 'bitburner/Locations/ui/SlumsLocation' {
+declare module 'bb-lib/Locations/ui/SlumsLocation' {
   /**
    * React Subcomponent for displaying a location's UI, when that location is a slum
    *
@@ -6671,7 +6671,7 @@ declare module 'bitburner/Locations/ui/SlumsLocation' {
   export function SlumsLocation(): React.ReactElement;
 
 }
-declare module 'bitburner/Locations/ui/SpecialLocation' {
+declare module 'bb-lib/Locations/ui/SpecialLocation' {
   /**
    * React Subcomponent for displaying a location's UI, when that location has special
    * actions/options/properties
@@ -6685,7 +6685,7 @@ declare module 'bitburner/Locations/ui/SpecialLocation' {
    * properties
    */
   import React from "react";
-  import { Location } from "bitburner/Locations/Location";
+  import { Location } from "bb-lib/Locations/Location";
   type IProps = {
       loc: Location;
   };
@@ -6693,14 +6693,14 @@ declare module 'bitburner/Locations/ui/SpecialLocation' {
   export {};
 
 }
-declare module 'bitburner/Locations/ui/TechVendorLocation' {
+declare module 'bb-lib/Locations/ui/TechVendorLocation' {
   /**
    * React Subcomponent for displaying a location's UI, when that location is a tech vendor
    *
    * This subcomponent renders all of the buttons for purchasing things from tech vendors
    */
   import React from "react";
-  import { Location } from "bitburner/Locations/Location";
+  import { Location } from "bb-lib/Locations/Location";
   type IProps = {
       loc: Location;
   };
@@ -6708,9 +6708,9 @@ declare module 'bitburner/Locations/ui/TechVendorLocation' {
   export {};
 
 }
-declare module 'bitburner/Locations/ui/TorButton' {
+declare module 'bb-lib/Locations/ui/TorButton' {
   import React from "react";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
   type IProps = {
       p: IPlayer;
       rerender: () => void;
@@ -6719,15 +6719,15 @@ declare module 'bitburner/Locations/ui/TorButton' {
   export {};
 
 }
-declare module 'bitburner/Locations/ui/TravelAgencyRoot' {
+declare module 'bb-lib/Locations/ui/TravelAgencyRoot' {
   /**
    * React Subcomponent for displaying a location's UI, when that location is a Travel Agency
    *
    * TThis subcomponent renders all of the buttons for traveling to different cities
    */
   import React from "react";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { IRouter } from "bitburner/ui/Router";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { IRouter } from "bb-lib/ui/Router";
   type IProps = {
       p: IPlayer;
       router: IRouter;
@@ -6736,7 +6736,7 @@ declare module 'bitburner/Locations/ui/TravelAgencyRoot' {
   export {};
 
 }
-declare module 'bitburner/Locations/ui/TravelConfirmationModal' {
+declare module 'bb-lib/Locations/ui/TravelConfirmationModal' {
   import React from "react";
   interface IProps {
       city: string;
@@ -6748,14 +6748,14 @@ declare module 'bitburner/Locations/ui/TravelConfirmationModal' {
   export {};
 
 }
-declare module 'bitburner/Locations/ui/UniversityLocation' {
+declare module 'bb-lib/Locations/ui/UniversityLocation' {
   /**
    * React Subcomponent for displaying a location's UI, when that location is a university
    *
    * This subcomponent renders all of the buttons for studying/taking courses
    */
   import * as React from "react";
-  import { Location } from "bitburner/Locations/Location";
+  import { Location } from "bb-lib/Locations/Location";
   type IProps = {
       loc: Location;
   };
@@ -6763,7 +6763,7 @@ declare module 'bitburner/Locations/ui/UniversityLocation' {
   export {};
 
 }
-declare module 'bitburner/MathJaxWrapper' {
+declare module 'bb-lib/MathJaxWrapper' {
   import React from "react";
   interface IProps {
       children: React.ReactNode;
@@ -6772,8 +6772,8 @@ declare module 'bitburner/MathJaxWrapper' {
   export {};
 
 }
-declare module 'bitburner/Message/Message' {
-  import { MessageFilenames } from "bitburner/Message/MessageHelpers";
+declare module 'bb-lib/Message/Message' {
+  import { MessageFilenames } from "bb-lib/Message/MessageHelpers";
   export class Message {
       filename: MessageFilenames;
       msg: string;
@@ -6781,8 +6781,8 @@ declare module 'bitburner/Message/Message' {
   }
 
 }
-declare module 'bitburner/Message/MessageHelpers' {
-  import { Message } from "bitburner/Message/Message";
+declare module 'bb-lib/Message/MessageHelpers' {
+  import { Message } from "bb-lib/Message/Message";
   function showMessage(name: MessageFilenames): void;
   function checkForMessagesToSend(): void;
   export enum MessageFilenames {
@@ -6801,22 +6801,22 @@ declare module 'bitburner/Message/MessageHelpers' {
   export { Messages, checkForMessagesToSend, showMessage };
 
 }
-declare module 'bitburner/Milestones/Milestone' {
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
+declare module 'bb-lib/Milestones/Milestone' {
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
   export type Milestone = {
       title: string;
       fulfilled: (p: IPlayer) => boolean;
   };
 
 }
-declare module 'bitburner/Milestones/Milestones' {
-  import { Milestone } from "bitburner/Milestones/Milestone";
+declare module 'bb-lib/Milestones/Milestones' {
+  import { Milestone } from "bb-lib/Milestones/Milestone";
   export const Milestones: Milestone[];
 
 }
-declare module 'bitburner/Milestones/ui/MilestonesRoot' {
+declare module 'bb-lib/Milestones/ui/MilestonesRoot' {
   /// <reference types="react" />
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
   interface IProps {
       player: IPlayer;
   }
@@ -6824,9 +6824,9 @@ declare module 'bitburner/Milestones/ui/MilestonesRoot' {
   export {};
 
 }
-declare module 'bitburner/Netscript/APIWrapper' {
-  import type { WorkerScript } from "bitburner/Netscript/WorkerScript";
-  import { ScriptArg } from "bitburner/Netscript/ScriptArg";
+declare module 'bb-lib/Netscript/APIWrapper' {
+  import type { WorkerScript } from "bb-lib/Netscript/WorkerScript";
+  import { ScriptArg } from "bb-lib/Netscript/ScriptArg";
   import { NSEnums } from "src/ScriptEditor/NetscriptDefinitions";
   import { NSFull } from "src/NetscriptFunctions";
   type ExternalFunction = (...args: unknown[]) => unknown;
@@ -6847,8 +6847,8 @@ declare module 'bitburner/Netscript/APIWrapper' {
   export {};
 
 }
-declare module 'bitburner/Netscript/Environment' {
-  import { NS } from "bitburner/ScriptEditor/NetscriptDefinitions/index";
+declare module 'bb-lib/Netscript/Environment' {
+  import { NS } from "bb-lib/ScriptEditor/NetscriptDefinitions/index";
   /**
    * The environment in which a script runs. The environment holds
    * Netscript functions and arguments for that script.
@@ -6869,9 +6869,9 @@ declare module 'bitburner/Netscript/Environment' {
   }
 
 }
-declare module 'bitburner/Netscript/killWorkerScript' {
-  import { WorkerScript } from "bitburner/Netscript/WorkerScript";
-  import { RunningScript } from "bitburner/Script/RunningScript";
+declare module 'bb-lib/Netscript/killWorkerScript' {
+  import { WorkerScript } from "bb-lib/Netscript/WorkerScript";
+  import { RunningScript } from "bb-lib/Script/RunningScript";
   export type killScriptParams = WorkerScript | number | {
       runningScript: RunningScript;
       hostname: string;
@@ -6879,22 +6879,22 @@ declare module 'bitburner/Netscript/killWorkerScript' {
   export function killWorkerScript(params: killScriptParams): boolean;
 
 }
-declare module 'bitburner/Netscript/NetscriptHelpers' {
-  import { NetscriptContext } from "bitburner/Netscript/APIWrapper";
-  import { WorkerScript } from "bitburner/Netscript/WorkerScript";
-  import { ScriptArg } from "bitburner/Netscript/ScriptArg";
-  import { CityName } from "bitburner/Locations/data/CityNames";
+declare module 'bb-lib/Netscript/NetscriptHelpers' {
+  import { NetscriptContext } from "bb-lib/Netscript/APIWrapper";
+  import { WorkerScript } from "bb-lib/Netscript/WorkerScript";
+  import { ScriptArg } from "bb-lib/Netscript/ScriptArg";
+  import { CityName } from "bb-lib/Locations/data/CityNames";
   import { BasicHGWOptions } from "src/ScriptEditor/NetscriptDefinitions";
-  import { Server } from "bitburner/Server/Server";
-  import { IPort } from "bitburner/NetscriptPort";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { FormulaGang } from "bitburner/Gang/formulas/formulas";
-  import { GangMember } from "bitburner/Gang/GangMember";
-  import { GangMemberTask } from "bitburner/Gang/GangMemberTask";
-  import { RunningScript } from "bitburner/Script/RunningScript";
-  import { ScriptIdentifier } from "bitburner/Netscript/ScriptIdentifier";
-  import { RunningScript as IRunningScript } from "bitburner/ScriptEditor/NetscriptDefinitions/index";
-  import { BaseServer } from "bitburner/Server/BaseServer";
+  import { Server } from "bb-lib/Server/Server";
+  import { IPort } from "bb-lib/NetscriptPort";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { FormulaGang } from "bb-lib/Gang/formulas/formulas";
+  import { GangMember } from "bb-lib/Gang/GangMember";
+  import { GangMemberTask } from "bb-lib/Gang/GangMemberTask";
+  import { RunningScript } from "bb-lib/Script/RunningScript";
+  import { ScriptIdentifier } from "bb-lib/Netscript/ScriptIdentifier";
+  import { RunningScript as IRunningScript } from "bb-lib/ScriptEditor/NetscriptDefinitions/index";
+  import { BaseServer } from "bb-lib/Server/BaseServer";
   export const helpers: {
       string: typeof string;
       number: typeof number;
@@ -7013,7 +7013,7 @@ declare module 'bitburner/Netscript/NetscriptHelpers' {
   export {};
 
 }
-declare module 'bitburner/Netscript/Pid' {
+declare module 'bb-lib/Netscript/Pid' {
   /**
    * Find and return the next availble PID for a script
    */
@@ -7021,17 +7021,17 @@ declare module 'bitburner/Netscript/Pid' {
   export function resetPidCounter(): void;
 
 }
-declare module 'bitburner/Netscript/RamCostGenerator' {
+declare module 'bb-lib/Netscript/RamCostGenerator' {
   import { IPlayer } from "src/PersonObjects/IPlayer";
-  import { IMap } from "bitburner/types";
+  import { IMap } from "bb-lib/types";
   export const RamCostConstants: IMap<number>;
   export const RamCosts: IMap<any>;
   export function getRamCost(player: IPlayer, ...args: string[]): number;
 
 }
-declare module 'bitburner/Netscript/RecentScripts' {
+declare module 'bb-lib/Netscript/RecentScripts' {
   import { RunningScript } from "src/Script/RunningScript";
-  import { WorkerScript } from "bitburner/Netscript/WorkerScript";
+  import { WorkerScript } from "bb-lib/Netscript/WorkerScript";
   export const recentScripts: RecentScript[];
   export function AddRecentScript(workerScript: WorkerScript): void;
   export interface RecentScript {
@@ -7040,12 +7040,12 @@ declare module 'bitburner/Netscript/RecentScripts' {
   }
 
 }
-declare module 'bitburner/Netscript/ScriptArg' {
+declare module 'bb-lib/Netscript/ScriptArg' {
   export type ScriptArg = string | number | boolean;
 
 }
-declare module 'bitburner/Netscript/ScriptDeath' {
-  import { WorkerScript } from "bitburner/Netscript/WorkerScript";
+declare module 'bb-lib/Netscript/ScriptDeath' {
+  import { WorkerScript } from "bb-lib/Netscript/WorkerScript";
   /**
    * Script death marker.
    *
@@ -7069,8 +7069,8 @@ declare module 'bitburner/Netscript/ScriptDeath' {
   }
 
 }
-declare module 'bitburner/Netscript/ScriptIdentifier' {
-  import { ScriptArg } from "bitburner/Netscript/ScriptArg";
+declare module 'bb-lib/Netscript/ScriptIdentifier' {
+  import { ScriptArg } from "bb-lib/Netscript/ScriptArg";
   export type ScriptIdentifier = number | {
       scriptname: string;
       hostname: string;
@@ -7078,7 +7078,7 @@ declare module 'bitburner/Netscript/ScriptIdentifier' {
   };
 
 }
-declare module 'bitburner/Netscript/WorkerScript' {
+declare module 'bb-lib/Netscript/WorkerScript' {
   /**
    * The worker agent for running a script instance. Each running script instance
    * has its own underlying WorkerScript object.
@@ -7087,14 +7087,14 @@ declare module 'bitburner/Netscript/WorkerScript' {
    * Instead, whenever the game is opened, WorkerScripts are re-created from
    * RunningScript objects
    */
-  import { Environment } from "bitburner/Netscript/Environment";
-  import { RunningScript } from "bitburner/Script/RunningScript";
-  import { Script } from "bitburner/Script/Script";
-  import { BaseServer } from "bitburner/Server/BaseServer";
-  import { IMap } from "bitburner/types";
-  import { NS } from "bitburner/ScriptEditor/NetscriptDefinitions/index";
-  import { ScriptDeath } from "bitburner/Netscript/ScriptDeath";
-  import { ScriptArg } from "bitburner/Netscript/ScriptArg";
+  import { Environment } from "bb-lib/Netscript/Environment";
+  import { RunningScript } from "bb-lib/Script/RunningScript";
+  import { Script } from "bb-lib/Script/Script";
+  import { BaseServer } from "bb-lib/Server/BaseServer";
+  import { IMap } from "bb-lib/types";
+  import { NS } from "bb-lib/ScriptEditor/NetscriptDefinitions/index";
+  import { ScriptDeath } from "bb-lib/Netscript/ScriptDeath";
+  import { ScriptArg } from "bb-lib/Netscript/ScriptArg";
   export class WorkerScript {
       /**
        * Script's arguments
@@ -7190,42 +7190,42 @@ declare module 'bitburner/Netscript/WorkerScript' {
   }
 
 }
-declare module 'bitburner/Netscript/WorkerScripts' {
+declare module 'bb-lib/Netscript/WorkerScripts' {
   /**
    * Global pool of all active scripts (scripts that are currently running)
    */
-  import { WorkerScript } from "bitburner/Netscript/WorkerScript";
+  import { WorkerScript } from "bb-lib/Netscript/WorkerScript";
   export const workerScripts: Map<number, WorkerScript>;
 
 }
-declare module 'bitburner/Netscript/WorkerScriptStartStopEventEmitter' {
+declare module 'bb-lib/Netscript/WorkerScriptStartStopEventEmitter' {
   /**
    * Event emitter that triggers when scripts are started/stopped
    */
-  import { EventEmitter } from "bitburner/utils/EventEmitter";
+  import { EventEmitter } from "bb-lib/utils/EventEmitter";
   export const WorkerScriptStartStopEventEmitter: EventEmitter<[]>;
 
 }
-declare module 'bitburner/NetscriptFunctions/Bladeburner' {
-  import { Bladeburner as INetscriptBladeburner } from "bitburner/ScriptEditor/NetscriptDefinitions/index";
+declare module 'bb-lib/NetscriptFunctions/Bladeburner' {
+  import { Bladeburner as INetscriptBladeburner } from "bb-lib/ScriptEditor/NetscriptDefinitions/index";
   import { InternalAPI } from "src/Netscript/APIWrapper";
   export function NetscriptBladeburner(): InternalAPI<INetscriptBladeburner>;
 
 }
-declare module 'bitburner/NetscriptFunctions/CodingContract' {
-  import { CodingContract as ICodingContract } from "bitburner/ScriptEditor/NetscriptDefinitions/index";
-  import { InternalAPI } from "bitburner/Netscript/APIWrapper";
+declare module 'bb-lib/NetscriptFunctions/CodingContract' {
+  import { CodingContract as ICodingContract } from "bb-lib/ScriptEditor/NetscriptDefinitions/index";
+  import { InternalAPI } from "bb-lib/Netscript/APIWrapper";
   export function NetscriptCodingContract(): InternalAPI<ICodingContract>;
 
 }
-declare module 'bitburner/NetscriptFunctions/Corporation' {
-  import { Corporation as NSCorporation } from "bitburner/ScriptEditor/NetscriptDefinitions/index";
-  import { InternalAPI } from "bitburner/Netscript/APIWrapper";
+declare module 'bb-lib/NetscriptFunctions/Corporation' {
+  import { Corporation as NSCorporation } from "bb-lib/ScriptEditor/NetscriptDefinitions/index";
+  import { InternalAPI } from "bb-lib/Netscript/APIWrapper";
   export function NetscriptCorporation(): InternalAPI<NSCorporation>;
 
 }
-declare module 'bitburner/NetscriptFunctions/Extra' {
-  import { InternalAPI } from "bitburner/Netscript/APIWrapper";
+declare module 'bb-lib/NetscriptFunctions/Extra' {
+  import { InternalAPI } from "bb-lib/Netscript/APIWrapper";
   export interface INetscriptExtra {
       heart: {
           break(): number;
@@ -7239,9 +7239,9 @@ declare module 'bitburner/NetscriptFunctions/Extra' {
   export function NetscriptExtra(): InternalAPI<INetscriptExtra>;
 
 }
-declare module 'bitburner/NetscriptFunctions/Flags' {
-  import { ScriptArg } from "bitburner/Netscript/ScriptArg";
-  import { NetscriptContext } from "bitburner/Netscript/APIWrapper";
+declare module 'bb-lib/NetscriptFunctions/Flags' {
+  import { ScriptArg } from "bb-lib/Netscript/ScriptArg";
+  import { NetscriptContext } from "bb-lib/Netscript/APIWrapper";
   type FlagsRet = {
       [key: string]: ScriptArg | string[];
   };
@@ -7249,89 +7249,89 @@ declare module 'bitburner/NetscriptFunctions/Flags' {
   export {};
 
 }
-declare module 'bitburner/NetscriptFunctions/Formulas' {
-  import { Formulas as IFormulas } from "bitburner/ScriptEditor/NetscriptDefinitions/index";
-  import { InternalAPI } from "bitburner/Netscript/APIWrapper";
+declare module 'bb-lib/NetscriptFunctions/Formulas' {
+  import { Formulas as IFormulas } from "bb-lib/ScriptEditor/NetscriptDefinitions/index";
+  import { InternalAPI } from "bb-lib/Netscript/APIWrapper";
   export function NetscriptFormulas(): InternalAPI<IFormulas>;
 
 }
-declare module 'bitburner/NetscriptFunctions/Gang' {
-  import { Gang as IGang } from "bitburner/ScriptEditor/NetscriptDefinitions/index";
-  import { InternalAPI } from "bitburner/Netscript/APIWrapper";
+declare module 'bb-lib/NetscriptFunctions/Gang' {
+  import { Gang as IGang } from "bb-lib/ScriptEditor/NetscriptDefinitions/index";
+  import { InternalAPI } from "bb-lib/Netscript/APIWrapper";
   export function NetscriptGang(): InternalAPI<IGang>;
 
 }
-declare module 'bitburner/NetscriptFunctions/Grafting' {
-  import { InternalAPI } from "bitburner/Netscript/APIWrapper";
-  import { Grafting as IGrafting } from "bitburner/ScriptEditor/NetscriptDefinitions/index";
+declare module 'bb-lib/NetscriptFunctions/Grafting' {
+  import { InternalAPI } from "bb-lib/Netscript/APIWrapper";
+  import { Grafting as IGrafting } from "bb-lib/ScriptEditor/NetscriptDefinitions/index";
   export function NetscriptGrafting(): InternalAPI<IGrafting>;
 
 }
-declare module 'bitburner/NetscriptFunctions/Hacknet' {
-  import { Hacknet as IHacknet } from "bitburner/ScriptEditor/NetscriptDefinitions/index";
-  import { InternalAPI } from "bitburner/Netscript/APIWrapper";
+declare module 'bb-lib/NetscriptFunctions/Hacknet' {
+  import { Hacknet as IHacknet } from "bb-lib/ScriptEditor/NetscriptDefinitions/index";
+  import { InternalAPI } from "bb-lib/Netscript/APIWrapper";
   export function NetscriptHacknet(): InternalAPI<IHacknet>;
 
 }
-declare module 'bitburner/NetscriptFunctions/Infiltration' {
-  import { Infiltration as IInfiltration } from "bitburner/ScriptEditor/NetscriptDefinitions/index";
-  import { InternalAPI } from "bitburner/Netscript/APIWrapper";
+declare module 'bb-lib/NetscriptFunctions/Infiltration' {
+  import { Infiltration as IInfiltration } from "bb-lib/ScriptEditor/NetscriptDefinitions/index";
+  import { InternalAPI } from "bb-lib/Netscript/APIWrapper";
   export function NetscriptInfiltration(): InternalAPI<IInfiltration>;
 
 }
-declare module 'bitburner/NetscriptFunctions/Singularity' {
-  import { Singularity as ISingularity } from "bitburner/ScriptEditor/NetscriptDefinitions/index";
+declare module 'bb-lib/NetscriptFunctions/Singularity' {
+  import { Singularity as ISingularity } from "bb-lib/ScriptEditor/NetscriptDefinitions/index";
   import { InternalAPI } from "src/Netscript/APIWrapper";
   export function NetscriptSingularity(): InternalAPI<ISingularity>;
 
 }
-declare module 'bitburner/NetscriptFunctions/Sleeve' {
-  import { Sleeve as ISleeve } from "bitburner/ScriptEditor/NetscriptDefinitions/index";
-  import { InternalAPI } from "bitburner/Netscript/APIWrapper";
+declare module 'bb-lib/NetscriptFunctions/Sleeve' {
+  import { Sleeve as ISleeve } from "bb-lib/ScriptEditor/NetscriptDefinitions/index";
+  import { InternalAPI } from "bb-lib/Netscript/APIWrapper";
   export function NetscriptSleeve(): InternalAPI<ISleeve>;
 
 }
-declare module 'bitburner/NetscriptFunctions/Stanek' {
-  import { Stanek as IStanek } from "bitburner/ScriptEditor/NetscriptDefinitions/index";
-  import { InternalAPI } from "bitburner/Netscript/APIWrapper";
+declare module 'bb-lib/NetscriptFunctions/Stanek' {
+  import { Stanek as IStanek } from "bb-lib/ScriptEditor/NetscriptDefinitions/index";
+  import { InternalAPI } from "bb-lib/Netscript/APIWrapper";
   export function NetscriptStanek(): InternalAPI<IStanek>;
 
 }
-declare module 'bitburner/NetscriptFunctions/StockMarket' {
-  import { TIX } from "bitburner/ScriptEditor/NetscriptDefinitions/index";
-  import { InternalAPI } from "bitburner/Netscript/APIWrapper";
+declare module 'bb-lib/NetscriptFunctions/StockMarket' {
+  import { TIX } from "bb-lib/ScriptEditor/NetscriptDefinitions/index";
+  import { InternalAPI } from "bb-lib/Netscript/APIWrapper";
   export function NetscriptStockMarket(): InternalAPI<TIX>;
 
 }
-declare module 'bitburner/NetscriptFunctions/toNative' {
+declare module 'bb-lib/NetscriptFunctions/toNative' {
   export function toNative(pseudoObj: unknown): unknown;
 
 }
-declare module 'bitburner/NetscriptFunctions/UserInterface' {
-  import { UserInterface as IUserInterface } from "bitburner/ScriptEditor/NetscriptDefinitions/index";
-  import { InternalAPI } from "bitburner/Netscript/APIWrapper";
+declare module 'bb-lib/NetscriptFunctions/UserInterface' {
+  import { UserInterface as IUserInterface } from "bb-lib/ScriptEditor/NetscriptDefinitions/index";
+  import { InternalAPI } from "bb-lib/Netscript/APIWrapper";
   export function NetscriptUserInterface(): InternalAPI<IUserInterface>;
 
 }
-declare module 'bitburner/NetscriptFunctions' {
-  import { WorkerScript } from "bitburner/Netscript/WorkerScript";
-  import { NS } from "bitburner/ScriptEditor/NetscriptDefinitions/index";
-  import { INetscriptExtra } from "bitburner/NetscriptFunctions/Extra";
+declare module 'bb-lib/NetscriptFunctions' {
+  import { WorkerScript } from "bb-lib/Netscript/WorkerScript";
+  import { NS } from "bb-lib/ScriptEditor/NetscriptDefinitions/index";
+  import { INetscriptExtra } from "bb-lib/NetscriptFunctions/Extra";
   export type NSFull = NS & INetscriptExtra;
   export function NetscriptFunctions(workerScript: WorkerScript): NSFull;
 
 }
-declare module 'bitburner/NetscriptJSEvaluator' {
-  import { WorkerScript } from "bitburner/Netscript/WorkerScript";
-  import { Script } from "bitburner/Script/Script";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { ScriptModule } from "bitburner/Script/ScriptModule";
+declare module 'bb-lib/NetscriptJSEvaluator' {
+  import { WorkerScript } from "bb-lib/Netscript/WorkerScript";
+  import { Script } from "bb-lib/Script/Script";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { ScriptModule } from "bb-lib/Script/ScriptModule";
   export type Node = any;
   export function compile(player: IPlayer, script: Script, scripts: Script[]): Promise<ScriptModule>;
   export function executeJSScript(player: IPlayer, scripts: Script[] | undefined, workerScript: WorkerScript): Promise<void>;
 
 }
-declare module 'bitburner/NetscriptPort' {
+declare module 'bb-lib/NetscriptPort' {
   export interface IPort {
       write: (value: unknown) => unknown;
       tryWrite: (value: unknown) => boolean;
@@ -7344,12 +7344,12 @@ declare module 'bitburner/NetscriptPort' {
   export function NetscriptPort(): IPort;
 
 }
-declare module 'bitburner/NetscriptWorker' {
-  import { WorkerScript } from "bitburner/Netscript/WorkerScript";
-  import { IPort } from "bitburner/NetscriptPort";
-  import { RunningScript } from "bitburner/Script/RunningScript";
-  import { BaseServer } from "bitburner/Server/BaseServer";
-  import { ScriptArg } from "bitburner/Netscript/ScriptArg";
+declare module 'bb-lib/NetscriptWorker' {
+  import { WorkerScript } from "bb-lib/Netscript/WorkerScript";
+  import { IPort } from "bb-lib/NetscriptPort";
+  import { RunningScript } from "bb-lib/Script/RunningScript";
+  import { BaseServer } from "bb-lib/Server/BaseServer";
+  import { ScriptArg } from "bb-lib/Netscript/ScriptArg";
   export const NetscriptPorts: IPort[];
   export function prestigeWorkerScripts(): void;
   /**
@@ -7373,28 +7373,28 @@ declare module 'bitburner/NetscriptWorker' {
   export function runScriptFromScript(caller: string, server: BaseServer, scriptname: string, args: ScriptArg[], workerScript: WorkerScript, threads?: number): number;
 
 }
-declare module 'bitburner/NetworkShare/formulas/share' {
+declare module 'bb-lib/NetworkShare/formulas/share' {
   export function CalculateShareMult(power: number): number;
 
 }
-declare module 'bitburner/NetworkShare/Share' {
+declare module 'bb-lib/NetworkShare/Share' {
   export let sharePower: number;
   export function StartSharing(threads: number): () => void;
   export function CalculateShareMult(): number;
 
 }
-declare module 'bitburner/PersonObjects/formulas/intelligence' {
+declare module 'bb-lib/PersonObjects/formulas/intelligence' {
   export function calculateIntelligenceBonus(intelligence: number, weight?: number): number;
 
 }
-declare module 'bitburner/PersonObjects/formulas/reputation' {
-  import { IPerson } from "bitburner/PersonObjects/IPerson";
+declare module 'bb-lib/PersonObjects/formulas/reputation' {
+  import { IPerson } from "bb-lib/PersonObjects/IPerson";
   export function getHackingWorkRepGain(p: IPerson, favor: number): number;
   export function getFactionSecurityWorkRepGain(p: IPerson, favor: number): number;
   export function getFactionFieldWorkRepGain(p: IPerson, favor: number): number;
 
 }
-declare module 'bitburner/PersonObjects/formulas/skill' {
+declare module 'bb-lib/PersonObjects/formulas/skill' {
   export function calculateSkill(exp: number, mult?: number): number;
   export function calculateExp(skill: number, mult?: number): number;
   export function calculateSkillProgress(exp: number, mult?: number): ISkillProgress;
@@ -7411,14 +7411,14 @@ declare module 'bitburner/PersonObjects/formulas/skill' {
   export function getEmptySkillProgress(): ISkillProgress;
 
 }
-declare module 'bitburner/PersonObjects/Grafting/EntropyAccumulation' {
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { Multipliers } from "bitburner/PersonObjects/Multipliers";
+declare module 'bb-lib/PersonObjects/Grafting/EntropyAccumulation' {
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { Multipliers } from "bb-lib/PersonObjects/Multipliers";
   export const calculateEntropy: (player: IPlayer, stacks?: number) => Multipliers;
 
 }
-declare module 'bitburner/PersonObjects/Grafting/GraftableAugmentation' {
-  import { Augmentation } from "bitburner/Augmentation/Augmentation";
+declare module 'bb-lib/PersonObjects/Grafting/GraftableAugmentation' {
+  import { Augmentation } from "bb-lib/Augmentation/Augmentation";
   export interface IConstructorParams {
       augmentation: Augmentation;
       readonly cost: number;
@@ -7432,34 +7432,34 @@ declare module 'bitburner/PersonObjects/Grafting/GraftableAugmentation' {
   }
 
 }
-declare module 'bitburner/PersonObjects/Grafting/GraftingHelpers' {
-  import { GraftableAugmentation } from "bitburner/PersonObjects/Grafting/GraftableAugmentation";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
+declare module 'bb-lib/PersonObjects/Grafting/GraftingHelpers' {
+  import { GraftableAugmentation } from "bb-lib/PersonObjects/Grafting/GraftableAugmentation";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
   export const getGraftingAvailableAugs: (player: IPlayer) => string[];
   export const graftingIntBonus: (player: IPlayer) => number;
   export const calculateGraftingTimeWithBonus: (player: IPlayer, aug: GraftableAugmentation) => number;
 
 }
-declare module 'bitburner/PersonObjects/Grafting/ui/GraftingRoot' {
+declare module 'bb-lib/PersonObjects/Grafting/ui/GraftingRoot' {
   import React from "react";
-  import { GraftableAugmentation } from "bitburner/PersonObjects/Grafting/GraftableAugmentation";
+  import { GraftableAugmentation } from "bb-lib/PersonObjects/Grafting/GraftableAugmentation";
   export const GraftableAugmentations: () => Record<string, GraftableAugmentation>;
   export const GraftingRoot: () => React.ReactElement;
 
 }
-declare module 'bitburner/PersonObjects/HP' {
+declare module 'bb-lib/PersonObjects/HP' {
   export interface HP {
       current: number;
       max: number;
   }
 
 }
-declare module 'bitburner/PersonObjects/IPerson' {
-  import { IPlayerOwnedAugmentation } from "bitburner/Augmentation/PlayerOwnedAugmentation";
-  import { HP } from "bitburner/PersonObjects/HP";
-  import { ITaskTracker } from "bitburner/PersonObjects/ITaskTracker";
-  import { Multipliers } from "bitburner/PersonObjects/Multipliers";
-  import { Skills } from "bitburner/PersonObjects/Skills";
+declare module 'bb-lib/PersonObjects/IPerson' {
+  import { IPlayerOwnedAugmentation } from "bb-lib/Augmentation/PlayerOwnedAugmentation";
+  import { HP } from "bb-lib/PersonObjects/HP";
+  import { ITaskTracker } from "bb-lib/PersonObjects/ITaskTracker";
+  import { Multipliers } from "bb-lib/PersonObjects/Multipliers";
+  import { Skills } from "bb-lib/PersonObjects/Skills";
   export interface IPerson {
       hp: HP;
       skills: Skills;
@@ -7483,40 +7483,40 @@ declare module 'bitburner/PersonObjects/IPerson' {
   }
 
 }
-declare module 'bitburner/PersonObjects/IPlayer' {
+declare module 'bb-lib/PersonObjects/IPlayer' {
   /**
    * Interface for an object that represents the player (PlayerObject)
    * Used because at the time of implementation, the PlayerObject
    * cant be converted to TypeScript.
    */
-  import { Sleeve } from "bitburner/PersonObjects/Sleeve/Sleeve";
-  import { IMap } from "bitburner/types";
-  import { IPlayerOwnedAugmentation } from "bitburner/Augmentation/PlayerOwnedAugmentation";
-  import { Augmentation } from "bitburner/Augmentation/Augmentation";
-  import { Company } from "bitburner/Company/Company";
-  import { CompanyPosition } from "bitburner/Company/CompanyPosition";
-  import { CityName } from "bitburner/Locations/data/CityNames";
-  import { Faction } from "bitburner/Faction/Faction";
-  import { HashManager } from "bitburner/Hacknet/HashManager";
-  import { HacknetNode } from "bitburner/Hacknet/HacknetNode";
-  import { LocationName } from "bitburner/Locations/data/LocationNames";
-  import { Server } from "bitburner/Server/Server";
-  import { BaseServer } from "bitburner/Server/BaseServer";
-  import { IPlayerOwnedSourceFile } from "bitburner/SourceFile/PlayerOwnedSourceFile";
-  import { MoneySourceTracker } from "bitburner/utils/MoneySourceTracker";
-  import { Exploit } from "bitburner/Exploits/Exploit";
-  import { ICorporation } from "bitburner/Corporation/ICorporation";
-  import { IGang } from "bitburner/Gang/IGang";
-  import { IBladeburner } from "bitburner/Bladeburner/IBladeburner";
-  import { ICodingContractReward } from "bitburner/CodingContracts";
-  import { HacknetServer } from "bitburner/Hacknet/HacknetServer";
-  import { ISkillProgress } from "bitburner/PersonObjects/formulas/skill";
-  import { PlayerAchievement } from "bitburner/Achievements/Achievements";
-  import { IPerson } from "bitburner/PersonObjects/IPerson";
-  import { Work } from "bitburner/Work/Work";
-  import { Multipliers } from "bitburner/PersonObjects/Multipliers";
-  import { Skills } from "bitburner/PersonObjects/Skills";
-  import { HP } from "bitburner/PersonObjects/HP";
+  import { Sleeve } from "bb-lib/PersonObjects/Sleeve/Sleeve";
+  import { IMap } from "bb-lib/types";
+  import { IPlayerOwnedAugmentation } from "bb-lib/Augmentation/PlayerOwnedAugmentation";
+  import { Augmentation } from "bb-lib/Augmentation/Augmentation";
+  import { Company } from "bb-lib/Company/Company";
+  import { CompanyPosition } from "bb-lib/Company/CompanyPosition";
+  import { CityName } from "bb-lib/Locations/data/CityNames";
+  import { Faction } from "bb-lib/Faction/Faction";
+  import { HashManager } from "bb-lib/Hacknet/HashManager";
+  import { HacknetNode } from "bb-lib/Hacknet/HacknetNode";
+  import { LocationName } from "bb-lib/Locations/data/LocationNames";
+  import { Server } from "bb-lib/Server/Server";
+  import { BaseServer } from "bb-lib/Server/BaseServer";
+  import { IPlayerOwnedSourceFile } from "bb-lib/SourceFile/PlayerOwnedSourceFile";
+  import { MoneySourceTracker } from "bb-lib/utils/MoneySourceTracker";
+  import { Exploit } from "bb-lib/Exploits/Exploit";
+  import { ICorporation } from "bb-lib/Corporation/ICorporation";
+  import { IGang } from "bb-lib/Gang/IGang";
+  import { IBladeburner } from "bb-lib/Bladeburner/IBladeburner";
+  import { ICodingContractReward } from "bb-lib/CodingContracts";
+  import { HacknetServer } from "bb-lib/Hacknet/HacknetServer";
+  import { ISkillProgress } from "bb-lib/PersonObjects/formulas/skill";
+  import { PlayerAchievement } from "bb-lib/Achievements/Achievements";
+  import { IPerson } from "bb-lib/PersonObjects/IPerson";
+  import { Work } from "bb-lib/Work/Work";
+  import { Multipliers } from "bb-lib/PersonObjects/Multipliers";
+  import { Skills } from "bb-lib/PersonObjects/Skills";
+  import { HP } from "bb-lib/PersonObjects/HP";
   export interface IPlayer extends IPerson {
       bitNodeN: number;
       city: CityName;
@@ -7634,7 +7634,7 @@ declare module 'bitburner/PersonObjects/IPlayer' {
   }
 
 }
-declare module 'bitburner/PersonObjects/ITaskTracker' {
+declare module 'bb-lib/PersonObjects/ITaskTracker' {
   export interface ITaskTracker {
       hack: number;
       str: number;
@@ -7648,8 +7648,8 @@ declare module 'bitburner/PersonObjects/ITaskTracker' {
   export function createTaskTracker(): ITaskTracker;
 
 }
-declare module 'bitburner/PersonObjects/Multipliers' {
-  import { AugmentationStats } from "bitburner/ScriptEditor/NetscriptDefinitions/index";
+declare module 'bb-lib/PersonObjects/Multipliers' {
+  import { AugmentationStats } from "bb-lib/ScriptEditor/NetscriptDefinitions/index";
   export interface Multipliers {
       hacking_chance: number;
       hacking_speed: number;
@@ -7686,19 +7686,19 @@ declare module 'bitburner/PersonObjects/Multipliers' {
   export const mergeMultipliers: (m0: Multipliers, m1: AugmentationStats) => Multipliers;
 
 }
-declare module 'bitburner/PersonObjects/Person' {
-  import * as generalMethods from "bitburner/PersonObjects/Player/PlayerObjectGeneralMethods";
-  import { Augmentation } from "bitburner/Augmentation/Augmentation";
-  import { IPlayerOwnedAugmentation } from "bitburner/Augmentation/PlayerOwnedAugmentation";
-  import { CityName } from "bitburner/Locations/data/CityNames";
-  import { IPerson } from "bitburner/PersonObjects/IPerson";
-  import { Skills } from "bitburner/PersonObjects/Skills";
-  import { HP } from "bitburner/PersonObjects/HP";
+declare module 'bb-lib/PersonObjects/Person' {
+  import * as generalMethods from "bb-lib/PersonObjects/Player/PlayerObjectGeneralMethods";
+  import { Augmentation } from "bb-lib/Augmentation/Augmentation";
+  import { IPlayerOwnedAugmentation } from "bb-lib/Augmentation/PlayerOwnedAugmentation";
+  import { CityName } from "bb-lib/Locations/data/CityNames";
+  import { IPerson } from "bb-lib/PersonObjects/IPerson";
+  import { Skills } from "bb-lib/PersonObjects/Skills";
+  import { HP } from "bb-lib/PersonObjects/HP";
   export abstract class Person implements IPerson {
       hp: HP;
       skills: Skills;
       exp: Skills;
-      mults: import("bitburner/PersonObjects/Multipliers").Multipliers;
+      mults: import("bb-lib/PersonObjects/Multipliers").Multipliers;
       /**
        * Augmentations
        */
@@ -7756,37 +7756,37 @@ declare module 'bitburner/PersonObjects/Person' {
   }
 
 }
-declare module 'bitburner/PersonObjects/Player/PlayerObject' {
-  import { IMap } from "bitburner/types";
-  import { Sleeve } from "bitburner/PersonObjects/Sleeve/Sleeve";
-  import { IPlayerOwnedSourceFile } from "bitburner/SourceFile/PlayerOwnedSourceFile";
-  import { Exploit } from "bitburner/Exploits/Exploit";
-  import { CompanyPosition } from "bitburner/Company/CompanyPosition";
-  import { Server } from "bitburner/Server/Server";
-  import { BaseServer } from "bitburner/Server/BaseServer";
-  import { HacknetServer } from "bitburner/Hacknet/HacknetServer";
-  import { Faction } from "bitburner/Faction/Faction";
-  import { Company } from "bitburner/Company/Company";
-  import { Augmentation } from "bitburner/Augmentation/Augmentation";
-  import { ICodingContractReward } from "bitburner/CodingContracts";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { LocationName } from "bitburner/Locations/data/LocationNames";
-  import { IPlayerOwnedAugmentation } from "bitburner/Augmentation/PlayerOwnedAugmentation";
-  import { ICorporation } from "bitburner/Corporation/ICorporation";
-  import { IGang } from "bitburner/Gang/IGang";
-  import { IBladeburner } from "bitburner/Bladeburner/IBladeburner";
-  import { HacknetNode } from "bitburner/Hacknet/HacknetNode";
-  import { HashManager } from "bitburner/Hacknet/HashManager";
-  import { CityName } from "bitburner/Locations/data/CityNames";
-  import { MoneySourceTracker } from "bitburner/utils/MoneySourceTracker";
-  import { IReviverValue } from "bitburner/utils/JSONReviver";
-  import { ISkillProgress } from "bitburner/PersonObjects/formulas/skill";
-  import { PlayerAchievement } from "bitburner/Achievements/Achievements";
-  import { ITaskTracker } from "bitburner/PersonObjects/ITaskTracker";
+declare module 'bb-lib/PersonObjects/Player/PlayerObject' {
+  import { IMap } from "bb-lib/types";
+  import { Sleeve } from "bb-lib/PersonObjects/Sleeve/Sleeve";
+  import { IPlayerOwnedSourceFile } from "bb-lib/SourceFile/PlayerOwnedSourceFile";
+  import { Exploit } from "bb-lib/Exploits/Exploit";
+  import { CompanyPosition } from "bb-lib/Company/CompanyPosition";
+  import { Server } from "bb-lib/Server/Server";
+  import { BaseServer } from "bb-lib/Server/BaseServer";
+  import { HacknetServer } from "bb-lib/Hacknet/HacknetServer";
+  import { Faction } from "bb-lib/Faction/Faction";
+  import { Company } from "bb-lib/Company/Company";
+  import { Augmentation } from "bb-lib/Augmentation/Augmentation";
+  import { ICodingContractReward } from "bb-lib/CodingContracts";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { LocationName } from "bb-lib/Locations/data/LocationNames";
+  import { IPlayerOwnedAugmentation } from "bb-lib/Augmentation/PlayerOwnedAugmentation";
+  import { ICorporation } from "bb-lib/Corporation/ICorporation";
+  import { IGang } from "bb-lib/Gang/IGang";
+  import { IBladeburner } from "bb-lib/Bladeburner/IBladeburner";
+  import { HacknetNode } from "bb-lib/Hacknet/HacknetNode";
+  import { HashManager } from "bb-lib/Hacknet/HashManager";
+  import { CityName } from "bb-lib/Locations/data/CityNames";
+  import { MoneySourceTracker } from "bb-lib/utils/MoneySourceTracker";
+  import { IReviverValue } from "bb-lib/utils/JSONReviver";
+  import { ISkillProgress } from "bb-lib/PersonObjects/formulas/skill";
+  import { PlayerAchievement } from "bb-lib/Achievements/Achievements";
+  import { ITaskTracker } from "bb-lib/PersonObjects/ITaskTracker";
   import { Work } from "src/Work/Work";
-  import { Multipliers } from "bitburner/PersonObjects/Multipliers";
-  import { HP } from "bitburner/PersonObjects/HP";
-  import { Skills } from "bitburner/PersonObjects/Skills";
+  import { Multipliers } from "bb-lib/PersonObjects/Multipliers";
+  import { HP } from "bb-lib/PersonObjects/HP";
+  import { Skills } from "bb-lib/PersonObjects/Skills";
   export class PlayerObject implements IPlayer {
       augmentations: IPlayerOwnedAugmentation[];
       bitNodeN: number;
@@ -7931,33 +7931,33 @@ declare module 'bitburner/PersonObjects/Player/PlayerObject' {
   }
 
 }
-declare module 'bitburner/PersonObjects/Player/PlayerObjectAugmentationMethods' {
+declare module 'bb-lib/PersonObjects/Player/PlayerObjectAugmentationMethods' {
   /**
    * Augmentation-related methods for the Player class (PlayerObject)
    */
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { Augmentation } from "bitburner/Augmentation/Augmentation";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { Augmentation } from "bb-lib/Augmentation/Augmentation";
   export function hasAugmentation(this: IPlayer, aug: string | Augmentation, ignoreQueued?: boolean): boolean;
   export function applyEntropy(this: IPlayer, stacks?: number): void;
 
 }
-declare module 'bitburner/PersonObjects/Player/PlayerObjectBladeburnerMethods' {
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
+declare module 'bb-lib/PersonObjects/Player/PlayerObjectBladeburnerMethods' {
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
   export function canAccessBladeburner(this: IPlayer): boolean;
   export function inBladeburner(this: IPlayer): boolean;
   export function startBladeburner(this: IPlayer): void;
 
 }
-declare module 'bitburner/PersonObjects/Player/PlayerObjectCorporationMethods' {
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
+declare module 'bb-lib/PersonObjects/Player/PlayerObjectCorporationMethods' {
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
   export function canAccessCorporation(this: IPlayer): boolean;
   export function hasCorporation(this: IPlayer): boolean;
   export function startCorporation(this: IPlayer, corpName: string, additionalShares?: number): void;
 
 }
-declare module 'bitburner/PersonObjects/Player/PlayerObjectGangMethods' {
-  import { Faction } from "bitburner/Faction/Faction";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
+declare module 'bb-lib/PersonObjects/Player/PlayerObjectGangMethods' {
+  import { Faction } from "bb-lib/Faction/Faction";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
   export function canAccessGang(this: IPlayer): boolean;
   export function isAwareOfGang(this: IPlayer): boolean;
   export function getGangFaction(this: IPlayer): Faction;
@@ -7967,19 +7967,19 @@ declare module 'bitburner/PersonObjects/Player/PlayerObjectGangMethods' {
   export function startGang(this: IPlayer, factionName: string, hacking: boolean): void;
 
 }
-declare module 'bitburner/PersonObjects/Player/PlayerObjectGeneralMethods' {
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { PlayerObject } from "bitburner/PersonObjects/Player/PlayerObject";
-  import { ICodingContractReward } from "bitburner/CodingContracts";
-  import { Company } from "bitburner/Company/Company";
-  import { CompanyPosition } from "bitburner/Company/CompanyPosition";
-  import { Exploit } from "bitburner/Exploits/Exploit";
-  import { Faction } from "bitburner/Faction/Faction";
-  import { CityName } from "bitburner/Locations/data/CityNames";
-  import { LocationName } from "bitburner/Locations/data/LocationNames";
-  import { ISkillProgress } from "bitburner/PersonObjects/formulas/skill";
-  import { ITaskTracker } from "bitburner/PersonObjects/ITaskTracker";
-  import { IPerson } from "bitburner/PersonObjects/IPerson";
+declare module 'bb-lib/PersonObjects/Player/PlayerObjectGeneralMethods' {
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { PlayerObject } from "bb-lib/PersonObjects/Player/PlayerObject";
+  import { ICodingContractReward } from "bb-lib/CodingContracts";
+  import { Company } from "bb-lib/Company/Company";
+  import { CompanyPosition } from "bb-lib/Company/CompanyPosition";
+  import { Exploit } from "bb-lib/Exploits/Exploit";
+  import { Faction } from "bb-lib/Faction/Faction";
+  import { CityName } from "bb-lib/Locations/data/CityNames";
+  import { LocationName } from "bb-lib/Locations/data/LocationNames";
+  import { ISkillProgress } from "bb-lib/PersonObjects/formulas/skill";
+  import { ITaskTracker } from "bb-lib/PersonObjects/ITaskTracker";
+  import { IPerson } from "bb-lib/PersonObjects/IPerson";
   export function init(this: IPlayer): void;
   export function prestigeAugmentation(this: PlayerObject): void;
   export function prestigeSourceFile(this: IPlayer): void;
@@ -8054,14 +8054,14 @@ declare module 'bitburner/PersonObjects/Player/PlayerObjectGeneralMethods' {
   export function focusPenalty(this: IPlayer): number;
 
 }
-declare module 'bitburner/PersonObjects/Player/PlayerObjectServerMethods' {
+declare module 'bb-lib/PersonObjects/Player/PlayerObjectServerMethods' {
   /**
    * Server and HacknetServer-related methods for the Player class (PlayerObject)
    */
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { Server } from "bitburner/Server/Server";
-  import { BaseServer } from "bitburner/Server/BaseServer";
-  import { HacknetServer } from "bitburner/Hacknet/HacknetServer";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { Server } from "bb-lib/Server/Server";
+  import { BaseServer } from "bb-lib/Server/BaseServer";
+  import { HacknetServer } from "bb-lib/Hacknet/HacknetServer";
   export function hasTorRouter(this: IPlayer): boolean;
   export function getCurrentServer(this: IPlayer): BaseServer;
   export function getHomeComputer(this: IPlayer): Server;
@@ -8070,15 +8070,15 @@ declare module 'bitburner/PersonObjects/Player/PlayerObjectServerMethods' {
   export function createHacknetServer(this: IPlayer): HacknetServer;
 
 }
-declare module 'bitburner/PersonObjects/Player/PlayerObjectWorkMethods' {
-  import { Work } from "bitburner/Work/Work";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
+declare module 'bb-lib/PersonObjects/Player/PlayerObjectWorkMethods' {
+  import { Work } from "bb-lib/Work/Work";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
   export function start(this: IPlayer, w: Work): void;
   export function process(this: IPlayer, cycles?: number): void;
   export function finish(this: IPlayer, cancelled: boolean): void;
 
 }
-declare module 'bitburner/PersonObjects/Skills' {
+declare module 'bb-lib/PersonObjects/Skills' {
   export interface Skills {
       hacking: number;
       strength: number;
@@ -8090,7 +8090,7 @@ declare module 'bitburner/PersonObjects/Skills' {
   }
 
 }
-declare module 'bitburner/PersonObjects/Sleeve/Sleeve' {
+declare module 'bb-lib/PersonObjects/Sleeve/Sleeve' {
   /**
    * Sleeves are bodies that contain the player's cloned consciousness.
    * The player can use these bodies to perform different tasks synchronously.
@@ -8099,12 +8099,12 @@ declare module 'bitburner/PersonObjects/Sleeve/Sleeve' {
    *
    * Sleeves are unlocked in BitNode-10.
    */
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { Person } from "bitburner/PersonObjects/Person";
-  import { Augmentation } from "bitburner/Augmentation/Augmentation";
-  import { CityName } from "bitburner/Locations/data/CityNames";
-  import { IReviverValue } from "bitburner/utils/JSONReviver";
-  import { Work } from "bitburner/PersonObjects/Sleeve/Work/Work";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { Person } from "bb-lib/PersonObjects/Person";
+  import { Augmentation } from "bb-lib/Augmentation/Augmentation";
+  import { CityName } from "bb-lib/Locations/data/CityNames";
+  import { IReviverValue } from "bb-lib/utils/JSONReviver";
+  import { Work } from "bb-lib/PersonObjects/Sleeve/Work/Work";
   export class Sleeve extends Person {
       currentWork: Work | null;
       /**
@@ -8198,7 +8198,7 @@ declare module 'bitburner/PersonObjects/Sleeve/Sleeve' {
   }
 
 }
-declare module 'bitburner/PersonObjects/Sleeve/SleeveCovenantPurchases' {
+declare module 'bb-lib/PersonObjects/Sleeve/SleeveCovenantPurchases' {
   /**
    * Implements the purchasing of extra Duplicate Sleeves from The Covenant,
    * as well as the purchasing of upgrades (memory)
@@ -8207,14 +8207,14 @@ declare module 'bitburner/PersonObjects/Sleeve/SleeveCovenantPurchases' {
   export const BaseCostPerSleeve = 10000000000000;
 
 }
-declare module 'bitburner/PersonObjects/Sleeve/SleeveHelpers' {
-  import { Sleeve } from "bitburner/PersonObjects/Sleeve/Sleeve";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { Augmentation } from "bitburner/Augmentation/Augmentation";
+declare module 'bb-lib/PersonObjects/Sleeve/SleeveHelpers' {
+  import { Sleeve } from "bb-lib/PersonObjects/Sleeve/Sleeve";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { Augmentation } from "bb-lib/Augmentation/Augmentation";
   export function findSleevePurchasableAugs(sleeve: Sleeve, p: IPlayer): Augmentation[];
 
 }
-declare module 'bitburner/PersonObjects/Sleeve/SleeveTaskTypesEnum' {
+declare module 'bb-lib/PersonObjects/Sleeve/SleeveTaskTypesEnum' {
   /**
    * Enum for different types of tasks that a Sleeve can perform
    */
@@ -8231,7 +8231,7 @@ declare module 'bitburner/PersonObjects/Sleeve/SleeveTaskTypesEnum' {
   }
 
 }
-declare module 'bitburner/PersonObjects/Sleeve/ui/CovenantPurchasesRoot' {
+declare module 'bb-lib/PersonObjects/Sleeve/ui/CovenantPurchasesRoot' {
   /**
    * Root React component for the popup that lets player purchase Duplicate
    * Sleeves and Sleeve-related upgrades from The Covenant
@@ -8245,14 +8245,14 @@ declare module 'bitburner/PersonObjects/Sleeve/ui/CovenantPurchasesRoot' {
   export {};
 
 }
-declare module 'bitburner/PersonObjects/Sleeve/ui/CovenantSleeveMemoryUpgrade' {
+declare module 'bb-lib/PersonObjects/Sleeve/ui/CovenantSleeveMemoryUpgrade' {
   /**
    * React component for a panel that lets you purchase upgrades for a Duplicate
    * Sleeve's Memory (through The Covenant)
    */
   import React from "react";
-  import { Sleeve } from "bitburner/PersonObjects/Sleeve/Sleeve";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
+  import { Sleeve } from "bb-lib/PersonObjects/Sleeve/Sleeve";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
   interface IProps {
       index: number;
       p: IPlayer;
@@ -8263,7 +8263,7 @@ declare module 'bitburner/PersonObjects/Sleeve/ui/CovenantSleeveMemoryUpgrade' {
   export {};
 
 }
-declare module 'bitburner/PersonObjects/Sleeve/ui/FAQModal' {
+declare module 'bb-lib/PersonObjects/Sleeve/ui/FAQModal' {
   import React from "react";
   interface IProps {
       open: boolean;
@@ -8273,8 +8273,8 @@ declare module 'bitburner/PersonObjects/Sleeve/ui/FAQModal' {
   export {};
 
 }
-declare module 'bitburner/PersonObjects/Sleeve/ui/MoreStatsModal' {
-  import { Sleeve } from "bitburner/PersonObjects/Sleeve/Sleeve";
+declare module 'bb-lib/PersonObjects/Sleeve/ui/MoreStatsModal' {
+  import { Sleeve } from "bb-lib/PersonObjects/Sleeve/Sleeve";
   import React from "react";
   interface IProps {
       open: boolean;
@@ -8285,9 +8285,9 @@ declare module 'bitburner/PersonObjects/Sleeve/ui/MoreStatsModal' {
   export {};
 
 }
-declare module 'bitburner/PersonObjects/Sleeve/ui/SleeveAugmentationsModal' {
+declare module 'bb-lib/PersonObjects/Sleeve/ui/SleeveAugmentationsModal' {
   import React from "react";
-  import { Sleeve } from "bitburner/PersonObjects/Sleeve/Sleeve";
+  import { Sleeve } from "bb-lib/PersonObjects/Sleeve/Sleeve";
   interface IProps {
       open: boolean;
       onClose: () => void;
@@ -8297,9 +8297,9 @@ declare module 'bitburner/PersonObjects/Sleeve/ui/SleeveAugmentationsModal' {
   export {};
 
 }
-declare module 'bitburner/PersonObjects/Sleeve/ui/SleeveElem' {
+declare module 'bb-lib/PersonObjects/Sleeve/ui/SleeveElem' {
   import React from "react";
-  import { Sleeve } from "bitburner/PersonObjects/Sleeve/Sleeve";
+  import { Sleeve } from "bb-lib/PersonObjects/Sleeve/Sleeve";
   interface IProps {
       sleeve: Sleeve;
       rerender: () => void;
@@ -8308,14 +8308,14 @@ declare module 'bitburner/PersonObjects/Sleeve/ui/SleeveElem' {
   export {};
 
 }
-declare module 'bitburner/PersonObjects/Sleeve/ui/SleeveRoot' {
+declare module 'bb-lib/PersonObjects/Sleeve/ui/SleeveRoot' {
   import React from "react";
   export function SleeveRoot(): React.ReactElement;
 
 }
-declare module 'bitburner/PersonObjects/Sleeve/ui/StatsElement' {
+declare module 'bb-lib/PersonObjects/Sleeve/ui/StatsElement' {
   import React from "react";
-  import { Sleeve } from "bitburner/PersonObjects/Sleeve/Sleeve";
+  import { Sleeve } from "bb-lib/PersonObjects/Sleeve/Sleeve";
   interface IProps {
       sleeve: Sleeve;
   }
@@ -8324,10 +8324,10 @@ declare module 'bitburner/PersonObjects/Sleeve/ui/StatsElement' {
   export {};
 
 }
-declare module 'bitburner/PersonObjects/Sleeve/ui/TaskSelector' {
+declare module 'bb-lib/PersonObjects/Sleeve/ui/TaskSelector' {
   import React from "react";
-  import { Sleeve } from "bitburner/PersonObjects/Sleeve/Sleeve";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
+  import { Sleeve } from "bb-lib/PersonObjects/Sleeve/Sleeve";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
   interface IProps {
       sleeve: Sleeve;
       player: IPlayer;
@@ -8337,9 +8337,9 @@ declare module 'bitburner/PersonObjects/Sleeve/ui/TaskSelector' {
   export {};
 
 }
-declare module 'bitburner/PersonObjects/Sleeve/ui/TravelModal' {
+declare module 'bb-lib/PersonObjects/Sleeve/ui/TravelModal' {
   import React from "react";
-  import { Sleeve } from "bitburner/PersonObjects/Sleeve/Sleeve";
+  import { Sleeve } from "bb-lib/PersonObjects/Sleeve/Sleeve";
   interface IProps {
       open: boolean;
       onClose: () => void;
@@ -8350,11 +8350,11 @@ declare module 'bitburner/PersonObjects/Sleeve/ui/TravelModal' {
   export {};
 
 }
-declare module 'bitburner/PersonObjects/Sleeve/Work/SleeveBladeburnerWork' {
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { IReviverValue } from "bitburner/utils/JSONReviver";
-  import { Sleeve } from "bitburner/PersonObjects/Sleeve/Sleeve";
-  import { Work } from "bitburner/PersonObjects/Sleeve/Work/Work";
+declare module 'bb-lib/PersonObjects/Sleeve/Work/SleeveBladeburnerWork' {
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { IReviverValue } from "bb-lib/utils/JSONReviver";
+  import { Sleeve } from "bb-lib/PersonObjects/Sleeve/Sleeve";
+  import { Work } from "bb-lib/PersonObjects/Sleeve/Work/Work";
   interface SleeveBladeburnerWorkParams {
       type: string;
       name: string;
@@ -8380,14 +8380,14 @@ declare module 'bitburner/PersonObjects/Sleeve/Work/SleeveBladeburnerWork' {
   export {};
 
 }
-declare module 'bitburner/PersonObjects/Sleeve/Work/SleeveClassWork' {
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { IReviverValue } from "bitburner/utils/JSONReviver";
-  import { Work } from "bitburner/PersonObjects/Sleeve/Work/Work";
-  import { ClassType } from "bitburner/Work/ClassWork";
-  import { LocationName } from "bitburner/Locations/data/LocationNames";
-  import { Sleeve } from "bitburner/PersonObjects/Sleeve/Sleeve";
-  import { WorkStats } from "bitburner/Work/WorkStats";
+declare module 'bb-lib/PersonObjects/Sleeve/Work/SleeveClassWork' {
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { IReviverValue } from "bb-lib/utils/JSONReviver";
+  import { Work } from "bb-lib/PersonObjects/Sleeve/Work/Work";
+  import { ClassType } from "bb-lib/Work/ClassWork";
+  import { LocationName } from "bb-lib/Locations/data/LocationNames";
+  import { Sleeve } from "bb-lib/PersonObjects/Sleeve/Sleeve";
+  import { WorkStats } from "bb-lib/Work/WorkStats";
   export const isSleeveClassWork: (w: Work | null) => w is SleeveClassWork;
   interface ClassWorkParams {
       classType: ClassType;
@@ -8413,13 +8413,13 @@ declare module 'bitburner/PersonObjects/Sleeve/Work/SleeveClassWork' {
   export {};
 
 }
-declare module 'bitburner/PersonObjects/Sleeve/Work/SleeveCompanyWork' {
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { IReviverValue } from "bitburner/utils/JSONReviver";
-  import { Sleeve } from "bitburner/PersonObjects/Sleeve/Sleeve";
-  import { Work } from "bitburner/PersonObjects/Sleeve/Work/Work";
-  import { Company } from "bitburner/Company/Company";
-  import { WorkStats } from "bitburner/Work/WorkStats";
+declare module 'bb-lib/PersonObjects/Sleeve/Work/SleeveCompanyWork' {
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { IReviverValue } from "bb-lib/utils/JSONReviver";
+  import { Sleeve } from "bb-lib/PersonObjects/Sleeve/Sleeve";
+  import { Work } from "bb-lib/PersonObjects/Sleeve/Work/Work";
+  import { Company } from "bb-lib/Company/Company";
+  import { WorkStats } from "bb-lib/Work/WorkStats";
   interface SleeveCompanyWorkParams {
       companyName: string;
   }
@@ -8443,14 +8443,14 @@ declare module 'bitburner/PersonObjects/Sleeve/Work/SleeveCompanyWork' {
   export {};
 
 }
-declare module 'bitburner/PersonObjects/Sleeve/Work/SleeveCrimeWork' {
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { IReviverValue } from "bitburner/utils/JSONReviver";
-  import { Sleeve } from "bitburner/PersonObjects/Sleeve/Sleeve";
-  import { Work } from "bitburner/PersonObjects/Sleeve/Work/Work";
-  import { CrimeType } from "bitburner/utils/WorkType";
-  import { Crime } from "bitburner/Crime/Crime";
-  import { WorkStats } from "bitburner/Work/WorkStats";
+declare module 'bb-lib/PersonObjects/Sleeve/Work/SleeveCrimeWork' {
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { IReviverValue } from "bb-lib/utils/JSONReviver";
+  import { Sleeve } from "bb-lib/PersonObjects/Sleeve/Sleeve";
+  import { Work } from "bb-lib/PersonObjects/Sleeve/Work/Work";
+  import { CrimeType } from "bb-lib/utils/WorkType";
+  import { Crime } from "bb-lib/Crime/Crime";
+  import { WorkStats } from "bb-lib/Work/WorkStats";
   export const isSleeveCrimeWork: (w: Work | null) => w is SleeveCrimeWork;
   export class SleeveCrimeWork extends Work {
       crimeType: CrimeType;
@@ -8472,14 +8472,14 @@ declare module 'bitburner/PersonObjects/Sleeve/Work/SleeveCrimeWork' {
   }
 
 }
-declare module 'bitburner/PersonObjects/Sleeve/Work/SleeveFactionWork' {
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { IReviverValue } from "bitburner/utils/JSONReviver";
-  import { Sleeve } from "bitburner/PersonObjects/Sleeve/Sleeve";
-  import { Work } from "bitburner/PersonObjects/Sleeve/Work/Work";
-  import { FactionWorkType } from "bitburner/Work/data/FactionWorkType";
-  import { Faction } from "bitburner/Faction/Faction";
-  import { WorkStats } from "bitburner/Work/WorkStats";
+declare module 'bb-lib/PersonObjects/Sleeve/Work/SleeveFactionWork' {
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { IReviverValue } from "bb-lib/utils/JSONReviver";
+  import { Sleeve } from "bb-lib/PersonObjects/Sleeve/Sleeve";
+  import { Work } from "bb-lib/PersonObjects/Sleeve/Work/Work";
+  import { FactionWorkType } from "bb-lib/Work/data/FactionWorkType";
+  import { Faction } from "bb-lib/Faction/Faction";
+  import { WorkStats } from "bb-lib/Work/WorkStats";
   interface SleeveFactionWorkParams {
       factionWorkType: FactionWorkType;
       factionName: string;
@@ -8506,11 +8506,11 @@ declare module 'bitburner/PersonObjects/Sleeve/Work/SleeveFactionWork' {
   export {};
 
 }
-declare module 'bitburner/PersonObjects/Sleeve/Work/SleeveInfiltrateWork' {
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { IReviverValue } from "bitburner/utils/JSONReviver";
-  import { Sleeve } from "bitburner/PersonObjects/Sleeve/Sleeve";
-  import { Work } from "bitburner/PersonObjects/Sleeve/Work/Work";
+declare module 'bb-lib/PersonObjects/Sleeve/Work/SleeveInfiltrateWork' {
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { IReviverValue } from "bb-lib/utils/JSONReviver";
+  import { Sleeve } from "bb-lib/PersonObjects/Sleeve/Sleeve";
+  import { Work } from "bb-lib/PersonObjects/Sleeve/Work/Work";
   export const isSleeveInfiltrateWork: (w: Work | null) => w is SleeveInfiltrateWork;
   export class SleeveInfiltrateWork extends Work {
       cyclesWorked: number;
@@ -8529,11 +8529,11 @@ declare module 'bitburner/PersonObjects/Sleeve/Work/SleeveInfiltrateWork' {
   }
 
 }
-declare module 'bitburner/PersonObjects/Sleeve/Work/SleeveRecoveryWork' {
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { IReviverValue } from "bitburner/utils/JSONReviver";
-  import { Sleeve } from "bitburner/PersonObjects/Sleeve/Sleeve";
-  import { Work } from "bitburner/PersonObjects/Sleeve/Work/Work";
+declare module 'bb-lib/PersonObjects/Sleeve/Work/SleeveRecoveryWork' {
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { IReviverValue } from "bb-lib/utils/JSONReviver";
+  import { Sleeve } from "bb-lib/PersonObjects/Sleeve/Sleeve";
+  import { Work } from "bb-lib/PersonObjects/Sleeve/Work/Work";
   export const isSleeveRecoveryWork: (w: Work | null) => w is SleeveRecoveryWork;
   export class SleeveRecoveryWork extends Work {
       constructor();
@@ -8550,10 +8550,10 @@ declare module 'bitburner/PersonObjects/Sleeve/Work/SleeveRecoveryWork' {
   }
 
 }
-declare module 'bitburner/PersonObjects/Sleeve/Work/SleeveSupportWork' {
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { IReviverValue } from "bitburner/utils/JSONReviver";
-  import { Work } from "bitburner/PersonObjects/Sleeve/Work/Work";
+declare module 'bb-lib/PersonObjects/Sleeve/Work/SleeveSupportWork' {
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { IReviverValue } from "bb-lib/utils/JSONReviver";
+  import { Work } from "bb-lib/PersonObjects/Sleeve/Work/Work";
   export const isSleeveSupportWork: (w: Work | null) => w is SleeveSupportWork;
   export class SleeveSupportWork extends Work {
       constructor(player?: IPlayer);
@@ -8571,11 +8571,11 @@ declare module 'bitburner/PersonObjects/Sleeve/Work/SleeveSupportWork' {
   }
 
 }
-declare module 'bitburner/PersonObjects/Sleeve/Work/SleeveSynchroWork' {
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { IReviverValue } from "bitburner/utils/JSONReviver";
-  import { Sleeve } from "bitburner/PersonObjects/Sleeve/Sleeve";
-  import { Work } from "bitburner/PersonObjects/Sleeve/Work/Work";
+declare module 'bb-lib/PersonObjects/Sleeve/Work/SleeveSynchroWork' {
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { IReviverValue } from "bb-lib/utils/JSONReviver";
+  import { Sleeve } from "bb-lib/PersonObjects/Sleeve/Sleeve";
+  import { Work } from "bb-lib/PersonObjects/Sleeve/Work/Work";
   export const isSleeveSynchroWork: (w: Work | null) => w is SleeveSynchroWork;
   export class SleeveSynchroWork extends Work {
       constructor();
@@ -8592,11 +8592,11 @@ declare module 'bitburner/PersonObjects/Sleeve/Work/SleeveSynchroWork' {
   }
 
 }
-declare module 'bitburner/PersonObjects/Sleeve/Work/Work' {
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { IReviverValue } from "bitburner/utils/JSONReviver";
-  import { Sleeve } from "bitburner/PersonObjects/Sleeve/Sleeve";
-  import { WorkStats } from "bitburner/Work/WorkStats";
+declare module 'bb-lib/PersonObjects/Sleeve/Work/Work' {
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { IReviverValue } from "bb-lib/utils/JSONReviver";
+  import { Sleeve } from "bb-lib/PersonObjects/Sleeve/Sleeve";
+  import { WorkStats } from "bb-lib/Work/WorkStats";
   export const applySleeveGains: (player: IPlayer, sleeve: Sleeve, rawStats: WorkStats, cycles?: number) => void;
   export abstract class Work {
       type: WorkType;
@@ -8619,23 +8619,23 @@ declare module 'bitburner/PersonObjects/Sleeve/Work/Work' {
   }
 
 }
-declare module 'bitburner/Player' {
-  import { PlayerObject } from "bitburner/PersonObjects/Player/PlayerObject";
+declare module 'bb-lib/Player' {
+  import { PlayerObject } from "bb-lib/PersonObjects/Player/PlayerObject";
   export let Player: PlayerObject;
   export function loadPlayer(saveString: string): void;
 
 }
-declare module 'bitburner/Prestige' {
+declare module 'bb-lib/Prestige' {
   export function prestigeAugmentation(): void;
   export function prestigeSourceFile(flume: boolean): void;
 
 }
-declare module 'bitburner/Programs/data/ProgramsMetadata' {
-  import { IProgramCreate } from "bitburner/Programs/Program";
-  import { BaseServer } from "bitburner/Server/BaseServer";
-  import { ITerminal } from "bitburner/Terminal/ITerminal";
-  import { IRouter } from "bitburner/ui/Router";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
+declare module 'bb-lib/Programs/data/ProgramsMetadata' {
+  import { IProgramCreate } from "bb-lib/Programs/Program";
+  import { BaseServer } from "bb-lib/Server/BaseServer";
+  import { ITerminal } from "bb-lib/Terminal/ITerminal";
+  import { IRouter } from "bb-lib/ui/Router";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
   interface IProgramCreationParams {
       key: string;
       name: string;
@@ -8646,11 +8646,11 @@ declare module 'bitburner/Programs/data/ProgramsMetadata' {
   export {};
 
 }
-declare module 'bitburner/Programs/Program' {
-  import { BaseServer } from "bitburner/Server/BaseServer";
-  import { ITerminal } from "bitburner/Terminal/ITerminal";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { IRouter } from "bitburner/ui/Router";
+declare module 'bb-lib/Programs/Program' {
+  import { BaseServer } from "bb-lib/Server/BaseServer";
+  import { ITerminal } from "bb-lib/Terminal/ITerminal";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { IRouter } from "bb-lib/ui/Router";
   export interface IProgramCreate {
       level: number;
       req(p: IPlayer): boolean;
@@ -8665,30 +8665,30 @@ declare module 'bitburner/Programs/Program' {
   }
 
 }
-declare module 'bitburner/Programs/ProgramHelpers' {
-  import { Program } from "bitburner/Programs/Program";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
+declare module 'bb-lib/Programs/ProgramHelpers' {
+  import { Program } from "bb-lib/Programs/Program";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
   export function getAvailableCreatePrograms(player: IPlayer): Program[];
 
 }
-declare module 'bitburner/Programs/Programs' {
-  import { Program } from "bitburner/Programs/Program";
-  import { IMap } from "bitburner/types";
+declare module 'bb-lib/Programs/Programs' {
+  import { Program } from "bb-lib/Programs/Program";
+  import { IMap } from "bb-lib/types";
   export const Programs: IMap<Program>;
 
 }
-declare module 'bitburner/Programs/ui/ProgramsRoot' {
+declare module 'bb-lib/Programs/ui/ProgramsRoot' {
   import React from "react";
   export const ProgramsSeen: string[];
   export function ProgramsRoot(): React.ReactElement;
 
 }
-declare module 'bitburner/RedPill' {
-  import { IRouter } from "bitburner/ui/Router";
+declare module 'bb-lib/RedPill' {
+  import { IRouter } from "bb-lib/ui/Router";
   export function enterBitNode(router: IRouter, flume: boolean, destroyedBitNode: number, newBitNode: number): void;
 
 }
-declare module 'bitburner/RemoteFileAPI/MessageDefinitions' {
+declare module 'bb-lib/RemoteFileAPI/MessageDefinitions' {
   export class RFAMessage {
       jsonrpc: string;
       method?: string;
@@ -8729,12 +8729,12 @@ declare module 'bitburner/RemoteFileAPI/MessageDefinitions' {
   export {};
 
 }
-declare module 'bitburner/RemoteFileAPI/MessageHandlers' {
-  import { RFAMessage } from "bitburner/RemoteFileAPI/MessageDefinitions";
+declare module 'bb-lib/RemoteFileAPI/MessageHandlers' {
+  import { RFAMessage } from "bb-lib/RemoteFileAPI/MessageDefinitions";
   export const RFARequestHandler: Record<string, (message: RFAMessage) => void | RFAMessage>;
 
 }
-declare module 'bitburner/RemoteFileAPI/Remote' {
+declare module 'bb-lib/RemoteFileAPI/Remote' {
   export class Remote {
       connection?: WebSocket;
       static protocol: string;
@@ -8746,13 +8746,13 @@ declare module 'bitburner/RemoteFileAPI/Remote' {
   }
 
 }
-declare module 'bitburner/RemoteFileAPI/RemoteFileAPI' {
+declare module 'bb-lib/RemoteFileAPI/RemoteFileAPI' {
   export function newRemoteFileApiConnection(): void;
   export function isRemoteFileApiConnectionLive(): boolean;
 
 }
-declare module 'bitburner/SaveObject' {
-  import { IReviverValue } from "bitburner/utils/JSONReviver";
+declare module 'bb-lib/SaveObject' {
+  import { IReviverValue } from "bb-lib/utils/JSONReviver";
   export interface SaveData {
       playerIdentifier: string;
       fileName: string;
@@ -8805,21 +8805,21 @@ declare module 'bitburner/SaveObject' {
   const saveObject: BitburnerSaveObject;
 
 }
-declare module 'bitburner/Script/isScriptFilename' {
+declare module 'bb-lib/Script/isScriptFilename' {
   export const validScriptExtensions: Array<string>;
   export function isScriptFilename(f: string): boolean;
 
 }
-declare module 'bitburner/Script/RamCalculationErrorCodes' {
+declare module 'bb-lib/Script/RamCalculationErrorCodes' {
   export enum RamCalculationErrorCode {
       SyntaxError = -1,
       ImportError = -2
   }
 
 }
-declare module 'bitburner/Script/RamCalculations' {
-  import { Script } from "bitburner/Script/Script";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
+declare module 'bb-lib/Script/RamCalculations' {
+  import { Script } from "bb-lib/Script/Script";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
   export interface RamUsageEntry {
       type: "ns" | "dom" | "fn" | "misc";
       name: string;
@@ -8839,16 +8839,16 @@ declare module 'bitburner/Script/RamCalculations' {
   export function calculateRamUsage(player: IPlayer, codeCopy: string, otherScripts: Script[]): RamCalculation;
 
 }
-declare module 'bitburner/Script/RunningScript' {
+declare module 'bb-lib/Script/RunningScript' {
   /**
    * Class representing a Script instance that is actively running.
    * A Script can have multiple active instances
    */
-  import { Script } from "bitburner/Script/Script";
-  import { ScriptUrl } from "bitburner/Script/ScriptUrl";
-  import { IMap } from "bitburner/types";
-  import { IReviverValue } from "bitburner/utils/JSONReviver";
-  import { ScriptArg } from "bitburner/Netscript/ScriptArg";
+  import { Script } from "bb-lib/Script/Script";
+  import { ScriptUrl } from "bb-lib/Script/ScriptUrl";
+  import { IMap } from "bb-lib/types";
+  import { IReviverValue } from "bb-lib/utils/JSONReviver";
+  import { ScriptArg } from "bb-lib/Netscript/ScriptArg";
   export class RunningScript {
       args: ScriptArg[];
       dataMap: IMap<number[]>;
@@ -8878,23 +8878,23 @@ declare module 'bitburner/Script/RunningScript' {
   }
 
 }
-declare module 'bitburner/Script/RunningScriptHelpers' {
-  import { RunningScript } from "bitburner/Script/RunningScript";
+declare module 'bb-lib/Script/RunningScriptHelpers' {
+  import { RunningScript } from "bb-lib/Script/RunningScript";
   export function getRamUsageFromRunningScript(script: RunningScript): number;
 
 }
-declare module 'bitburner/Script/Script' {
+declare module 'bb-lib/Script/Script' {
   /**
    * Class representing a script file.
    *
    * This does NOT represent a script that is actively running and
    * being evaluated. See RunningScript for that
    */
-  import { RamUsageEntry } from "bitburner/Script/RamCalculations";
-  import { ScriptUrl } from "bitburner/Script/ScriptUrl";
-  import { IReviverValue } from "bitburner/utils/JSONReviver";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { ScriptModule } from "bitburner/Script/ScriptModule";
+  import { RamUsageEntry } from "bb-lib/Script/RamCalculations";
+  import { ScriptUrl } from "bb-lib/Script/ScriptUrl";
+  import { IReviverValue } from "bb-lib/utils/JSONReviver";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { ScriptModule } from "bb-lib/Script/ScriptModule";
   interface ScriptReference {
       filename: string;
       server: string;
@@ -8945,23 +8945,23 @@ declare module 'bitburner/Script/Script' {
   export {};
 
 }
-declare module 'bitburner/Script/ScriptHelpers' {
-  import { BaseServer } from "bitburner/Server/BaseServer";
-  import { RunningScript } from "bitburner/Script/RunningScript";
+declare module 'bb-lib/Script/ScriptHelpers' {
+  import { BaseServer } from "bb-lib/Server/BaseServer";
+  import { RunningScript } from "bb-lib/Script/RunningScript";
   export function scriptCalculateOfflineProduction(runningScript: RunningScript): void;
   export function findRunningScript(filename: string, args: (string | number | boolean)[], server: BaseServer): RunningScript | null;
   export function findRunningScriptByPid(pid: number, server: BaseServer): RunningScript | null;
 
 }
-declare module 'bitburner/Script/ScriptModule' {
-  import { AutocompleteData, NS } from "bitburner/ScriptEditor/NetscriptDefinitions/index";
+declare module 'bb-lib/Script/ScriptModule' {
+  import { AutocompleteData, NS } from "bb-lib/ScriptEditor/NetscriptDefinitions/index";
   export interface ScriptModule {
       main?: (ns: NS) => Promise<void>;
       autocomplete?: (data: AutocompleteData, flags: string[]) => unknown;
   }
 
 }
-declare module 'bitburner/Script/ScriptUrl' {
+declare module 'bb-lib/Script/ScriptUrl' {
   export class ScriptUrl {
       filename: string;
       url: string;
@@ -8970,7 +8970,7 @@ declare module 'bitburner/Script/ScriptUrl' {
   }
 
 }
-declare module 'bitburner/ScriptEditor/CursorPositions' {
+declare module 'bb-lib/ScriptEditor/CursorPositions' {
   interface Position {
       row: number;
       column: number;
@@ -8985,7 +8985,7 @@ declare module 'bitburner/ScriptEditor/CursorPositions' {
   export {};
 
 }
-declare module 'bitburner/ScriptEditor/ui/Options' {
+declare module 'bb-lib/ScriptEditor/ui/Options' {
   export type WordWrapOptions = "on" | "off" | "bounded" | "wordWrapColumn";
   export interface Options {
       theme: string;
@@ -8996,9 +8996,9 @@ declare module 'bitburner/ScriptEditor/ui/Options' {
   }
 
 }
-declare module 'bitburner/ScriptEditor/ui/OptionsModal' {
+declare module 'bb-lib/ScriptEditor/ui/OptionsModal' {
   import React from "react";
-  import { Options } from "bitburner/ScriptEditor/ui/Options";
+  import { Options } from "bb-lib/ScriptEditor/ui/Options";
   interface IProps {
       options: Options;
       save: (options: Options) => void;
@@ -9009,10 +9009,10 @@ declare module 'bitburner/ScriptEditor/ui/OptionsModal' {
   export {};
 
 }
-declare module 'bitburner/ScriptEditor/ui/ScriptEditorRoot' {
+declare module 'bb-lib/ScriptEditor/ui/ScriptEditorRoot' {
   import React from "react";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { IRouter } from "bitburner/ui/Router";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { IRouter } from "bb-lib/ui/Router";
   interface IProps {
       files: Record<string, string>;
       hostname: string;
@@ -9025,7 +9025,7 @@ declare module 'bitburner/ScriptEditor/ui/ScriptEditorRoot' {
   export {};
 
 }
-declare module 'bitburner/ScriptEditor/ui/ThemeEditorModal' {
+declare module 'bb-lib/ScriptEditor/ui/ThemeEditorModal' {
   import React from "react";
   interface IProps {
       onClose: () => void;
@@ -9035,7 +9035,7 @@ declare module 'bitburner/ScriptEditor/ui/ThemeEditorModal' {
   export {};
 
 }
-declare module 'bitburner/ScriptEditor/ui/themes' {
+declare module 'bb-lib/ScriptEditor/ui/themes' {
   import * as monaco from "monaco-editor";
   import type { Monaco } from "@monaco-editor/react";
   export interface IScriptEditorTheme {
@@ -9075,10 +9075,10 @@ declare module 'bitburner/ScriptEditor/ui/themes' {
   export function loadThemes(monaco: Monaco): Promise<void>;
 
 }
-declare module 'bitburner/Server/AllServers' {
-  import { Server } from "bitburner/Server/Server";
-  import { BaseServer } from "bitburner/Server/BaseServer";
-  import { HacknetServer } from "bitburner/Hacknet/HacknetServer";
+declare module 'bb-lib/Server/AllServers' {
+  import { Server } from "bb-lib/Server/Server";
+  import { BaseServer } from "bb-lib/Server/BaseServer";
+  import { HacknetServer } from "bb-lib/Hacknet/HacknetServer";
   export function GetServer(s: string): BaseServer | null;
   export function GetAllServers(): BaseServer[];
   export function DeleteServer(serverkey: string): void;
@@ -9091,17 +9091,17 @@ declare module 'bitburner/Server/AllServers' {
   export function saveAllServers(excludeRunningScripts?: boolean): string;
 
 }
-declare module 'bitburner/Server/BaseServer' {
+declare module 'bb-lib/Server/BaseServer' {
   /**
    * Abstract Base Class for any Server object
    */
-  import { CodingContract } from "bitburner/CodingContracts";
-  import { RunningScript } from "bitburner/Script/RunningScript";
-  import { Script } from "bitburner/Script/Script";
-  import { TextFile } from "bitburner/TextFile";
-  import { IReturnStatus } from "bitburner/types";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { ScriptArg } from "bitburner/Netscript/ScriptArg";
+  import { CodingContract } from "bb-lib/CodingContracts";
+  import { RunningScript } from "bb-lib/Script/RunningScript";
+  import { Script } from "bb-lib/Script/Script";
+  import { TextFile } from "bb-lib/TextFile";
+  import { IReturnStatus } from "bb-lib/types";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { ScriptArg } from "bb-lib/Netscript/ScriptArg";
   interface IConstructorParams {
       adminRights?: boolean;
       hostname: string;
@@ -9183,8 +9183,8 @@ declare module 'bitburner/Server/BaseServer' {
   export {};
 
 }
-declare module 'bitburner/Server/data/servers' {
-  import { IMinMaxRange } from "bitburner/types";
+declare module 'bb-lib/Server/data/servers' {
+  import { IMinMaxRange } from "bb-lib/types";
   /**
    * The metadata describing the base state of servers on the network.
    * These values will be adjusted based on Bitnode multipliers when the Server objects are built out.
@@ -9245,7 +9245,7 @@ declare module 'bitburner/Server/data/servers' {
   export {};
 
 }
-declare module 'bitburner/Server/data/SpecialServers' {
+declare module 'bb-lib/Server/data/SpecialServers' {
   export const SpecialServers: {
       [key: string]: string | undefined;
       Home: string;
@@ -9261,15 +9261,15 @@ declare module 'bitburner/Server/data/SpecialServers' {
   };
 
 }
-declare module 'bitburner/Server/formulas/grow' {
-  import { Server } from "bitburner/Server/Server";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
+declare module 'bb-lib/Server/formulas/grow' {
+  import { Server } from "bb-lib/Server/Server";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
   export function calculateServerGrowth(server: Server, threads: number, p: IPlayer, cores?: number): number;
 
 }
-declare module 'bitburner/Server/Server' {
-  import { BaseServer } from "bitburner/Server/BaseServer";
-  import { IReviverValue } from "bitburner/utils/JSONReviver";
+declare module 'bb-lib/Server/Server' {
+  import { BaseServer } from "bb-lib/Server/BaseServer";
+  import { IReviverValue } from "bb-lib/utils/JSONReviver";
   export interface IConstructorParams {
       adminRights?: boolean;
       hackDifficulty?: number;
@@ -9327,10 +9327,10 @@ declare module 'bitburner/Server/Server' {
   }
 
 }
-declare module 'bitburner/Server/ServerHelpers' {
-  import { Server, IConstructorParams } from "bitburner/Server/Server";
-  import { BaseServer } from "bitburner/Server/BaseServer";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
+declare module 'bb-lib/Server/ServerHelpers' {
+  import { Server, IConstructorParams } from "bb-lib/Server/Server";
+  import { BaseServer } from "bb-lib/Server/BaseServer";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
   /**
    * Constructs a new server, while also ensuring that the new server
    * does not have a duplicate hostname/ip.
@@ -9409,8 +9409,8 @@ declare module 'bitburner/Server/ServerHelpers' {
   export function isBackdoorInstalled(server: BaseServer): boolean;
 
 }
-declare module 'bitburner/Server/ServerPurchases' {
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
+declare module 'bb-lib/Server/ServerPurchases' {
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
   /**
    * @param ram Amount of RAM on purchased server (GB)
    * @returns Cost of purchasing the given server. Returns infinity for invalid arguments
@@ -9422,7 +9422,7 @@ declare module 'bitburner/Server/ServerPurchases' {
   export function purchaseRamForHomeComputer(p: IPlayer): void;
 
 }
-declare module 'bitburner/Settings/SettingEnums' {
+declare module 'bb-lib/Settings/SettingEnums' {
   /**
    * Allowed values for the 'OwnedAugmentationsOrder' setting
    */
@@ -9441,14 +9441,14 @@ declare module 'bitburner/Settings/SettingEnums' {
   }
 
 }
-declare module 'bitburner/Settings/Settings' {
-  import { ISelfInitializer, ISelfLoading } from "bitburner/types";
-  import { OwnedAugmentationsOrderSetting, PurchaseAugmentationsOrderSetting } from "bitburner/Settings/SettingEnums";
-  import { ITheme } from "bitburner/Themes/Themes";
-  import { WordWrapOptions } from "bitburner/ScriptEditor/ui/Options";
-  import { OverviewSettings } from "bitburner/ui/React/Overview";
-  import { IStyleSettings } from "bitburner/ScriptEditor/NetscriptDefinitions/index";
-  import { IScriptEditorTheme } from "bitburner/ScriptEditor/ui/themes";
+declare module 'bb-lib/Settings/Settings' {
+  import { ISelfInitializer, ISelfLoading } from "bb-lib/types";
+  import { OwnedAugmentationsOrderSetting, PurchaseAugmentationsOrderSetting } from "bb-lib/Settings/SettingEnums";
+  import { ITheme } from "bb-lib/Themes/Themes";
+  import { WordWrapOptions } from "bb-lib/ScriptEditor/ui/Options";
+  import { OverviewSettings } from "bb-lib/ui/React/Overview";
+  import { IStyleSettings } from "bb-lib/ScriptEditor/NetscriptDefinitions/index";
+  import { IScriptEditorTheme } from "bb-lib/ScriptEditor/ui/themes";
   /**
    * Represents the default settings the player could customize.
    */
@@ -9593,10 +9593,10 @@ declare module 'bitburner/Settings/Settings' {
   export {};
 
 }
-declare module 'bitburner/Sidebar/ui/SidebarRoot' {
+declare module 'bb-lib/Sidebar/ui/SidebarRoot' {
   import React from "react";
-  import { IRouter, Page } from "bitburner/ui/Router";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
+  import { IRouter, Page } from "bb-lib/ui/Router";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
   interface IProps {
       player: IPlayer;
       router: IRouter;
@@ -9608,12 +9608,12 @@ declare module 'bitburner/Sidebar/ui/SidebarRoot' {
   export {};
 
 }
-declare module 'bitburner/SourceFile/applySourceFile' {
-  import { PlayerOwnedSourceFile } from "bitburner/SourceFile/PlayerOwnedSourceFile";
+declare module 'bb-lib/SourceFile/applySourceFile' {
+  import { PlayerOwnedSourceFile } from "bb-lib/SourceFile/PlayerOwnedSourceFile";
   export function applySourceFile(srcFile: PlayerOwnedSourceFile): void;
 
 }
-declare module 'bitburner/SourceFile/PlayerOwnedSourceFile' {
+declare module 'bb-lib/SourceFile/PlayerOwnedSourceFile' {
   export class PlayerOwnedSourceFile {
       lvl: number;
       n: number;
@@ -9625,7 +9625,7 @@ declare module 'bitburner/SourceFile/PlayerOwnedSourceFile' {
   }
 
 }
-declare module 'bitburner/SourceFile/SourceFile' {
+declare module 'bb-lib/SourceFile/SourceFile' {
   /// <reference types="react" />
   export class SourceFile {
       info: JSX.Element;
@@ -9637,19 +9637,19 @@ declare module 'bitburner/SourceFile/SourceFile' {
   }
 
 }
-declare module 'bitburner/SourceFile/SourceFiles' {
-  import { SourceFile } from "bitburner/SourceFile/SourceFile";
-  import { IMap } from "bitburner/types";
+declare module 'bb-lib/SourceFile/SourceFiles' {
+  import { SourceFile } from "bb-lib/SourceFile/SourceFile";
+  import { IMap } from "bb-lib/types";
   export const SourceFiles: IMap<SourceFile>;
 
 }
-declare module 'bitburner/StockMarket/BuyingAndSelling' {
+declare module 'bb-lib/StockMarket/BuyingAndSelling' {
   /**
    * Functions for buying/selling stocks. There are four functions total, two for
    * long positions and two for short positions.
    */
-  import { Stock } from "bitburner/StockMarket/Stock";
-  import { NetscriptContext } from "bitburner/Netscript/APIWrapper";
+  import { Stock } from "bb-lib/StockMarket/Stock";
+  import { NetscriptContext } from "bb-lib/Netscript/APIWrapper";
   /**
    * Each function takes an optional config object as its last argument
    */
@@ -9696,12 +9696,12 @@ declare module 'bitburner/StockMarket/BuyingAndSelling' {
   export {};
 
 }
-declare module 'bitburner/StockMarket/data/InitStockMetadata' {
-  import { IConstructorParams } from "bitburner/StockMarket/Stock";
+declare module 'bb-lib/StockMarket/data/InitStockMetadata' {
+  import { IConstructorParams } from "bb-lib/StockMarket/Stock";
   export const InitStockMetadata: IConstructorParams[];
 
 }
-declare module 'bitburner/StockMarket/data/OrderTypes' {
+declare module 'bb-lib/StockMarket/data/OrderTypes' {
   export enum OrderTypes {
       LimitBuy = "Limit Buy Order",
       LimitSell = "Limit Sell Order",
@@ -9710,35 +9710,35 @@ declare module 'bitburner/StockMarket/data/OrderTypes' {
   }
 
 }
-declare module 'bitburner/StockMarket/data/PositionTypes' {
+declare module 'bb-lib/StockMarket/data/PositionTypes' {
   export enum PositionTypes {
       Long = "L",
       Short = "S"
   }
 
 }
-declare module 'bitburner/StockMarket/data/StockSymbols' {
-  import { IMap } from "bitburner/types";
+declare module 'bb-lib/StockMarket/data/StockSymbols' {
+  import { IMap } from "bb-lib/types";
   export const StockSymbols: IMap<string>;
 
 }
-declare module 'bitburner/StockMarket/data/TickerHeaderFormatData' {
+declare module 'bb-lib/StockMarket/data/TickerHeaderFormatData' {
   export const TickerHeaderFormatData: {
       longestName: number;
       longestSymbol: number;
   };
 
 }
-declare module 'bitburner/StockMarket/IOrderBook' {
-  import { Order } from "bitburner/StockMarket/Order";
+declare module 'bb-lib/StockMarket/IOrderBook' {
+  import { Order } from "bb-lib/StockMarket/Order";
   export interface IOrderBook {
       [key: string]: Order[];
   }
 
 }
-declare module 'bitburner/StockMarket/IStockMarket' {
-  import { IOrderBook } from "bitburner/StockMarket/IOrderBook";
-  import { Stock } from "bitburner/StockMarket/Stock";
+declare module 'bb-lib/StockMarket/IStockMarket' {
+  import { IOrderBook } from "bb-lib/StockMarket/IOrderBook";
+  import { Stock } from "bb-lib/StockMarket/Stock";
   export type IStockMarket = {
       [key: string]: Stock;
   } & {
@@ -9749,14 +9749,14 @@ declare module 'bitburner/StockMarket/IStockMarket' {
   };
 
 }
-declare module 'bitburner/StockMarket/Order' {
+declare module 'bb-lib/StockMarket/Order' {
   /**
    * Represents a Limit or Buy Order on the stock market. Does not represent
    * a Market Order since those are just executed immediately
    */
-  import { OrderTypes } from "bitburner/StockMarket/data/OrderTypes";
-  import { PositionTypes } from "bitburner/StockMarket/data/PositionTypes";
-  import { IReviverValue } from "bitburner/utils/JSONReviver";
+  import { OrderTypes } from "bb-lib/StockMarket/data/OrderTypes";
+  import { PositionTypes } from "bb-lib/StockMarket/data/PositionTypes";
+  import { IReviverValue } from "bb-lib/utils/JSONReviver";
   export class Order {
       readonly pos: PositionTypes;
       readonly price: number;
@@ -9775,12 +9775,12 @@ declare module 'bitburner/StockMarket/Order' {
   }
 
 }
-declare module 'bitburner/StockMarket/OrderProcessing' {
-  import { IStockMarket } from "bitburner/StockMarket/IStockMarket";
-  import { Stock } from "bitburner/StockMarket/Stock";
-  import { OrderTypes } from "bitburner/StockMarket/data/OrderTypes";
-  import { PositionTypes } from "bitburner/StockMarket/data/PositionTypes";
-  import { IMap } from "bitburner/types";
+declare module 'bb-lib/StockMarket/OrderProcessing' {
+  import { IStockMarket } from "bb-lib/StockMarket/IStockMarket";
+  import { Stock } from "bb-lib/StockMarket/Stock";
+  import { OrderTypes } from "bb-lib/StockMarket/data/OrderTypes";
+  import { PositionTypes } from "bb-lib/StockMarket/data/PositionTypes";
+  import { IMap } from "bb-lib/types";
   export interface IProcessOrderRefs {
       stockMarket: IStockMarket;
       symbolToStockMap: IMap<Stock>;
@@ -9795,9 +9795,9 @@ declare module 'bitburner/StockMarket/OrderProcessing' {
   export function processOrders(stock: Stock, orderType: OrderTypes, posType: PositionTypes, refs: IProcessOrderRefs): void;
 
 }
-declare module 'bitburner/StockMarket/PlayerInfluencing' {
-  import { Company } from "bitburner/Company/Company";
-  import { Server } from "bitburner/Server/Server";
+declare module 'bb-lib/StockMarket/PlayerInfluencing' {
+  import { Company } from "bb-lib/Company/Company";
+  import { Server } from "bb-lib/Server/Server";
   export const forecastForecastChangeFromHack = 0.1;
   export const forecastForecastChangeFromCompanyWork = 0.001;
   /**
@@ -9826,9 +9826,9 @@ declare module 'bitburner/StockMarket/PlayerInfluencing' {
   export function influenceStockThroughCompanyWork(company: Company, performanceMult: number, cyclesOfWork: number): void;
 
 }
-declare module 'bitburner/StockMarket/Stock' {
-  import { IMinMaxRange } from "bitburner/types";
-  import { IReviverValue } from "bitburner/utils/JSONReviver";
+declare module 'bb-lib/StockMarket/Stock' {
+  import { IMinMaxRange } from "bb-lib/types";
+  import { IReviverValue } from "bb-lib/utils/JSONReviver";
   export const StockForecastInfluenceLimit = 5;
   export interface IConstructorParams {
       b: boolean;
@@ -9988,14 +9988,14 @@ declare module 'bitburner/StockMarket/Stock' {
   }
 
 }
-declare module 'bitburner/StockMarket/StockMarket' {
-  import { IStockMarket } from "bitburner/StockMarket/IStockMarket";
-  import { Order } from "bitburner/StockMarket/Order";
-  import { Stock } from "bitburner/StockMarket/Stock";
-  import { OrderTypes } from "bitburner/StockMarket/data/OrderTypes";
-  import { PositionTypes } from "bitburner/StockMarket/data/PositionTypes";
-  import { IMap } from "bitburner/types";
-  import { NetscriptContext } from "bitburner/Netscript/APIWrapper";
+declare module 'bb-lib/StockMarket/StockMarket' {
+  import { IStockMarket } from "bb-lib/StockMarket/IStockMarket";
+  import { Order } from "bb-lib/StockMarket/Order";
+  import { Stock } from "bb-lib/StockMarket/Stock";
+  import { OrderTypes } from "bb-lib/StockMarket/data/OrderTypes";
+  import { PositionTypes } from "bb-lib/StockMarket/data/PositionTypes";
+  import { IMap } from "bb-lib/types";
+  import { NetscriptContext } from "bb-lib/Netscript/APIWrapper";
   export let StockMarket: IStockMarket;
   export const SymbolToStockMap: IMap<Stock>;
   export function placeOrder(stock: Stock, shares: number, price: number, type: OrderTypes, position: PositionTypes, ctx?: NetscriptContext): boolean;
@@ -10016,7 +10016,7 @@ declare module 'bitburner/StockMarket/StockMarket' {
   export function initStockMarketFn(): void;
 
 }
-declare module 'bitburner/StockMarket/StockMarketConstants' {
+declare module 'bb-lib/StockMarket/StockMarketConstants' {
   /**
    * How many stock market 'ticks' before a 'cycle' is triggered.
    * A 'tick' is whenver stock prices update
@@ -10024,19 +10024,19 @@ declare module 'bitburner/StockMarket/StockMarketConstants' {
   export const TicksPerCycle = 75;
 
 }
-declare module 'bitburner/StockMarket/StockMarketCosts' {
+declare module 'bb-lib/StockMarket/StockMarketCosts' {
   export function getStockMarket4SDataCost(): number;
   export function getStockMarket4STixApiCost(): number;
   export function getStockMarketWseCost(): number;
   export function getStockMarketTixApiCost(): number;
 
 }
-declare module 'bitburner/StockMarket/StockMarketHelpers' {
+declare module 'bb-lib/StockMarket/StockMarketHelpers' {
   /**
    * Stock Market Helper Functions
    */
-  import { Stock } from "bitburner/StockMarket/Stock";
-  import { PositionTypes } from "bitburner/StockMarket/data/PositionTypes";
+  import { Stock } from "bb-lib/StockMarket/Stock";
+  import { PositionTypes } from "bb-lib/StockMarket/data/PositionTypes";
   export const forecastChangePerPriceMovement = 0.006;
   /**
    * Calculate the total cost of a "buy" transaction. This accounts for spread and commission.
@@ -10075,14 +10075,14 @@ declare module 'bitburner/StockMarket/StockMarketHelpers' {
   export function calculateBuyMaxAmount(stock: Stock, posType: PositionTypes, money: number): number;
 
 }
-declare module 'bitburner/StockMarket/ui/InfoAndPurchases' {
+declare module 'bb-lib/StockMarket/ui/InfoAndPurchases' {
   /**
    * React component for the Stock Market UI. This component displays
    * general information about the stock market, buttons for the various purchases,
    * and a link to the documentation (Investopedia)
    */
   import React from "react";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
   type IProps = {
       p: IPlayer;
       rerender: () => void;
@@ -10091,7 +10091,7 @@ declare module 'bitburner/StockMarket/ui/InfoAndPurchases' {
   export {};
 
 }
-declare module 'bitburner/StockMarket/ui/PlaceOrderModal' {
+declare module 'bb-lib/StockMarket/ui/PlaceOrderModal' {
   import React from "react";
   interface IProps {
       open: boolean;
@@ -10104,13 +10104,13 @@ declare module 'bitburner/StockMarket/ui/PlaceOrderModal' {
   export {};
 
 }
-declare module 'bitburner/StockMarket/ui/StockMarketRoot' {
+declare module 'bb-lib/StockMarket/ui/StockMarketRoot' {
   /**
    * Root React component for the Stock Market UI
    */
   import React from "react";
-  import { IStockMarket } from "bitburner/StockMarket/IStockMarket";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
+  import { IStockMarket } from "bb-lib/StockMarket/IStockMarket";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
   type IProps = {
       p: IPlayer;
       stockMarket: IStockMarket;
@@ -10119,14 +10119,14 @@ declare module 'bitburner/StockMarket/ui/StockMarketRoot' {
   export {};
 
 }
-declare module 'bitburner/StockMarket/ui/StockTicker' {
+declare module 'bb-lib/StockMarket/ui/StockTicker' {
   /**
    * React Component for a single stock ticker in the Stock Market UI
    */
   import React from "react";
-  import { Order } from "bitburner/StockMarket/Order";
-  import { Stock } from "bitburner/StockMarket/Stock";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
+  import { Order } from "bb-lib/StockMarket/Order";
+  import { Stock } from "bb-lib/StockMarket/Stock";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
   type IProps = {
       orders: Order[];
       p: IPlayer;
@@ -10137,15 +10137,15 @@ declare module 'bitburner/StockMarket/ui/StockTicker' {
   export {};
 
 }
-declare module 'bitburner/StockMarket/ui/StockTickerHeaderText' {
+declare module 'bb-lib/StockMarket/ui/StockTickerHeaderText' {
   /**
    * React Component for the text on a stock ticker's header. This text displays
    * general information on the stock such as the name, symbol, price, and
    * 4S Market Data
    */
   import * as React from "react";
-  import { Stock } from "bitburner/StockMarket/Stock";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
+  import { Stock } from "bb-lib/StockMarket/Stock";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
   type IProps = {
       p: IPlayer;
       stock: Stock;
@@ -10154,12 +10154,12 @@ declare module 'bitburner/StockMarket/ui/StockTickerHeaderText' {
   export {};
 
 }
-declare module 'bitburner/StockMarket/ui/StockTickerOrder' {
+declare module 'bb-lib/StockMarket/ui/StockTickerOrder' {
   /**
    * React component for displaying a single order in a stock's order book
    */
   import * as React from "react";
-  import { Order } from "bitburner/StockMarket/Order";
+  import { Order } from "bb-lib/StockMarket/Order";
   type IProps = {
       order: Order;
   };
@@ -10167,15 +10167,15 @@ declare module 'bitburner/StockMarket/ui/StockTickerOrder' {
   export {};
 
 }
-declare module 'bitburner/StockMarket/ui/StockTickerOrderList' {
+declare module 'bb-lib/StockMarket/ui/StockTickerOrderList' {
   /**
    * React component for displaying a stock's order list in the Stock Market UI.
    * This component resides in the stock ticker
    */
   import * as React from "react";
-  import { Order } from "bitburner/StockMarket/Order";
-  import { Stock } from "bitburner/StockMarket/Stock";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
+  import { Order } from "bb-lib/StockMarket/Order";
+  import { Stock } from "bb-lib/StockMarket/Stock";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
   type IProps = {
       orders: Order[];
       p: IPlayer;
@@ -10185,14 +10185,14 @@ declare module 'bitburner/StockMarket/ui/StockTickerOrderList' {
   export {};
 
 }
-declare module 'bitburner/StockMarket/ui/StockTickerPositionText' {
+declare module 'bb-lib/StockMarket/ui/StockTickerPositionText' {
   /**
    * React Component for the text on a stock ticker that display's information
    * about the player's position in that stock
    */
   import * as React from "react";
-  import { Stock } from "bitburner/StockMarket/Stock";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
+  import { Stock } from "bb-lib/StockMarket/Stock";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
   type IProps = {
       p: IPlayer;
       stock: Stock;
@@ -10201,15 +10201,15 @@ declare module 'bitburner/StockMarket/ui/StockTickerPositionText' {
   export {};
 
 }
-declare module 'bitburner/StockMarket/ui/StockTickers' {
+declare module 'bb-lib/StockMarket/ui/StockTickers' {
   /**
    * React Component for the Stock Market UI. This is the container for all
    * of the stock tickers. It also contains the configuration for the
    * stock ticker UI (watchlist filter, portfolio vs all mode, etc.)
    */
   import React from "react";
-  import { IStockMarket } from "bitburner/StockMarket/IStockMarket";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
+  import { IStockMarket } from "bb-lib/StockMarket/IStockMarket";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
   type IProps = {
       p: IPlayer;
       stockMarket: IStockMarket;
@@ -10218,7 +10218,7 @@ declare module 'bitburner/StockMarket/ui/StockTickers' {
   export {};
 
 }
-declare module 'bitburner/StockMarket/ui/StockTickersConfig' {
+declare module 'bb-lib/StockMarket/ui/StockTickersConfig' {
   /**
    * React component for the tickers configuration section of the Stock Market UI.
    * This config lets you change the way stock tickers are displayed (watchlist,
@@ -10238,7 +10238,7 @@ declare module 'bitburner/StockMarket/ui/StockTickersConfig' {
   export {};
 
 }
-declare module 'bitburner/StockMarket/ui/StockTickerTxButton' {
+declare module 'bb-lib/StockMarket/ui/StockTickerTxButton' {
   /**
    * React Component for a button that initiates a transaction on the Stock Market UI
    * (Buy, Sell, Buy Max, etc.)
@@ -10253,71 +10253,71 @@ declare module 'bitburner/StockMarket/ui/StockTickerTxButton' {
   export {};
 
 }
-declare module 'bitburner/Terminal/commands/alias' {
-  import { ITerminal } from "bitburner/Terminal/ITerminal";
-  import { IRouter } from "bitburner/ui/Router";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { BaseServer } from "bitburner/Server/BaseServer";
+declare module 'bb-lib/Terminal/commands/alias' {
+  import { ITerminal } from "bb-lib/Terminal/ITerminal";
+  import { IRouter } from "bb-lib/ui/Router";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { BaseServer } from "bb-lib/Server/BaseServer";
   export function alias(terminal: ITerminal, router: IRouter, player: IPlayer, server: BaseServer, args: (string | number | boolean)[]): void;
 
 }
-declare module 'bitburner/Terminal/commands/analyze' {
-  import { ITerminal } from "bitburner/Terminal/ITerminal";
-  import { IRouter } from "bitburner/ui/Router";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { BaseServer } from "bitburner/Server/BaseServer";
+declare module 'bb-lib/Terminal/commands/analyze' {
+  import { ITerminal } from "bb-lib/Terminal/ITerminal";
+  import { IRouter } from "bb-lib/ui/Router";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { BaseServer } from "bb-lib/Server/BaseServer";
   export function analyze(terminal: ITerminal, router: IRouter, player: IPlayer, server: BaseServer, args: (string | number | boolean)[]): void;
 
 }
-declare module 'bitburner/Terminal/commands/apr1' {
+declare module 'bb-lib/Terminal/commands/apr1' {
   export function apr1(): void;
 
 }
-declare module 'bitburner/Terminal/commands/backdoor' {
-  import { ITerminal } from "bitburner/Terminal/ITerminal";
-  import { IRouter } from "bitburner/ui/Router";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { BaseServer } from "bitburner/Server/BaseServer";
+declare module 'bb-lib/Terminal/commands/backdoor' {
+  import { ITerminal } from "bb-lib/Terminal/ITerminal";
+  import { IRouter } from "bb-lib/ui/Router";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { BaseServer } from "bb-lib/Server/BaseServer";
   export function backdoor(terminal: ITerminal, router: IRouter, player: IPlayer, server: BaseServer, args: (string | number | boolean)[]): void;
 
 }
-declare module 'bitburner/Terminal/commands/buy' {
-  import { ITerminal } from "bitburner/Terminal/ITerminal";
-  import { IRouter } from "bitburner/ui/Router";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { BaseServer } from "bitburner/Server/BaseServer";
+declare module 'bb-lib/Terminal/commands/buy' {
+  import { ITerminal } from "bb-lib/Terminal/ITerminal";
+  import { IRouter } from "bb-lib/ui/Router";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { BaseServer } from "bb-lib/Server/BaseServer";
   export function buy(terminal: ITerminal, router: IRouter, player: IPlayer, server: BaseServer, args: (string | number | boolean)[]): void;
 
 }
-declare module 'bitburner/Terminal/commands/cat' {
-  import { ITerminal } from "bitburner/Terminal/ITerminal";
-  import { IRouter } from "bitburner/ui/Router";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { BaseServer } from "bitburner/Server/BaseServer";
+declare module 'bb-lib/Terminal/commands/cat' {
+  import { ITerminal } from "bb-lib/Terminal/ITerminal";
+  import { IRouter } from "bb-lib/ui/Router";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { BaseServer } from "bb-lib/Server/BaseServer";
   export function cat(terminal: ITerminal, router: IRouter, player: IPlayer, server: BaseServer, args: (string | number | boolean)[]): void;
 
 }
-declare module 'bitburner/Terminal/commands/cd' {
-  import { ITerminal } from "bitburner/Terminal/ITerminal";
-  import { IRouter } from "bitburner/ui/Router";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { BaseServer } from "bitburner/Server/BaseServer";
+declare module 'bb-lib/Terminal/commands/cd' {
+  import { ITerminal } from "bb-lib/Terminal/ITerminal";
+  import { IRouter } from "bb-lib/ui/Router";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { BaseServer } from "bb-lib/Server/BaseServer";
   export function cd(terminal: ITerminal, router: IRouter, player: IPlayer, server: BaseServer, args: (string | number | boolean)[]): void;
 
 }
-declare module 'bitburner/Terminal/commands/check' {
-  import { ITerminal } from "bitburner/Terminal/ITerminal";
-  import { IRouter } from "bitburner/ui/Router";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { BaseServer } from "bitburner/Server/BaseServer";
+declare module 'bb-lib/Terminal/commands/check' {
+  import { ITerminal } from "bb-lib/Terminal/ITerminal";
+  import { IRouter } from "bb-lib/ui/Router";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { BaseServer } from "bb-lib/Server/BaseServer";
   export function check(terminal: ITerminal, router: IRouter, player: IPlayer, server: BaseServer, args: (string | number | boolean)[]): void;
 
 }
-declare module 'bitburner/Terminal/commands/common/editor' {
-  import { ITerminal } from "bitburner/Terminal/ITerminal";
-  import { IRouter, ScriptEditorRouteOptions } from "bitburner/ui/Router";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { BaseServer } from "bitburner/Server/BaseServer";
+declare module 'bb-lib/Terminal/commands/common/editor' {
+  import { ITerminal } from "bb-lib/Terminal/ITerminal";
+  import { IRouter, ScriptEditorRouteOptions } from "bb-lib/ui/Router";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { BaseServer } from "bb-lib/Server/BaseServer";
   interface EditorParameters {
       terminal: ITerminal;
       router: IRouter;
@@ -10329,277 +10329,277 @@ declare module 'bitburner/Terminal/commands/common/editor' {
   export {};
 
 }
-declare module 'bitburner/Terminal/commands/connect' {
-  import { ITerminal } from "bitburner/Terminal/ITerminal";
-  import { IRouter } from "bitburner/ui/Router";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { BaseServer } from "bitburner/Server/BaseServer";
+declare module 'bb-lib/Terminal/commands/connect' {
+  import { ITerminal } from "bb-lib/Terminal/ITerminal";
+  import { IRouter } from "bb-lib/ui/Router";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { BaseServer } from "bb-lib/Server/BaseServer";
   export function connect(terminal: ITerminal, router: IRouter, player: IPlayer, server: BaseServer, args: (string | number | boolean)[]): void;
 
 }
-declare module 'bitburner/Terminal/commands/cp' {
-  import { ITerminal } from "bitburner/Terminal/ITerminal";
-  import { IRouter } from "bitburner/ui/Router";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { BaseServer } from "bitburner/Server/BaseServer";
+declare module 'bb-lib/Terminal/commands/cp' {
+  import { ITerminal } from "bb-lib/Terminal/ITerminal";
+  import { IRouter } from "bb-lib/ui/Router";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { BaseServer } from "bb-lib/Server/BaseServer";
   export function cp(terminal: ITerminal, router: IRouter, player: IPlayer, server: BaseServer, args: (string | number | boolean)[]): void;
 
 }
-declare module 'bitburner/Terminal/commands/download' {
-  import { ITerminal } from "bitburner/Terminal/ITerminal";
-  import { IRouter } from "bitburner/ui/Router";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { BaseServer } from "bitburner/Server/BaseServer";
+declare module 'bb-lib/Terminal/commands/download' {
+  import { ITerminal } from "bb-lib/Terminal/ITerminal";
+  import { IRouter } from "bb-lib/ui/Router";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { BaseServer } from "bb-lib/Server/BaseServer";
   export function exportScripts(pattern: string, server: BaseServer): void;
   export function download(terminal: ITerminal, router: IRouter, player: IPlayer, server: BaseServer, args: (string | number | boolean)[]): void;
 
 }
-declare module 'bitburner/Terminal/commands/expr' {
-  import { ITerminal } from "bitburner/Terminal/ITerminal";
-  import { IRouter } from "bitburner/ui/Router";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { BaseServer } from "bitburner/Server/BaseServer";
+declare module 'bb-lib/Terminal/commands/expr' {
+  import { ITerminal } from "bb-lib/Terminal/ITerminal";
+  import { IRouter } from "bb-lib/ui/Router";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { BaseServer } from "bb-lib/Server/BaseServer";
   export function expr(terminal: ITerminal, router: IRouter, player: IPlayer, server: BaseServer, args: (string | number | boolean)[]): void;
 
 }
-declare module 'bitburner/Terminal/commands/free' {
-  import { ITerminal } from "bitburner/Terminal/ITerminal";
-  import { IRouter } from "bitburner/ui/Router";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { BaseServer } from "bitburner/Server/BaseServer";
+declare module 'bb-lib/Terminal/commands/free' {
+  import { ITerminal } from "bb-lib/Terminal/ITerminal";
+  import { IRouter } from "bb-lib/ui/Router";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { BaseServer } from "bb-lib/Server/BaseServer";
   export function free(terminal: ITerminal, router: IRouter, player: IPlayer, server: BaseServer, args: (string | number | boolean)[]): void;
 
 }
-declare module 'bitburner/Terminal/commands/grow' {
-  import { ITerminal } from "bitburner/Terminal/ITerminal";
-  import { IRouter } from "bitburner/ui/Router";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { BaseServer } from "bitburner/Server/BaseServer";
+declare module 'bb-lib/Terminal/commands/grow' {
+  import { ITerminal } from "bb-lib/Terminal/ITerminal";
+  import { IRouter } from "bb-lib/ui/Router";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { BaseServer } from "bb-lib/Server/BaseServer";
   export function grow(terminal: ITerminal, router: IRouter, player: IPlayer, server: BaseServer, args: (string | number | boolean)[]): void;
 
 }
-declare module 'bitburner/Terminal/commands/hack' {
-  import { ITerminal } from "bitburner/Terminal/ITerminal";
-  import { IRouter } from "bitburner/ui/Router";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { BaseServer } from "bitburner/Server/BaseServer";
+declare module 'bb-lib/Terminal/commands/hack' {
+  import { ITerminal } from "bb-lib/Terminal/ITerminal";
+  import { IRouter } from "bb-lib/ui/Router";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { BaseServer } from "bb-lib/Server/BaseServer";
   export function hack(terminal: ITerminal, router: IRouter, player: IPlayer, server: BaseServer, args: (string | number | boolean)[]): void;
 
 }
-declare module 'bitburner/Terminal/commands/help' {
-  import { ITerminal } from "bitburner/Terminal/ITerminal";
-  import { IRouter } from "bitburner/ui/Router";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { BaseServer } from "bitburner/Server/BaseServer";
+declare module 'bb-lib/Terminal/commands/help' {
+  import { ITerminal } from "bb-lib/Terminal/ITerminal";
+  import { IRouter } from "bb-lib/ui/Router";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { BaseServer } from "bb-lib/Server/BaseServer";
   export function help(terminal: ITerminal, router: IRouter, player: IPlayer, server: BaseServer, args: (string | number | boolean)[]): void;
 
 }
-declare module 'bitburner/Terminal/commands/history' {
-  import { ITerminal } from "bitburner/Terminal/ITerminal";
-  import { IRouter } from "bitburner/ui/Router";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { BaseServer } from "bitburner/Server/BaseServer";
+declare module 'bb-lib/Terminal/commands/history' {
+  import { ITerminal } from "bb-lib/Terminal/ITerminal";
+  import { IRouter } from "bb-lib/ui/Router";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { BaseServer } from "bb-lib/Server/BaseServer";
   export function history(terminal: ITerminal, router: IRouter, player: IPlayer, server: BaseServer, args: (string | number | boolean)[]): void;
 
 }
-declare module 'bitburner/Terminal/commands/home' {
-  import { ITerminal } from "bitburner/Terminal/ITerminal";
-  import { IRouter } from "bitburner/ui/Router";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { BaseServer } from "bitburner/Server/BaseServer";
+declare module 'bb-lib/Terminal/commands/home' {
+  import { ITerminal } from "bb-lib/Terminal/ITerminal";
+  import { IRouter } from "bb-lib/ui/Router";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { BaseServer } from "bb-lib/Server/BaseServer";
   export function home(terminal: ITerminal, router: IRouter, player: IPlayer, server: BaseServer, args: (string | number | boolean)[]): void;
 
 }
-declare module 'bitburner/Terminal/commands/hostname' {
-  import { ITerminal } from "bitburner/Terminal/ITerminal";
-  import { IRouter } from "bitburner/ui/Router";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { BaseServer } from "bitburner/Server/BaseServer";
+declare module 'bb-lib/Terminal/commands/hostname' {
+  import { ITerminal } from "bb-lib/Terminal/ITerminal";
+  import { IRouter } from "bb-lib/ui/Router";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { BaseServer } from "bb-lib/Server/BaseServer";
   export function hostname(terminal: ITerminal, router: IRouter, player: IPlayer, server: BaseServer, args: (string | number | boolean)[]): void;
 
 }
-declare module 'bitburner/Terminal/commands/kill' {
-  import { ITerminal } from "bitburner/Terminal/ITerminal";
-  import { IRouter } from "bitburner/ui/Router";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { BaseServer } from "bitburner/Server/BaseServer";
+declare module 'bb-lib/Terminal/commands/kill' {
+  import { ITerminal } from "bb-lib/Terminal/ITerminal";
+  import { IRouter } from "bb-lib/ui/Router";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { BaseServer } from "bb-lib/Server/BaseServer";
   export function kill(terminal: ITerminal, router: IRouter, player: IPlayer, server: BaseServer, args: (string | number | boolean)[]): void;
 
 }
-declare module 'bitburner/Terminal/commands/killall' {
-  import { ITerminal } from "bitburner/Terminal/ITerminal";
-  import { IRouter } from "bitburner/ui/Router";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { BaseServer } from "bitburner/Server/BaseServer";
+declare module 'bb-lib/Terminal/commands/killall' {
+  import { ITerminal } from "bb-lib/Terminal/ITerminal";
+  import { IRouter } from "bb-lib/ui/Router";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { BaseServer } from "bb-lib/Server/BaseServer";
   export function killall(terminal: ITerminal, router: IRouter, player: IPlayer, server: BaseServer): void;
 
 }
-declare module 'bitburner/Terminal/commands/ls' {
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { BaseServer } from "bitburner/Server/BaseServer";
-  import { IRouter } from "bitburner/ui/Router";
-  import { ITerminal } from "bitburner/Terminal/ITerminal";
-  import { ScriptArg } from "bitburner/Netscript/ScriptArg";
+declare module 'bb-lib/Terminal/commands/ls' {
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { BaseServer } from "bb-lib/Server/BaseServer";
+  import { IRouter } from "bb-lib/ui/Router";
+  import { ITerminal } from "bb-lib/Terminal/ITerminal";
+  import { ScriptArg } from "bb-lib/Netscript/ScriptArg";
   export function ls(terminal: ITerminal, router: IRouter, player: IPlayer, server: BaseServer, args: ScriptArg[]): void;
 
 }
-declare module 'bitburner/Terminal/commands/lscpu' {
-  import { ITerminal } from "bitburner/Terminal/ITerminal";
-  import { IRouter } from "bitburner/ui/Router";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
+declare module 'bb-lib/Terminal/commands/lscpu' {
+  import { ITerminal } from "bb-lib/Terminal/ITerminal";
+  import { IRouter } from "bb-lib/ui/Router";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
   export function lscpu(terminal: ITerminal, router: IRouter, player: IPlayer): void;
 
 }
-declare module 'bitburner/Terminal/commands/mem' {
-  import { ITerminal } from "bitburner/Terminal/ITerminal";
-  import { IRouter } from "bitburner/ui/Router";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { BaseServer } from "bitburner/Server/BaseServer";
+declare module 'bb-lib/Terminal/commands/mem' {
+  import { ITerminal } from "bb-lib/Terminal/ITerminal";
+  import { IRouter } from "bb-lib/ui/Router";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { BaseServer } from "bb-lib/Server/BaseServer";
   export function mem(terminal: ITerminal, router: IRouter, player: IPlayer, server: BaseServer, args: (string | number | boolean)[]): void;
 
 }
-declare module 'bitburner/Terminal/commands/mv' {
-  import { ITerminal } from "bitburner/Terminal/ITerminal";
-  import { IRouter } from "bitburner/ui/Router";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { BaseServer } from "bitburner/Server/BaseServer";
+declare module 'bb-lib/Terminal/commands/mv' {
+  import { ITerminal } from "bb-lib/Terminal/ITerminal";
+  import { IRouter } from "bb-lib/ui/Router";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { BaseServer } from "bb-lib/Server/BaseServer";
   export function mv(terminal: ITerminal, router: IRouter, player: IPlayer, server: BaseServer, args: (string | number | boolean)[]): void;
 
 }
-declare module 'bitburner/Terminal/commands/nano' {
-  import { ITerminal } from "bitburner/Terminal/ITerminal";
-  import { IRouter } from "bitburner/ui/Router";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { BaseServer } from "bitburner/Server/BaseServer";
+declare module 'bb-lib/Terminal/commands/nano' {
+  import { ITerminal } from "bb-lib/Terminal/ITerminal";
+  import { IRouter } from "bb-lib/ui/Router";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { BaseServer } from "bb-lib/Server/BaseServer";
   export function nano(terminal: ITerminal, router: IRouter, player: IPlayer, server: BaseServer, args: (string | number | boolean)[]): void;
 
 }
-declare module 'bitburner/Terminal/commands/ps' {
-  import { ITerminal } from "bitburner/Terminal/ITerminal";
-  import { IRouter } from "bitburner/ui/Router";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { BaseServer } from "bitburner/Server/BaseServer";
+declare module 'bb-lib/Terminal/commands/ps' {
+  import { ITerminal } from "bb-lib/Terminal/ITerminal";
+  import { IRouter } from "bb-lib/ui/Router";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { BaseServer } from "bb-lib/Server/BaseServer";
   export function ps(terminal: ITerminal, router: IRouter, player: IPlayer, server: BaseServer, args: (string | number | boolean)[]): void;
 
 }
-declare module 'bitburner/Terminal/commands/rm' {
-  import { ITerminal } from "bitburner/Terminal/ITerminal";
-  import { IRouter } from "bitburner/ui/Router";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { BaseServer } from "bitburner/Server/BaseServer";
+declare module 'bb-lib/Terminal/commands/rm' {
+  import { ITerminal } from "bb-lib/Terminal/ITerminal";
+  import { IRouter } from "bb-lib/ui/Router";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { BaseServer } from "bb-lib/Server/BaseServer";
   export function rm(terminal: ITerminal, router: IRouter, player: IPlayer, server: BaseServer, args: (string | number | boolean)[]): void;
 
 }
-declare module 'bitburner/Terminal/commands/run' {
-  import { ITerminal } from "bitburner/Terminal/ITerminal";
-  import { IRouter } from "bitburner/ui/Router";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { BaseServer } from "bitburner/Server/BaseServer";
+declare module 'bb-lib/Terminal/commands/run' {
+  import { ITerminal } from "bb-lib/Terminal/ITerminal";
+  import { IRouter } from "bb-lib/ui/Router";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { BaseServer } from "bb-lib/Server/BaseServer";
   export function run(terminal: ITerminal, router: IRouter, player: IPlayer, server: BaseServer, args: (string | number | boolean)[]): void;
 
 }
-declare module 'bitburner/Terminal/commands/runProgram' {
-  import { ITerminal } from "bitburner/Terminal/ITerminal";
-  import { IRouter } from "bitburner/ui/Router";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { BaseServer } from "bitburner/Server/BaseServer";
+declare module 'bb-lib/Terminal/commands/runProgram' {
+  import { ITerminal } from "bb-lib/Terminal/ITerminal";
+  import { IRouter } from "bb-lib/ui/Router";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { BaseServer } from "bb-lib/Server/BaseServer";
   export function runProgram(terminal: ITerminal, router: IRouter, player: IPlayer, server: BaseServer, args: (string | number | boolean)[]): void;
 
 }
-declare module 'bitburner/Terminal/commands/runScript' {
-  import { ITerminal } from "bitburner/Terminal/ITerminal";
-  import { IRouter } from "bitburner/ui/Router";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { BaseServer } from "bitburner/Server/BaseServer";
+declare module 'bb-lib/Terminal/commands/runScript' {
+  import { ITerminal } from "bb-lib/Terminal/ITerminal";
+  import { IRouter } from "bb-lib/ui/Router";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { BaseServer } from "bb-lib/Server/BaseServer";
   export function runScript(terminal: ITerminal, router: IRouter, player: IPlayer, server: BaseServer, commandArgs: (string | number | boolean)[]): void;
 
 }
-declare module 'bitburner/Terminal/commands/scan' {
-  import { ITerminal } from "bitburner/Terminal/ITerminal";
-  import { IRouter } from "bitburner/ui/Router";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { BaseServer } from "bitburner/Server/BaseServer";
+declare module 'bb-lib/Terminal/commands/scan' {
+  import { ITerminal } from "bb-lib/Terminal/ITerminal";
+  import { IRouter } from "bb-lib/ui/Router";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { BaseServer } from "bb-lib/Server/BaseServer";
   export function scan(terminal: ITerminal, router: IRouter, player: IPlayer, server: BaseServer, args: (string | number | boolean)[]): void;
 
 }
-declare module 'bitburner/Terminal/commands/scananalyze' {
-  import { ITerminal } from "bitburner/Terminal/ITerminal";
-  import { IRouter } from "bitburner/ui/Router";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { BaseServer } from "bitburner/Server/BaseServer";
+declare module 'bb-lib/Terminal/commands/scananalyze' {
+  import { ITerminal } from "bb-lib/Terminal/ITerminal";
+  import { IRouter } from "bb-lib/ui/Router";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { BaseServer } from "bb-lib/Server/BaseServer";
   export function scananalyze(terminal: ITerminal, router: IRouter, player: IPlayer, server: BaseServer, args: (string | number | boolean)[]): void;
 
 }
-declare module 'bitburner/Terminal/commands/scp' {
-  import { ITerminal } from "bitburner/Terminal/ITerminal";
-  import { IRouter } from "bitburner/ui/Router";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { BaseServer } from "bitburner/Server/BaseServer";
+declare module 'bb-lib/Terminal/commands/scp' {
+  import { ITerminal } from "bb-lib/Terminal/ITerminal";
+  import { IRouter } from "bb-lib/ui/Router";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { BaseServer } from "bb-lib/Server/BaseServer";
   export function scp(terminal: ITerminal, router: IRouter, player: IPlayer, server: BaseServer, args: (string | number | boolean)[]): void;
 
 }
-declare module 'bitburner/Terminal/commands/sudov' {
-  import { ITerminal } from "bitburner/Terminal/ITerminal";
-  import { IRouter } from "bitburner/ui/Router";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { BaseServer } from "bitburner/Server/BaseServer";
+declare module 'bb-lib/Terminal/commands/sudov' {
+  import { ITerminal } from "bb-lib/Terminal/ITerminal";
+  import { IRouter } from "bb-lib/ui/Router";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { BaseServer } from "bb-lib/Server/BaseServer";
   export function sudov(terminal: ITerminal, router: IRouter, player: IPlayer, server: BaseServer, args: (string | number | boolean)[]): void;
 
 }
-declare module 'bitburner/Terminal/commands/tail' {
-  import { ITerminal } from "bitburner/Terminal/ITerminal";
-  import { IRouter } from "bitburner/ui/Router";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { BaseServer } from "bitburner/Server/BaseServer";
+declare module 'bb-lib/Terminal/commands/tail' {
+  import { ITerminal } from "bb-lib/Terminal/ITerminal";
+  import { IRouter } from "bb-lib/ui/Router";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { BaseServer } from "bb-lib/Server/BaseServer";
   export function tail(terminal: ITerminal, router: IRouter, player: IPlayer, server: BaseServer, commandArray: (string | number | boolean)[]): void;
 
 }
-declare module 'bitburner/Terminal/commands/top' {
-  import { ITerminal } from "bitburner/Terminal/ITerminal";
-  import { IRouter } from "bitburner/ui/Router";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { BaseServer } from "bitburner/Server/BaseServer";
+declare module 'bb-lib/Terminal/commands/top' {
+  import { ITerminal } from "bb-lib/Terminal/ITerminal";
+  import { IRouter } from "bb-lib/ui/Router";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { BaseServer } from "bb-lib/Server/BaseServer";
   export function top(terminal: ITerminal, router: IRouter, player: IPlayer, server: BaseServer, args: (string | number | boolean)[]): void;
 
 }
-declare module 'bitburner/Terminal/commands/unalias' {
-  import { ITerminal } from "bitburner/Terminal/ITerminal";
-  import { IRouter } from "bitburner/ui/Router";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { BaseServer } from "bitburner/Server/BaseServer";
+declare module 'bb-lib/Terminal/commands/unalias' {
+  import { ITerminal } from "bb-lib/Terminal/ITerminal";
+  import { IRouter } from "bb-lib/ui/Router";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { BaseServer } from "bb-lib/Server/BaseServer";
   export function unalias(terminal: ITerminal, router: IRouter, player: IPlayer, server: BaseServer, args: (string | number | boolean)[]): void;
 
 }
-declare module 'bitburner/Terminal/commands/vim' {
-  import { ITerminal } from "bitburner/Terminal/ITerminal";
-  import { IRouter } from "bitburner/ui/Router";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { BaseServer } from "bitburner/Server/BaseServer";
+declare module 'bb-lib/Terminal/commands/vim' {
+  import { ITerminal } from "bb-lib/Terminal/ITerminal";
+  import { IRouter } from "bb-lib/ui/Router";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { BaseServer } from "bb-lib/Server/BaseServer";
   export function vim(terminal: ITerminal, router: IRouter, player: IPlayer, server: BaseServer, args: (string | number | boolean)[]): void;
 
 }
-declare module 'bitburner/Terminal/commands/weaken' {
-  import { ITerminal } from "bitburner/Terminal/ITerminal";
-  import { IRouter } from "bitburner/ui/Router";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { BaseServer } from "bitburner/Server/BaseServer";
+declare module 'bb-lib/Terminal/commands/weaken' {
+  import { ITerminal } from "bb-lib/Terminal/ITerminal";
+  import { IRouter } from "bb-lib/ui/Router";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { BaseServer } from "bb-lib/Server/BaseServer";
   export function weaken(terminal: ITerminal, router: IRouter, player: IPlayer, server: BaseServer, args: (string | number | boolean)[]): void;
 
 }
-declare module 'bitburner/Terminal/commands/wget' {
-  import { ITerminal } from "bitburner/Terminal/ITerminal";
-  import { IRouter } from "bitburner/ui/Router";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { BaseServer } from "bitburner/Server/BaseServer";
+declare module 'bb-lib/Terminal/commands/wget' {
+  import { ITerminal } from "bb-lib/Terminal/ITerminal";
+  import { IRouter } from "bb-lib/ui/Router";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { BaseServer } from "bb-lib/Server/BaseServer";
   export function wget(terminal: ITerminal, router: IRouter, player: IPlayer, server: BaseServer, args: (string | number | boolean)[]): void;
 
 }
-declare module 'bitburner/Terminal/determineAllPossibilitiesForTabCompletion' {
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
+declare module 'bb-lib/Terminal/determineAllPossibilitiesForTabCompletion' {
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
   export function determineAllPossibilitiesForTabCompletion(p: IPlayer, input: string, index: number, currPath?: string): Promise<string[]>;
 
 }
-declare module 'bitburner/Terminal/DirectoryHelpers' {
+declare module 'bb-lib/Terminal/DirectoryHelpers' {
   /**
    * Helper functions that implement "directory" functionality in the Terminal.
    * These aren't "real" directories, it's more of a pseudo-directory implementation
@@ -10689,8 +10689,8 @@ declare module 'bitburner/Terminal/DirectoryHelpers' {
   export function areImportsEquals(f0: string, f1: string): boolean;
 
 }
-declare module 'bitburner/Terminal/DirectoryServerHelpers' {
-  import { BaseServer } from "bitburner/Server/BaseServer";
+declare module 'bb-lib/Terminal/DirectoryServerHelpers' {
+  import { BaseServer } from "bb-lib/Server/BaseServer";
   /**
    * Given a directory (by the full directory path) and a server, returns all
    * subdirectories of that directory. This is only for FIRST-LEVEl/immediate subdirectories
@@ -10702,19 +10702,19 @@ declare module 'bitburner/Terminal/DirectoryServerHelpers' {
   export function containsFiles(server: BaseServer, dir: string): boolean;
 
 }
-declare module 'bitburner/Terminal/HelpText' {
-  import { IMap } from "bitburner/types";
+declare module 'bb-lib/Terminal/HelpText' {
+  import { IMap } from "bb-lib/types";
   export const TerminalHelpText: string[];
   export const HelpTexts: IMap<string[]>;
 
 }
-declare module 'bitburner/Terminal/ITerminal' {
+declare module 'bb-lib/Terminal/ITerminal' {
   import React from "react";
-  import { TextFile } from "bitburner/TextFile";
-  import { Script } from "bitburner/Script/Script";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { IRouter } from "bitburner/ui/Router";
-  import { BaseServer } from "bitburner/Server/BaseServer";
+  import { TextFile } from "bb-lib/TextFile";
+  import { Script } from "bb-lib/Script/Script";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { IRouter } from "bb-lib/ui/Router";
+  import { BaseServer } from "bb-lib/Server/BaseServer";
   export class Output {
       text: string;
       color: "primary" | "error" | "success" | "info" | "warn";
@@ -10779,12 +10779,12 @@ declare module 'bitburner/Terminal/ITerminal' {
   }
 
 }
-declare module 'bitburner/Terminal/Parser' {
+declare module 'bb-lib/Terminal/Parser' {
   export function ParseCommands(commands: string): string[];
   export function ParseCommand(command: string): (string | number | boolean)[];
 
 }
-declare module 'bitburner/Terminal/tabCompletion' {
+declare module 'bb-lib/Terminal/tabCompletion' {
   /**
    * Implements tab completion for the Terminal
    *
@@ -10795,14 +10795,14 @@ declare module 'bitburner/Terminal/tabCompletion' {
   export function tabCompletion(command: string, arg: string, allPossibilities: string[], oldValue: string): string[] | string | undefined;
 
 }
-declare module 'bitburner/Terminal/Terminal' {
+declare module 'bb-lib/Terminal/Terminal' {
   /// <reference types="react" />
-  import { ITerminal, Output, Link, RawOutput, TTimer } from "bitburner/Terminal/ITerminal";
-  import { IRouter } from "bitburner/ui/Router";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { BaseServer } from "bitburner/Server/BaseServer";
-  import { TextFile } from "bitburner/TextFile";
-  import { Script } from "bitburner/Script/Script";
+  import { ITerminal, Output, Link, RawOutput, TTimer } from "bb-lib/Terminal/ITerminal";
+  import { IRouter } from "bb-lib/ui/Router";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { BaseServer } from "bb-lib/Server/BaseServer";
+  import { TextFile } from "bb-lib/TextFile";
+  import { Script } from "bb-lib/Script/Script";
   export class Terminal implements ITerminal {
       action: TTimer | null;
       commandHistory: string[];
@@ -10848,17 +10848,17 @@ declare module 'bitburner/Terminal/Terminal' {
   }
 
 }
-declare module 'bitburner/Terminal/TerminalEvents' {
-  import { EventEmitter } from "bitburner/utils/EventEmitter";
+declare module 'bb-lib/Terminal/TerminalEvents' {
+  import { EventEmitter } from "bb-lib/utils/EventEmitter";
   export const TerminalEvents: EventEmitter<[]>;
   export const TerminalClearEvents: EventEmitter<[]>;
 
 }
-declare module 'bitburner/Terminal/ui/TerminalInput' {
+declare module 'bb-lib/Terminal/ui/TerminalInput' {
   import React from "react";
-  import { ITerminal } from "bitburner/Terminal/ITerminal";
-  import { IRouter } from "bitburner/ui/Router";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
+  import { ITerminal } from "bb-lib/Terminal/ITerminal";
+  import { IRouter } from "bb-lib/ui/Router";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
   interface IProps {
       terminal: ITerminal;
       router: IRouter;
@@ -10868,11 +10868,11 @@ declare module 'bitburner/Terminal/ui/TerminalInput' {
   export {};
 
 }
-declare module 'bitburner/Terminal/ui/TerminalRoot' {
+declare module 'bb-lib/Terminal/ui/TerminalRoot' {
   import React from "react";
-  import { ITerminal } from "bitburner/Terminal/ITerminal";
-  import { IRouter } from "bitburner/ui/Router";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
+  import { ITerminal } from "bb-lib/Terminal/ITerminal";
+  import { IRouter } from "bb-lib/ui/Router";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
   interface IProps {
       terminal: ITerminal;
       router: IRouter;
@@ -10882,14 +10882,14 @@ declare module 'bitburner/Terminal/ui/TerminalRoot' {
   export {};
 
 }
-declare module 'bitburner/Terminal' {
-  import { Terminal as TTerminal } from "bitburner/Terminal/Terminal";
+declare module 'bb-lib/Terminal' {
+  import { Terminal as TTerminal } from "bb-lib/Terminal/Terminal";
   export const Terminal: TTerminal;
 
 }
-declare module 'bitburner/TextFile' {
-  import { BaseServer } from "bitburner/Server/BaseServer";
-  import { IReviverValue } from "bitburner/utils/JSONReviver";
+declare module 'bb-lib/TextFile' {
+  import { BaseServer } from "bb-lib/Server/BaseServer";
+  import { IReviverValue } from "bb-lib/utils/JSONReviver";
   /**
    * Represents a plain text file that is typically stored on a server.
    */
@@ -10957,100 +10957,100 @@ declare module 'bitburner/TextFile' {
   export function createTextFile(fn: string, txt: string, server: BaseServer): TextFile | undefined;
 
 }
-declare module 'bitburner/Themes/data/dark-blue/index' {
-  import { IPredefinedTheme } from "bitburner/Themes/Themes";
+declare module 'bb-lib/Themes/data/dark-blue/index' {
+  import { IPredefinedTheme } from "bb-lib/Themes/Themes";
   export const Theme: IPredefinedTheme;
 
 }
-declare module 'bitburner/Themes/data/dark-plus/index' {
-  import { IPredefinedTheme } from "bitburner/Themes/Themes";
+declare module 'bb-lib/Themes/data/dark-plus/index' {
+  import { IPredefinedTheme } from "bb-lib/Themes/Themes";
   export const Theme: IPredefinedTheme;
 
 }
-declare module 'bitburner/Themes/data/default/index' {
-  import { IPredefinedTheme } from "bitburner/Themes/Themes";
+declare module 'bb-lib/Themes/data/default/index' {
+  import { IPredefinedTheme } from "bb-lib/Themes/Themes";
   export const Theme: IPredefinedTheme;
 
 }
-declare module 'bitburner/Themes/data/default-lite/index' {
-  import { IPredefinedTheme } from "bitburner/Themes/Themes";
+declare module 'bb-lib/Themes/data/default-lite/index' {
+  import { IPredefinedTheme } from "bb-lib/Themes/Themes";
   export const Theme: IPredefinedTheme;
 
 }
-declare module 'bitburner/Themes/data/discord-like/index' {
-  import { IPredefinedTheme } from "bitburner/Themes/Themes";
+declare module 'bb-lib/Themes/data/discord-like/index' {
+  import { IPredefinedTheme } from "bb-lib/Themes/Themes";
   export const Theme: IPredefinedTheme;
 
 }
-declare module 'bitburner/Themes/data/dracula/index' {
-  import { IPredefinedTheme } from "bitburner/Themes/Themes";
+declare module 'bb-lib/Themes/data/dracula/index' {
+  import { IPredefinedTheme } from "bb-lib/Themes/Themes";
   export const Theme: IPredefinedTheme;
 
 }
-declare module 'bitburner/Themes/data/index' {
-  export { Theme as Default } from "bitburner/Themes/data/default/index";
-  export { Theme as DefaultLite } from "bitburner/Themes/data/default-lite/index";
-  export { Theme as Monokai } from "bitburner/Themes/data/monokai-ish/index";
-  export { Theme as Warmer } from "bitburner/Themes/data/warmer/index";
-  export { Theme as DarkPlus } from "bitburner/Themes/data/dark-plus/index";
-  export { Theme as MayukaiDark } from "bitburner/Themes/data/mayukai-dark/index";
-  export { Theme as Purple } from "bitburner/Themes/data/purple/index";
-  export { Theme as SmoothGreen } from "bitburner/Themes/data/smooth-green/index";
-  export { Theme as Dracula } from "bitburner/Themes/data/dracula/index";
-  export { Theme as DarkBlue } from "bitburner/Themes/data/dark-blue/index";
-  export { Theme as DiscordLike } from "bitburner/Themes/data/discord-like/index";
-  export { Theme as OneDark } from "bitburner/Themes/data/one-dark/index";
-  export { Theme as MutedGoldBlue } from "bitburner/Themes/data/muted-gold-blue/index";
-  export { Theme as Light } from "bitburner/Themes/data/light/index";
+declare module 'bb-lib/Themes/data/index' {
+  export { Theme as Default } from "bb-lib/Themes/data/default/index";
+  export { Theme as DefaultLite } from "bb-lib/Themes/data/default-lite/index";
+  export { Theme as Monokai } from "bb-lib/Themes/data/monokai-ish/index";
+  export { Theme as Warmer } from "bb-lib/Themes/data/warmer/index";
+  export { Theme as DarkPlus } from "bb-lib/Themes/data/dark-plus/index";
+  export { Theme as MayukaiDark } from "bb-lib/Themes/data/mayukai-dark/index";
+  export { Theme as Purple } from "bb-lib/Themes/data/purple/index";
+  export { Theme as SmoothGreen } from "bb-lib/Themes/data/smooth-green/index";
+  export { Theme as Dracula } from "bb-lib/Themes/data/dracula/index";
+  export { Theme as DarkBlue } from "bb-lib/Themes/data/dark-blue/index";
+  export { Theme as DiscordLike } from "bb-lib/Themes/data/discord-like/index";
+  export { Theme as OneDark } from "bb-lib/Themes/data/one-dark/index";
+  export { Theme as MutedGoldBlue } from "bb-lib/Themes/data/muted-gold-blue/index";
+  export { Theme as Light } from "bb-lib/Themes/data/light/index";
 
 }
-declare module 'bitburner/Themes/data/light/index' {
-  import { IPredefinedTheme } from "bitburner/Themes/Themes";
+declare module 'bb-lib/Themes/data/light/index' {
+  import { IPredefinedTheme } from "bb-lib/Themes/Themes";
   export const Theme: IPredefinedTheme;
 
 }
-declare module 'bitburner/Themes/data/mayukai-dark/index' {
-  import { IPredefinedTheme } from "bitburner/Themes/Themes";
+declare module 'bb-lib/Themes/data/mayukai-dark/index' {
+  import { IPredefinedTheme } from "bb-lib/Themes/Themes";
   export const Theme: IPredefinedTheme;
 
 }
-declare module 'bitburner/Themes/data/monokai-ish/index' {
-  import { IPredefinedTheme } from "bitburner/Themes/Themes";
+declare module 'bb-lib/Themes/data/monokai-ish/index' {
+  import { IPredefinedTheme } from "bb-lib/Themes/Themes";
   export const Theme: IPredefinedTheme;
 
 }
-declare module 'bitburner/Themes/data/muted-gold-blue/index' {
-  import { IPredefinedTheme } from "bitburner/Themes/Themes";
+declare module 'bb-lib/Themes/data/muted-gold-blue/index' {
+  import { IPredefinedTheme } from "bb-lib/Themes/Themes";
   export const Theme: IPredefinedTheme;
 
 }
-declare module 'bitburner/Themes/data/one-dark/index' {
-  import { IPredefinedTheme } from "bitburner/Themes/Themes";
+declare module 'bb-lib/Themes/data/one-dark/index' {
+  import { IPredefinedTheme } from "bb-lib/Themes/Themes";
   export const Theme: IPredefinedTheme;
 
 }
-declare module 'bitburner/Themes/data/purple/index' {
-  import { IPredefinedTheme } from "bitburner/Themes/Themes";
+declare module 'bb-lib/Themes/data/purple/index' {
+  import { IPredefinedTheme } from "bb-lib/Themes/Themes";
   export const Theme: IPredefinedTheme;
 
 }
-declare module 'bitburner/Themes/data/smooth-green/index' {
-  import { IPredefinedTheme } from "bitburner/Themes/Themes";
+declare module 'bb-lib/Themes/data/smooth-green/index' {
+  import { IPredefinedTheme } from "bb-lib/Themes/Themes";
   export const Theme: IPredefinedTheme;
 
 }
-declare module 'bitburner/Themes/data/warmer/index' {
-  import { IPredefinedTheme } from "bitburner/Themes/Themes";
+declare module 'bb-lib/Themes/data/warmer/index' {
+  import { IPredefinedTheme } from "bb-lib/Themes/Themes";
   export const Theme: IPredefinedTheme;
 
 }
-declare module 'bitburner/Themes/Styles' {
-  import { IStyleSettings } from "bitburner/ScriptEditor/NetscriptDefinitions/index";
+declare module 'bb-lib/Themes/Styles' {
+  import { IStyleSettings } from "bb-lib/ScriptEditor/NetscriptDefinitions/index";
   export const defaultStyles: IStyleSettings;
 
 }
-declare module 'bitburner/Themes/Themes' {
-  import { IMap } from "bitburner/types";
+declare module 'bb-lib/Themes/Themes' {
+  import { IMap } from "bb-lib/types";
   export interface ITheme {
       [key: string]: string | undefined;
       primarylight: string;
@@ -11099,12 +11099,12 @@ declare module 'bitburner/Themes/Themes' {
   export const getPredefinedThemes: () => IMap<IPredefinedTheme>;
 
 }
-declare module 'bitburner/Themes/ui/StyleEditorButton' {
+declare module 'bb-lib/Themes/ui/StyleEditorButton' {
   import React from "react";
   export function StyleEditorButton(): React.ReactElement;
 
 }
-declare module 'bitburner/Themes/ui/StyleEditorModal' {
+declare module 'bb-lib/Themes/ui/StyleEditorModal' {
   import React from "react";
   interface IProps {
       open: boolean;
@@ -11114,9 +11114,9 @@ declare module 'bitburner/Themes/ui/StyleEditorModal' {
   export {};
 
 }
-declare module 'bitburner/Themes/ui/Theme' {
+declare module 'bb-lib/Themes/ui/Theme' {
   import React from "react";
-  import { EventEmitter } from "bitburner/utils/EventEmitter";
+  import { EventEmitter } from "bb-lib/utils/EventEmitter";
   export const ThemeEvents: EventEmitter<[]>;
   module "@mui/material/styles" {
       interface Theme {
@@ -11166,9 +11166,9 @@ declare module 'bitburner/Themes/ui/Theme' {
   export {};
 
 }
-declare module 'bitburner/Themes/ui/ThemeBrowser' {
+declare module 'bb-lib/Themes/ui/ThemeBrowser' {
   import React from "react";
-  import { IRouter } from "bitburner/ui/Router";
+  import { IRouter } from "bb-lib/ui/Router";
   interface IProps {
       router: IRouter;
   }
@@ -11176,14 +11176,14 @@ declare module 'bitburner/Themes/ui/ThemeBrowser' {
   export {};
 
 }
-declare module 'bitburner/Themes/ui/ThemeCollaborate' {
+declare module 'bb-lib/Themes/ui/ThemeCollaborate' {
   import React from "react";
   export function ThemeCollaborate(): React.ReactElement;
 
 }
-declare module 'bitburner/Themes/ui/ThemeEditorButton' {
+declare module 'bb-lib/Themes/ui/ThemeEditorButton' {
   import React from "react";
-  import { IRouter } from "bitburner/ui/Router";
+  import { IRouter } from "bb-lib/ui/Router";
   interface IProps {
       router: IRouter;
   }
@@ -11191,9 +11191,9 @@ declare module 'bitburner/Themes/ui/ThemeEditorButton' {
   export {};
 
 }
-declare module 'bitburner/Themes/ui/ThemeEditorModal' {
+declare module 'bb-lib/Themes/ui/ThemeEditorModal' {
   import React from "react";
-  import { IRouter } from "bitburner/ui/Router";
+  import { IRouter } from "bb-lib/ui/Router";
   interface IProps {
       open: boolean;
       onClose: () => void;
@@ -11203,9 +11203,9 @@ declare module 'bitburner/Themes/ui/ThemeEditorModal' {
   export {};
 
 }
-declare module 'bitburner/Themes/ui/ThemeEntry' {
+declare module 'bb-lib/Themes/ui/ThemeEntry' {
   import React from "react";
-  import { IPredefinedTheme } from "bitburner/Themes/Themes";
+  import { IPredefinedTheme } from "bb-lib/Themes/Themes";
   interface IProps {
       theme: IPredefinedTheme;
       onActivated: () => void;
@@ -11215,7 +11215,7 @@ declare module 'bitburner/Themes/ui/ThemeEntry' {
   export {};
 
 }
-declare module 'bitburner/ThirdParty/colorUtils' {
+declare module 'bb-lib/ThirdParty/colorUtils' {
   export class Solver {
       constructor(target: any);
       solve(): {
@@ -11240,7 +11240,7 @@ declare module 'bitburner/ThirdParty/colorUtils' {
   export function getFiltersFromHex(hex: any): string;
 
 }
-declare module 'bitburner/Tutorial/ui/TutorialRoot' {
+declare module 'bb-lib/Tutorial/ui/TutorialRoot' {
   import React from "react";
   interface IProps {
       reactivateTutorial: () => void;
@@ -11249,7 +11249,7 @@ declare module 'bitburner/Tutorial/ui/TutorialRoot' {
   export {};
 
 }
-declare module 'bitburner/types' {
+declare module 'bb-lib/types' {
   /**
    * Performs an equality check between two instances of the same type.
    */
@@ -11308,13 +11308,13 @@ declare module 'bitburner/types' {
   }
 
 }
-declare module 'bitburner/ui/ActiveScripts/ActiveScriptsPage' {
+declare module 'bb-lib/ui/ActiveScripts/ActiveScriptsPage' {
   /**
    * Root React Component for the "Active Scripts" UI page. This page displays
    * and provides information about all of the player's scripts that are currently running
    */
   import React from "react";
-  import { WorkerScript } from "bitburner/Netscript/WorkerScript";
+  import { WorkerScript } from "bb-lib/Netscript/WorkerScript";
   interface IProps {
       workerScripts: Map<number, WorkerScript>;
   }
@@ -11322,13 +11322,13 @@ declare module 'bitburner/ui/ActiveScripts/ActiveScriptsPage' {
   export {};
 
 }
-declare module 'bitburner/ui/ActiveScripts/ActiveScriptsRoot' {
+declare module 'bb-lib/ui/ActiveScripts/ActiveScriptsRoot' {
   /**
    * Root React Component for the "Active Scripts" UI page. This page displays
    * and provides information about all of the player's scripts that are currently running
    */
   import React from "react";
-  import { WorkerScript } from "bitburner/Netscript/WorkerScript";
+  import { WorkerScript } from "bb-lib/Netscript/WorkerScript";
   interface IProps {
       workerScripts: Map<number, WorkerScript>;
   }
@@ -11336,13 +11336,13 @@ declare module 'bitburner/ui/ActiveScripts/ActiveScriptsRoot' {
   export {};
 
 }
-declare module 'bitburner/ui/ActiveScripts/RecentScriptAccordion' {
+declare module 'bb-lib/ui/ActiveScripts/RecentScriptAccordion' {
   /**
    * React Component for displaying a single WorkerScript's info as an
    * Accordion element
    */
   import * as React from "react";
-  import { RecentScript } from "bitburner/Netscript/RecentScripts";
+  import { RecentScript } from "bb-lib/Netscript/RecentScripts";
   interface IProps {
       recentScript: RecentScript;
   }
@@ -11350,7 +11350,7 @@ declare module 'bitburner/ui/ActiveScripts/RecentScriptAccordion' {
   export {};
 
 }
-declare module 'bitburner/ui/ActiveScripts/RecentScriptsPage' {
+declare module 'bb-lib/ui/ActiveScripts/RecentScriptsPage' {
   /**
    * Root React Component for the "Active Scripts" UI page. This page displays
    * and provides information about all of the player's scripts that are currently running
@@ -11359,7 +11359,7 @@ declare module 'bitburner/ui/ActiveScripts/RecentScriptsPage' {
   export function RecentScriptsPage(): React.ReactElement;
 
 }
-declare module 'bitburner/ui/ActiveScripts/ScriptProduction' {
+declare module 'bb-lib/ui/ActiveScripts/ScriptProduction' {
   /**
    * React Component for displaying the total production and production rate
    * of scripts on the 'Active Scripts' UI page
@@ -11368,14 +11368,14 @@ declare module 'bitburner/ui/ActiveScripts/ScriptProduction' {
   export function ScriptProduction(): React.ReactElement;
 
 }
-declare module 'bitburner/ui/ActiveScripts/ServerAccordion' {
+declare module 'bb-lib/ui/ActiveScripts/ServerAccordion' {
   /**
    * React Component for rendering the Accordion element for a single
    * server in the 'Active Scripts' UI page
    */
   import * as React from "react";
-  import { BaseServer } from "bitburner/Server/BaseServer";
-  import { WorkerScript } from "bitburner/Netscript/WorkerScript";
+  import { BaseServer } from "bb-lib/Server/BaseServer";
+  import { WorkerScript } from "bb-lib/Netscript/WorkerScript";
   type IProps = {
       server: BaseServer;
       workerScripts: WorkerScript[];
@@ -11384,9 +11384,9 @@ declare module 'bitburner/ui/ActiveScripts/ServerAccordion' {
   export {};
 
 }
-declare module 'bitburner/ui/ActiveScripts/ServerAccordionContent' {
+declare module 'bb-lib/ui/ActiveScripts/ServerAccordionContent' {
   import React from "react";
-  import { WorkerScript } from "bitburner/Netscript/WorkerScript";
+  import { WorkerScript } from "bb-lib/Netscript/WorkerScript";
   interface IProps {
       workerScripts: WorkerScript[];
   }
@@ -11394,13 +11394,13 @@ declare module 'bitburner/ui/ActiveScripts/ServerAccordionContent' {
   export {};
 
 }
-declare module 'bitburner/ui/ActiveScripts/ServerAccordions' {
+declare module 'bb-lib/ui/ActiveScripts/ServerAccordions' {
   /**
    * React Component for rendering the Accordion elements for all servers
    * on which scripts are running
    */
   import React from "react";
-  import { WorkerScript } from "bitburner/Netscript/WorkerScript";
+  import { WorkerScript } from "bb-lib/Netscript/WorkerScript";
   type IProps = {
       workerScripts: Map<number, WorkerScript>;
   };
@@ -11408,13 +11408,13 @@ declare module 'bitburner/ui/ActiveScripts/ServerAccordions' {
   export {};
 
 }
-declare module 'bitburner/ui/ActiveScripts/WorkerScriptAccordion' {
+declare module 'bb-lib/ui/ActiveScripts/WorkerScriptAccordion' {
   /**
    * React Component for displaying a single WorkerScript's info as an
    * Accordion element
    */
   import * as React from "react";
-  import { WorkerScript } from "bitburner/Netscript/WorkerScript";
+  import { WorkerScript } from "bb-lib/Netscript/WorkerScript";
   type IProps = {
       workerScript: WorkerScript;
   };
@@ -11422,22 +11422,22 @@ declare module 'bitburner/ui/ActiveScripts/WorkerScriptAccordion' {
   export {};
 
 }
-declare module 'bitburner/ui/Apr1' {
+declare module 'bb-lib/ui/Apr1' {
   import React from "react";
-  import { EventEmitter } from "bitburner/utils/EventEmitter";
+  import { EventEmitter } from "bb-lib/utils/EventEmitter";
   export const Apr1Events: EventEmitter<any[]>;
   export function Apr1(): React.ReactElement;
 
 }
-declare module 'bitburner/ui/CharacterStats' {
+declare module 'bb-lib/ui/CharacterStats' {
   import React from "react";
   export function CharacterStats(): React.ReactElement;
 
 }
-declare module 'bitburner/ui/Context' {
+declare module 'bb-lib/ui/Context' {
   import React from "react";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { IRouter } from "bitburner/ui/Router";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { IRouter } from "bb-lib/ui/Router";
   export const Context: {
       Player: React.Context<IPlayer>;
       Router: React.Context<IRouter>;
@@ -11448,9 +11448,9 @@ declare module 'bitburner/ui/Context' {
   };
 
 }
-declare module 'bitburner/ui/ErrorBoundary' {
+declare module 'bb-lib/ui/ErrorBoundary' {
   import React, { ErrorInfo } from "react";
-  import { IRouter, Page } from "bitburner/ui/Router";
+  import { IRouter, Page } from "bb-lib/ui/Router";
   interface IProps {
       router: IRouter;
       softReset: () => void;
@@ -11472,12 +11472,12 @@ declare module 'bitburner/ui/ErrorBoundary' {
   export {};
 
 }
-declare module 'bitburner/ui/GameRoot' {
+declare module 'bb-lib/ui/GameRoot' {
   import React from "react";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { IEngine } from "bitburner/IEngine";
-  import { ITerminal } from "bitburner/Terminal/ITerminal";
-  import { IRouter } from "bitburner/ui/Router";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { IEngine } from "bb-lib/IEngine";
+  import { ITerminal } from "bb-lib/Terminal/ITerminal";
+  import { IRouter } from "bb-lib/ui/Router";
   interface IProps {
       terminal: ITerminal;
       player: IPlayer;
@@ -11488,17 +11488,17 @@ declare module 'bitburner/ui/GameRoot' {
   export {};
 
 }
-declare module 'bitburner/ui/InteractiveTutorial/InteractiveTutorialRoot' {
+declare module 'bb-lib/ui/InteractiveTutorial/InteractiveTutorialRoot' {
   import React from "react";
   export function InteractiveTutorialRoot(): React.ReactElement;
 
 }
-declare module 'bitburner/ui/InteractiveTutorial/ITutorialEvents' {
-  import { EventEmitter } from "bitburner/utils/EventEmitter";
+declare module 'bb-lib/ui/InteractiveTutorial/ITutorialEvents' {
+  import { EventEmitter } from "bb-lib/utils/EventEmitter";
   export const ITutorialEvents: EventEmitter<[]>;
 
 }
-declare module 'bitburner/ui/InteractiveTutorial/NSSelection' {
+declare module 'bb-lib/ui/InteractiveTutorial/NSSelection' {
   import React from "react";
   interface IProps {
       open: boolean;
@@ -11508,12 +11508,12 @@ declare module 'bitburner/ui/InteractiveTutorial/NSSelection' {
   export {};
 
 }
-declare module 'bitburner/ui/LoadingScreen' {
+declare module 'bb-lib/ui/LoadingScreen' {
   import React from "react";
   export function LoadingScreen(): React.ReactElement;
 
 }
-declare module 'bitburner/ui/numeralFormat' {
+declare module 'bb-lib/ui/numeralFormat' {
   import "numeral/locales/bg";
   import "numeral/locales/cs";
   import "numeral/locales/da-dk";
@@ -11568,14 +11568,14 @@ declare module 'bitburner/ui/numeralFormat' {
   export {};
 
 }
-declare module 'bitburner/ui/React/AlertManager' {
+declare module 'bb-lib/ui/React/AlertManager' {
   import React from "react";
-  import { EventEmitter } from "bitburner/utils/EventEmitter";
+  import { EventEmitter } from "bb-lib/utils/EventEmitter";
   export const AlertEvents: EventEmitter<[string | JSX.Element]>;
   export function AlertManager(): React.ReactElement;
 
 }
-declare module 'bitburner/ui/React/ANSIITypography' {
+declare module 'bb-lib/ui/React/ANSIITypography' {
   import React from "react";
   interface IProps {
       text: unknown;
@@ -11585,14 +11585,14 @@ declare module 'bitburner/ui/React/ANSIITypography' {
   export {};
 
 }
-declare module 'bitburner/ui/React/Augmentation' {
+declare module 'bb-lib/ui/React/Augmentation' {
   /// <reference types="react" />
   export function Augmentation({ name }: {
       name: string;
   }): JSX.Element;
 
 }
-declare module 'bitburner/ui/React/AugmentationAccordion' {
+declare module 'bb-lib/ui/React/AugmentationAccordion' {
   /**
    * React Component for displaying a single Augmentation as an accordion.
    *
@@ -11600,7 +11600,7 @@ declare module 'bitburner/ui/React/AugmentationAccordion' {
    * applicable), and the accordion's panel contains the Augmentation's description.
    */
   import React from "react";
-  import { Augmentation } from "bitburner/Augmentation/Augmentation";
+  import { Augmentation } from "bb-lib/Augmentation/Augmentation";
   type IProps = {
       aug: Augmentation;
       level?: number | string | null;
@@ -11609,7 +11609,7 @@ declare module 'bitburner/ui/React/AugmentationAccordion' {
   export {};
 
 }
-declare module 'bitburner/ui/React/BypassWrapper' {
+declare module 'bb-lib/ui/React/BypassWrapper' {
   import React from "react";
   interface IProps {
       children: React.ReactNode;
@@ -11619,7 +11619,7 @@ declare module 'bitburner/ui/React/BypassWrapper' {
   export {};
 
 }
-declare module 'bitburner/ui/React/CharacterOverview' {
+declare module 'bb-lib/ui/React/CharacterOverview' {
   import React from "react";
   interface IProps {
       save: () => void;
@@ -11630,7 +11630,7 @@ declare module 'bitburner/ui/React/CharacterOverview' {
   export function CharacterOverview({ save, killScripts }: IProps): React.ReactElement;
 
 }
-declare module 'bitburner/ui/React/CinematicLine' {
+declare module 'bb-lib/ui/React/CinematicLine' {
   import React from "react";
   interface IProps {
       text: string;
@@ -11640,7 +11640,7 @@ declare module 'bitburner/ui/React/CinematicLine' {
   export {};
 
 }
-declare module 'bitburner/ui/React/CinematicText' {
+declare module 'bb-lib/ui/React/CinematicText' {
   import React from "react";
   interface IProps {
       lines: string[];
@@ -11651,10 +11651,10 @@ declare module 'bitburner/ui/React/CinematicText' {
   export {};
 
 }
-declare module 'bitburner/ui/React/CodingContractModal' {
+declare module 'bb-lib/ui/React/CodingContractModal' {
   import React from "react";
-  import { CodingContract } from "bitburner/CodingContracts";
-  import { EventEmitter } from "bitburner/utils/EventEmitter";
+  import { CodingContract } from "bb-lib/CodingContracts";
+  import { EventEmitter } from "bb-lib/utils/EventEmitter";
   interface IProps {
       c: CodingContract;
       onClose: () => void;
@@ -11665,7 +11665,7 @@ declare module 'bitburner/ui/React/CodingContractModal' {
   export {};
 
 }
-declare module 'bitburner/ui/React/ConfirmationModal' {
+declare module 'bb-lib/ui/React/ConfirmationModal' {
   import React from "react";
   interface IProps {
       open: boolean;
@@ -11678,7 +11678,7 @@ declare module 'bitburner/ui/React/ConfirmationModal' {
   export {};
 
 }
-declare module 'bitburner/ui/React/CopyableText' {
+declare module 'bb-lib/ui/React/CopyableText' {
   import React from "react";
   type IProps = {
       value: string;
@@ -11689,7 +11689,7 @@ declare module 'bitburner/ui/React/CopyableText' {
   export {};
 
 }
-declare module 'bitburner/ui/React/CorruptableText' {
+declare module 'bb-lib/ui/React/CorruptableText' {
   /// <reference types="react" />
   interface IProps {
       content: string;
@@ -11698,7 +11698,7 @@ declare module 'bitburner/ui/React/CorruptableText' {
   export {};
 
 }
-declare module 'bitburner/ui/React/DeleteGameButton' {
+declare module 'bb-lib/ui/React/DeleteGameButton' {
   import React from "react";
   interface IProps {
       color?: "primary" | "warning" | "error";
@@ -11707,36 +11707,36 @@ declare module 'bitburner/ui/React/DeleteGameButton' {
   export {};
 
 }
-declare module 'bitburner/ui/React/DialogBox' {
+declare module 'bb-lib/ui/React/DialogBox' {
   /// <reference types="react" />
   import { SxProps } from "@mui/system";
   export function dialogBoxCreate(txt: string | JSX.Element, styles?: SxProps): void;
 
 }
-declare module 'bitburner/ui/React/Favor' {
+declare module 'bb-lib/ui/React/Favor' {
   import * as React from "react";
   export function Favor({ favor }: {
       favor: number | string;
   }): React.ReactElement;
 
 }
-declare module 'bitburner/ui/React/Hashes' {
+declare module 'bb-lib/ui/React/Hashes' {
   import * as React from "react";
   export function Hashes({ hashes }: {
       hashes: number | string;
   }): React.ReactElement;
 
 }
-declare module 'bitburner/ui/React/HashRate' {
+declare module 'bb-lib/ui/React/HashRate' {
   import React from "react";
   export function HashRate({ hashes }: {
       hashes: number;
   }): React.ReactElement;
 
 }
-declare module 'bitburner/ui/React/ImportSaveRoot' {
+declare module 'bb-lib/ui/React/ImportSaveRoot' {
   /// <reference types="react" />
-  import { IRouter } from "bitburner/ui/Router";
+  import { IRouter } from "bb-lib/ui/Router";
   export interface IProps {
       importString: string;
       automatic: boolean;
@@ -11745,7 +11745,7 @@ declare module 'bitburner/ui/React/ImportSaveRoot' {
   export function ImportSaveRoot(props: IProps): JSX.Element;
 
 }
-declare module 'bitburner/ui/React/KillScriptsModal' {
+declare module 'bb-lib/ui/React/KillScriptsModal' {
   import React from "react";
   interface IProps {
       open: boolean;
@@ -11756,10 +11756,10 @@ declare module 'bitburner/ui/React/KillScriptsModal' {
   export {};
 
 }
-declare module 'bitburner/ui/React/LogBoxManager' {
+declare module 'bb-lib/ui/React/LogBoxManager' {
   import React from "react";
-  import { EventEmitter } from "bitburner/utils/EventEmitter";
-  import { RunningScript } from "bitburner/Script/RunningScript";
+  import { EventEmitter } from "bb-lib/utils/EventEmitter";
+  import { RunningScript } from "bb-lib/Script/RunningScript";
   export const LogBoxEvents: EventEmitter<[RunningScript]>;
   export const LogBoxCloserEvents: EventEmitter<[number]>;
   export const LogBoxClearEvents: EventEmitter<[]>;
@@ -11782,7 +11782,7 @@ declare module 'bitburner/ui/React/LogBoxManager' {
   export {};
 
 }
-declare module 'bitburner/ui/React/Modal' {
+declare module 'bb-lib/ui/React/Modal' {
   import { Theme } from "@mui/material";
   import { SxProps } from "@mui/system";
   import React from "react";
@@ -11796,9 +11796,9 @@ declare module 'bitburner/ui/React/Modal' {
   export {};
 
 }
-declare module 'bitburner/ui/React/Money' {
+declare module 'bb-lib/ui/React/Money' {
   import * as React from "react";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
   interface IProps {
       money: number | string;
       player?: IPlayer;
@@ -11807,14 +11807,14 @@ declare module 'bitburner/ui/React/Money' {
   export {};
 
 }
-declare module 'bitburner/ui/React/MoneyRate' {
+declare module 'bb-lib/ui/React/MoneyRate' {
   /// <reference types="react" />
   export function MoneyRate({ money }: {
       money: number;
   }): JSX.Element;
 
 }
-declare module 'bitburner/ui/React/NumberInput' {
+declare module 'bb-lib/ui/React/NumberInput' {
   import { StandardTextFieldProps } from "@mui/material";
   import React from "react";
   interface IProps extends Omit<StandardTextFieldProps, "onChange"> {
@@ -11824,7 +11824,7 @@ declare module 'bitburner/ui/React/NumberInput' {
   export {};
 
 }
-declare module 'bitburner/ui/React/OptionSwitch' {
+declare module 'bb-lib/ui/React/OptionSwitch' {
   import React from "react";
   interface IProps {
       checked: boolean;
@@ -11836,7 +11836,7 @@ declare module 'bitburner/ui/React/OptionSwitch' {
   export {};
 
 }
-declare module 'bitburner/ui/React/Overview' {
+declare module 'bb-lib/ui/React/Overview' {
   import React from "react";
   interface IProps {
       children: JSX.Element[] | JSX.Element | React.ReactElement[] | React.ReactElement;
@@ -11851,14 +11851,14 @@ declare module 'bitburner/ui/React/Overview' {
   export {};
 
 }
-declare module 'bitburner/ui/React/Progress' {
+declare module 'bb-lib/ui/React/Progress' {
   /// <reference types="react" />
   export const ProgressBar: import("react").JSXElementConstructor<Omit<import("@mui/material/LinearProgress").LinearProgressProps, "classes"> & import("@mui/styles/withStyles").StyledComponentProps<"root" | "bar"> & object>;
 
 }
-declare module 'bitburner/ui/React/PromptManager' {
+declare module 'bb-lib/ui/React/PromptManager' {
   import React from "react";
-  import { EventEmitter } from "bitburner/utils/EventEmitter";
+  import { EventEmitter } from "bb-lib/utils/EventEmitter";
   export const PromptEvent: EventEmitter<[Prompt]>;
   interface Prompt {
       txt: string;
@@ -11872,10 +11872,10 @@ declare module 'bitburner/ui/React/PromptManager' {
   export {};
 
 }
-declare module 'bitburner/ui/React/RecoveryRoot' {
+declare module 'bb-lib/ui/React/RecoveryRoot' {
   import React from "react";
-  import { IRouter } from "bitburner/ui/Router";
-  import { IErrorData } from "bitburner/utils/ErrorHelper";
+  import { IRouter } from "bb-lib/ui/Router";
+  import { IErrorData } from "bb-lib/utils/ErrorHelper";
   export let RecoveryMode: boolean;
   export function ActivateRecoveryMode(): void;
   interface IProps {
@@ -11888,21 +11888,21 @@ declare module 'bitburner/ui/React/RecoveryRoot' {
   export {};
 
 }
-declare module 'bitburner/ui/React/Reputation' {
+declare module 'bb-lib/ui/React/Reputation' {
   import * as React from "react";
   export function Reputation({ reputation }: {
       reputation: number | string;
   }): React.ReactElement;
 
 }
-declare module 'bitburner/ui/React/ReputationRate' {
+declare module 'bb-lib/ui/React/ReputationRate' {
   import React from "react";
   export function ReputationRate({ reputation }: {
       reputation: number;
   }): React.ReactElement;
 
 }
-declare module 'bitburner/ui/React/ServerDropdown' {
+declare module 'bb-lib/ui/React/ServerDropdown' {
   /**
    * Creates a dropdown (select HTML element) with server hostnames as options
    *
@@ -11927,9 +11927,9 @@ declare module 'bitburner/ui/React/ServerDropdown' {
   export {};
 
 }
-declare module 'bitburner/ui/React/Snackbar' {
+declare module 'bb-lib/ui/React/Snackbar' {
   import React from "react";
-  import { EventEmitter } from "bitburner/utils/EventEmitter";
+  import { EventEmitter } from "bb-lib/utils/EventEmitter";
   interface IProps {
       children: React.ReactNode | React.ReactNode[];
   }
@@ -11945,7 +11945,7 @@ declare module 'bitburner/ui/React/Snackbar' {
   export {};
 
 }
-declare module 'bitburner/ui/React/SoftResetButton' {
+declare module 'bb-lib/ui/React/SoftResetButton' {
   import React from "react";
   interface IProps {
       color?: "primary" | "warning" | "error";
@@ -11956,7 +11956,7 @@ declare module 'bitburner/ui/React/SoftResetButton' {
   export {};
 
 }
-declare module 'bitburner/ui/React/SourceFileAccordion' {
+declare module 'bb-lib/ui/React/SourceFileAccordion' {
   /**
    * React Component for displaying a single Source-File as an accordion.
    *
@@ -11964,7 +11964,7 @@ declare module 'bitburner/ui/React/SourceFileAccordion' {
    * and the accordion's panel contains the Source-File's description.
    */
   import React from "react";
-  import { SourceFile } from "bitburner/SourceFile/SourceFile";
+  import { SourceFile } from "bb-lib/SourceFile/SourceFile";
   type IProps = {
       level: number;
       sf: SourceFile;
@@ -11973,7 +11973,7 @@ declare module 'bitburner/ui/React/SourceFileAccordion' {
   export {};
 
 }
-declare module 'bitburner/ui/React/StaticModal' {
+declare module 'bb-lib/ui/React/StaticModal' {
   import React from "react";
   interface IProps {
       open: boolean;
@@ -11984,7 +11984,7 @@ declare module 'bitburner/ui/React/StaticModal' {
   export {};
 
 }
-declare module 'bitburner/ui/React/StatsProgressBar' {
+declare module 'bb-lib/ui/React/StatsProgressBar' {
   import * as React from "react";
   import { ISkillProgress } from "src/PersonObjects/formulas/skill";
   interface IProgressProps {
@@ -12004,7 +12004,7 @@ declare module 'bitburner/ui/React/StatsProgressBar' {
   export {};
 
 }
-declare module 'bitburner/ui/React/StatsRow' {
+declare module 'bb-lib/ui/React/StatsRow' {
   import React from "react";
   import { ClassNameMap } from "@material-ui/core/styles/withStyles";
   interface ITableRowData {
@@ -12023,7 +12023,7 @@ declare module 'bitburner/ui/React/StatsRow' {
   export {};
 
 }
-declare module 'bitburner/ui/React/StatsTable' {
+declare module 'bb-lib/ui/React/StatsTable' {
   import React from "react";
   interface IProps {
       rows: React.ReactNode[][];
@@ -12034,14 +12034,14 @@ declare module 'bitburner/ui/React/StatsTable' {
   export {};
 
 }
-declare module 'bitburner/ui/React/Table' {
+declare module 'bb-lib/ui/React/Table' {
   import React from "react";
   import { TableCellProps, TableProps } from "@mui/material";
   export const TableCell: React.FC<TableCellProps>;
   export const Table: React.FC<TableProps>;
 
 }
-declare module 'bitburner/ui/React/TablePaginationActionsAll' {
+declare module 'bb-lib/ui/React/TablePaginationActionsAll' {
   import * as React from "react";
   interface TablePaginationActionsProps {
       count: number;
@@ -12053,9 +12053,9 @@ declare module 'bitburner/ui/React/TablePaginationActionsAll' {
   export {};
 
 }
-declare module 'bitburner/ui/React/WorldMap' {
+declare module 'bb-lib/ui/React/WorldMap' {
   import React from "react";
-  import { CityName } from "bitburner/Locations/data/CityNames";
+  import { CityName } from "bb-lib/Locations/data/CityNames";
   interface IProps {
       currentCity: CityName;
       onTravel: (city: CityName) => void;
@@ -12064,9 +12064,9 @@ declare module 'bitburner/ui/React/WorldMap' {
   export {};
 
 }
-declare module 'bitburner/ui/Router' {
-  import { Faction } from "bitburner/Faction/Faction";
-  import { Location } from "bitburner/Locations/Location";
+declare module 'bb-lib/ui/Router' {
+  import { Faction } from "bb-lib/Faction/Faction";
+  import { Location } from "bb-lib/Locations/Location";
   /**
    * The full-screen page the player is currently be on.
    * These pages are mutually exclusive.
@@ -12150,16 +12150,16 @@ declare module 'bitburner/ui/Router' {
   }
 
 }
-declare module 'bitburner/ui/WorkInProgressRoot' {
+declare module 'bb-lib/ui/WorkInProgressRoot' {
   import React from "react";
   export function WorkInProgressRoot(): React.ReactElement;
 
 }
-declare module 'bitburner/UncaughtPromiseHandler' {
+declare module 'bb-lib/UncaughtPromiseHandler' {
   export function setupUncaughtPromiseHandler(): void;
 
 }
-declare module 'bitburner/utils/calculateEffectWithFactors' {
+declare module 'bb-lib/utils/calculateEffectWithFactors' {
   /**
    * This is a component that implements a mathematical formula used commonly throughout the
    * game. This formula is (typically) used to calculate the effect that various statistics
@@ -12177,16 +12177,16 @@ declare module 'bitburner/utils/calculateEffectWithFactors' {
   export function calculateEffectWithFactors(n: number, expFac: number, linearFac: number): number;
 
 }
-declare module 'bitburner/utils/CompressionContracts' {
+declare module 'bb-lib/utils/CompressionContracts' {
   export function comprGenChar(): string;
   export function comprLZGenerate(): string;
   export function comprLZEncode(plain: string): string;
   export function comprLZDecode(compr: string): string | null;
 
 }
-declare module 'bitburner/utils/ErrorHelper' {
+declare module 'bb-lib/utils/ErrorHelper' {
   import React from "react";
-  import { Page } from "bitburner/ui/Router";
+  import { Page } from "bb-lib/ui/Router";
   enum GameEnv {
       Production = 0,
       Development = 1
@@ -12229,7 +12229,7 @@ declare module 'bitburner/utils/ErrorHelper' {
   export {};
 
 }
-declare module 'bitburner/utils/EventEmitter' {
+declare module 'bb-lib/utils/EventEmitter' {
   export class EventEmitter<T extends any[]> {
       subscribers: {
           [key: string]: (...args: [...T]) => void | undefined;
@@ -12239,13 +12239,13 @@ declare module 'bitburner/utils/EventEmitter' {
   }
 
 }
-declare module 'bitburner/utils/HammingCodeTools' {
+declare module 'bb-lib/utils/HammingCodeTools' {
   export function HammingEncode(data: number): string;
   export function HammingEncodeProperly(data: number): string;
   export function HammingDecode(data: string): number;
 
 }
-declare module 'bitburner/utils/Heap' {
+declare module 'bb-lib/utils/Heap' {
   /** Binary heap. */
   abstract class BinHeap<T> {
       /**
@@ -12289,7 +12289,7 @@ declare module 'bitburner/utils/Heap' {
   export {};
 
 }
-declare module 'bitburner/utils/helpers/addOffset' {
+declare module 'bb-lib/utils/helpers/addOffset' {
   /**
    * Adds a random offset to a number within a certain percentage
    * @example
@@ -12304,7 +12304,7 @@ declare module 'bitburner/utils/helpers/addOffset' {
   export function addOffset(midpoint: number, percentage: number): number;
 
 }
-declare module 'bitburner/utils/helpers/arrayToString' {
+declare module 'bb-lib/utils/helpers/arrayToString' {
   /**
    * Returns the input array as a comma separated string.
    *
@@ -12315,13 +12315,13 @@ declare module 'bitburner/utils/helpers/arrayToString' {
   export function arrayToString(a: unknown[]): string;
 
 }
-declare module 'bitburner/utils/helpers/checkEnum' {
+declare module 'bb-lib/utils/helpers/checkEnum' {
   export function checkEnum<T extends string, TEnumValue extends string>(enumVariable: {
       [key in T]: TEnumValue;
   }, value: string): value is TEnumValue;
 
 }
-declare module 'bitburner/utils/helpers/clearObject' {
+declare module 'bb-lib/utils/helpers/clearObject' {
   /**
    * Clears defined properties from an object.
    * Does not delete up the prototype chain.
@@ -12331,7 +12331,7 @@ declare module 'bitburner/utils/helpers/clearObject' {
   export function clearObject(obj: unknown): void;
 
 }
-declare module 'bitburner/utils/helpers/compareArrays' {
+declare module 'bb-lib/utils/helpers/compareArrays' {
   /**
    * Does a shallow compare of two arrays to determine if they are equal.
    * @param a1 The first array
@@ -12340,7 +12340,7 @@ declare module 'bitburner/utils/helpers/compareArrays' {
   export function compareArrays<T>(a1: T[], a2: T[]): boolean;
 
 }
-declare module 'bitburner/utils/helpers/createProgressBarText' {
+declare module 'bb-lib/utils/helpers/createProgressBarText' {
   /**
    * Represents the possible configuration values that can be provided when creating the progress bar text.
    */
@@ -12363,11 +12363,11 @@ declare module 'bitburner/utils/helpers/createProgressBarText' {
   export {};
 
 }
-declare module 'bitburner/utils/helpers/createRandomString' {
+declare module 'bb-lib/utils/helpers/createRandomString' {
   export function createRandomString(n: number): string;
 
 }
-declare module 'bitburner/utils/helpers/exceptionAlert' {
+declare module 'bb-lib/utils/helpers/exceptionAlert' {
   interface IError {
       fileName?: string;
       lineNumber?: number;
@@ -12377,11 +12377,11 @@ declare module 'bitburner/utils/helpers/exceptionAlert' {
   export {};
 
 }
-declare module 'bitburner/utils/helpers/formatTime' {
+declare module 'bb-lib/utils/helpers/formatTime' {
   export function formatTime(fmt: string): string;
 
 }
-declare module 'bitburner/utils/helpers/getRandomByte' {
+declare module 'bb-lib/utils/helpers/getRandomByte' {
   /**
    * Gets a random value in the range of a byte (0 - 255), or up to the maximum.
    * @param max The maximum value (up to 255).
@@ -12389,7 +12389,7 @@ declare module 'bitburner/utils/helpers/getRandomByte' {
   export function getRandomByte(max: number): number;
 
 }
-declare module 'bitburner/utils/helpers/getRandomInt' {
+declare module 'bb-lib/utils/helpers/getRandomInt' {
   /**
    * Gets a random integer bounded by the values passed in.
    * @param min The minimum value in the range.
@@ -12398,14 +12398,14 @@ declare module 'bitburner/utils/helpers/getRandomInt' {
   export function getRandomInt(min: number, max: number): number;
 
 }
-declare module 'bitburner/utils/helpers/getTimestamp' {
+declare module 'bb-lib/utils/helpers/getTimestamp' {
   /**
    * Returns a MM/DD HH:MM timestamp for the current time
    */
   export function getTimestamp(): string;
 
 }
-declare module 'bitburner/utils/helpers/isPowerOfTwo' {
+declare module 'bb-lib/utils/helpers/isPowerOfTwo' {
   /**
    * Determines if the number is a power of 2
    * @param n The number to check.
@@ -12413,7 +12413,7 @@ declare module 'bitburner/utils/helpers/isPowerOfTwo' {
   export function isPowerOfTwo(n: number): boolean;
 
 }
-declare module 'bitburner/utils/helpers/isString' {
+declare module 'bb-lib/utils/helpers/isString' {
   /**
    * Checks whether the value passed in can be considered a string.
    * @param value The value to check if it is a string.
@@ -12421,7 +12421,7 @@ declare module 'bitburner/utils/helpers/isString' {
   export function isString(value: unknown): value is string;
 
 }
-declare module 'bitburner/utils/helpers/isValidIPAddress' {
+declare module 'bb-lib/utils/helpers/isValidIPAddress' {
   /**
    * Checks whether a IP Address string is valid.
    * @param ipaddress A string representing a potential IP Address
@@ -12429,7 +12429,7 @@ declare module 'bitburner/utils/helpers/isValidIPAddress' {
   export function isValidIPAddress(ipaddress: string): boolean;
 
 }
-declare module 'bitburner/utils/helpers/isValidNumber' {
+declare module 'bb-lib/utils/helpers/isValidNumber' {
   /**
    * Checks that a variable is a valid number. A valid number
    * must be a "number" type and cannot be NaN
@@ -12437,7 +12437,7 @@ declare module 'bitburner/utils/helpers/isValidNumber' {
   export function isValidNumber(n: number): boolean;
 
 }
-declare module 'bitburner/utils/helpers/keyCodes' {
+declare module 'bb-lib/utils/helpers/keyCodes' {
   /**
    * Keyboard key codes as returned by event.key
    */
@@ -12565,11 +12565,11 @@ declare module 'bitburner/utils/helpers/keyCodes' {
   }
 
 }
-declare module 'bitburner/utils/helpers/N00dles' {
+declare module 'bb-lib/utils/helpers/N00dles' {
   export function N00dles(): void;
 
 }
-declare module 'bitburner/utils/helpers/roundToTwo' {
+declare module 'bb-lib/utils/helpers/roundToTwo' {
   /**
    * Rounds a number to two decimal places.
    * @param decimal A decimal value to trim to two places.
@@ -12577,7 +12577,7 @@ declare module 'bitburner/utils/helpers/roundToTwo' {
   export function roundToTwo(decimal: number): number;
 
 }
-declare module 'bitburner/utils/IPAddress' {
+declare module 'bb-lib/utils/IPAddress' {
   /**
    * Generate a random IP address
    * Does not check to see if the IP already exists in the game
@@ -12585,7 +12585,7 @@ declare module 'bitburner/utils/IPAddress' {
   export const createRandomIp: () => string;
 
 }
-declare module 'bitburner/utils/JSONReviver' {
+declare module 'bb-lib/utils/JSONReviver' {
   export interface IReviverValue {
       ctor: string;
       data: any;
@@ -12600,12 +12600,12 @@ declare module 'bitburner/utils/JSONReviver' {
   export function Generic_fromJSON<T>(ctor: new () => T, data: any): T;
 
 }
-declare module 'bitburner/utils/MoneySourceTracker' {
+declare module 'bb-lib/utils/MoneySourceTracker' {
   /**
    * This is an object that is used to keep track of where all of the player's
    * money is coming from (or going to)
    */
-  import { IReviverValue } from "bitburner/utils/JSONReviver";
+  import { IReviverValue } from "bb-lib/utils/JSONReviver";
   export class MoneySourceTracker {
       [key: string]: number | Function;
       bladeburner: number;
@@ -12634,7 +12634,7 @@ declare module 'bitburner/utils/MoneySourceTracker' {
   }
 
 }
-declare module 'bitburner/utils/StringHelperFunctions' {
+declare module 'bb-lib/utils/StringHelperFunctions' {
   function convertTimeMsToTimeElapsedString(time: number, showMilli?: boolean): string;
   function longestCommonStart(strings: string[]): string;
   function containsAllStrings(arr: string[]): boolean;
@@ -12653,7 +12653,7 @@ declare module 'bitburner/utils/StringHelperFunctions' {
   export { convertTimeMsToTimeElapsedString, longestCommonStart, containsAllStrings, formatNumber, generateRandomString, cyrb53, capitalizeFirstLetter, capitalizeEachWord, };
 
 }
-declare module 'bitburner/utils/v1APIBreak' {
+declare module 'bb-lib/utils/v1APIBreak' {
   export function AwardNFG(n?: number): void;
   export interface IFileLine {
       file: string;
@@ -12663,17 +12663,17 @@ declare module 'bitburner/utils/v1APIBreak' {
   export function v1APIBreak(): void;
 
 }
-declare module 'bitburner/utils/v2APIBreak' {
+declare module 'bb-lib/utils/v2APIBreak' {
   export const v2APIBreak: () => void;
 
 }
-declare module 'bitburner/utils/V2Modal' {
+declare module 'bb-lib/utils/V2Modal' {
   import React from "react";
   export const openV2Modal: () => void;
   export const V2Modal: () => React.ReactElement;
 
 }
-declare module 'bitburner/utils/Validator' {
+declare module 'bb-lib/utils/Validator' {
   export type ObjectValidator<T> = {
       [key in keyof T]?: ParameterValidator<T, keyof T>;
   };
@@ -12692,7 +12692,7 @@ declare module 'bitburner/utils/Validator' {
   export {};
 
 }
-declare module 'bitburner/utils/WorkType' {
+declare module 'bb-lib/utils/WorkType' {
   export enum CrimeType {
       None = "",
       SHOPLIFT = "SHOPLIFT",
@@ -12710,12 +12710,12 @@ declare module 'bitburner/utils/WorkType' {
   }
 
 }
-declare module 'bitburner/Work/ClassWork' {
-  import { IReviverValue } from "bitburner/utils/JSONReviver";
-  import { LocationName } from "bitburner/Locations/data/LocationNames";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { Work } from "bitburner/Work/Work";
-  import { WorkStats } from "bitburner/Work/WorkStats";
+declare module 'bb-lib/Work/ClassWork' {
+  import { IReviverValue } from "bb-lib/utils/JSONReviver";
+  import { LocationName } from "bb-lib/Locations/data/LocationNames";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { Work } from "bb-lib/Work/Work";
+  import { WorkStats } from "bb-lib/Work/WorkStats";
   export enum ClassType {
       StudyComputerScience = "STUDYCOMPUTERSCIENCE",
       DataStructures = "DATASTRUCTURES",
@@ -12763,12 +12763,12 @@ declare module 'bitburner/Work/ClassWork' {
   export {};
 
 }
-declare module 'bitburner/Work/CompanyWork' {
-  import { IReviverValue } from "bitburner/utils/JSONReviver";
+declare module 'bb-lib/Work/CompanyWork' {
+  import { IReviverValue } from "bb-lib/utils/JSONReviver";
   import { IPlayer } from "src/PersonObjects/IPlayer";
-  import { Work } from "bitburner/Work/Work";
-  import { WorkStats } from "bitburner/Work/WorkStats";
-  import { Company } from "bitburner/Company/Company";
+  import { Work } from "bb-lib/Work/Work";
+  import { WorkStats } from "bb-lib/Work/WorkStats";
+  import { Company } from "bb-lib/Company/Company";
   interface CompanyWorkParams {
       companyName: string;
       singularity: boolean;
@@ -12794,11 +12794,11 @@ declare module 'bitburner/Work/CompanyWork' {
   export {};
 
 }
-declare module 'bitburner/Work/CreateProgramWork' {
-  import { IReviverValue } from "bitburner/utils/JSONReviver";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { Work } from "bitburner/Work/Work";
-  import { Program } from "bitburner/Programs/Program";
+declare module 'bb-lib/Work/CreateProgramWork' {
+  import { IReviverValue } from "bb-lib/utils/JSONReviver";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { Work } from "bb-lib/Work/Work";
+  import { Program } from "bb-lib/Programs/Program";
   export const isCreateProgramWork: (w: Work | null) => w is CreateProgramWork;
   interface CreateProgramWorkParams {
       programName: string;
@@ -12826,13 +12826,13 @@ declare module 'bitburner/Work/CreateProgramWork' {
   export {};
 
 }
-declare module 'bitburner/Work/CrimeWork' {
-  import { IReviverValue } from "bitburner/utils/JSONReviver";
-  import { Crime } from "bitburner/Crime/Crime";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { CrimeType } from "bitburner/utils/WorkType";
-  import { Work } from "bitburner/Work/Work";
-  import { WorkStats } from "bitburner/Work/WorkStats";
+declare module 'bb-lib/Work/CrimeWork' {
+  import { IReviverValue } from "bb-lib/utils/JSONReviver";
+  import { Crime } from "bb-lib/Crime/Crime";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { CrimeType } from "bb-lib/utils/WorkType";
+  import { Work } from "bb-lib/Work/Work";
+  import { WorkStats } from "bb-lib/Work/WorkStats";
   interface CrimeWorkParams {
       crimeType: CrimeType;
       singularity: boolean;
@@ -12860,7 +12860,7 @@ declare module 'bitburner/Work/CrimeWork' {
   export {};
 
 }
-declare module 'bitburner/Work/data/FactionWorkType' {
+declare module 'bb-lib/Work/data/FactionWorkType' {
   export enum FactionWorkType {
       HACKING = "HACKING",
       FIELD = "FIELD",
@@ -12868,13 +12868,13 @@ declare module 'bitburner/Work/data/FactionWorkType' {
   }
 
 }
-declare module 'bitburner/Work/FactionWork' {
-  import { Work } from "bitburner/Work/Work";
-  import { IReviverValue } from "bitburner/utils/JSONReviver";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { Faction } from "bitburner/Faction/Faction";
-  import { WorkStats } from "bitburner/Work/WorkStats";
-  import { FactionWorkType } from "bitburner/Work/data/FactionWorkType";
+declare module 'bb-lib/Work/FactionWork' {
+  import { Work } from "bb-lib/Work/Work";
+  import { IReviverValue } from "bb-lib/utils/JSONReviver";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { Faction } from "bb-lib/Faction/Faction";
+  import { WorkStats } from "bb-lib/Work/WorkStats";
+  import { FactionWorkType } from "bb-lib/Work/data/FactionWorkType";
   interface FactionWorkParams {
       singularity: boolean;
       factionWorkType: FactionWorkType;
@@ -12903,44 +12903,44 @@ declare module 'bitburner/Work/FactionWork' {
   export {};
 
 }
-declare module 'bitburner/Work/formulas/Class' {
-  import { Location } from "bitburner/Locations/Location";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { Class, ClassType } from "bitburner/Work/ClassWork";
-  import { WorkStats } from "bitburner/Work/WorkStats";
-  import { IPerson } from "bitburner/PersonObjects/IPerson";
-  import { LocationName } from "bitburner/Locations/data/LocationNames";
+declare module 'bb-lib/Work/formulas/Class' {
+  import { Location } from "bb-lib/Locations/Location";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { Class, ClassType } from "bb-lib/Work/ClassWork";
+  import { WorkStats } from "bb-lib/Work/WorkStats";
+  import { IPerson } from "bb-lib/PersonObjects/IPerson";
+  import { LocationName } from "bb-lib/Locations/data/LocationNames";
   export function calculateCost(classs: Class, location: Location): number;
   export function calculateClassEarnings(player: IPlayer, target: IPerson, type: ClassType, locationName: LocationName): WorkStats;
 
 }
-declare module 'bitburner/Work/formulas/Company' {
-  import { Company } from "bitburner/Company/Company";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { WorkStats } from "bitburner/Work/WorkStats";
+declare module 'bb-lib/Work/formulas/Company' {
+  import { Company } from "bb-lib/Company/Company";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { WorkStats } from "bb-lib/Work/WorkStats";
   import { IPerson } from "src/PersonObjects/IPerson";
   export const calculateCompanyWorkStats: (player: IPlayer, worker: IPerson, company: Company) => WorkStats;
 
 }
-declare module 'bitburner/Work/formulas/Crime' {
+declare module 'bb-lib/Work/formulas/Crime' {
   import { Crime } from "src/Crime/Crime";
-  import { WorkStats } from "bitburner/Work/WorkStats";
+  import { WorkStats } from "bb-lib/Work/WorkStats";
   export const calculateCrimeWorkStats: (crime: Crime) => WorkStats;
 
 }
-declare module 'bitburner/Work/formulas/Faction' {
-  import { IPerson } from "bitburner/PersonObjects/IPerson";
-  import { FactionWorkType } from "bitburner/Work/data/FactionWorkType";
-  import { WorkStats } from "bitburner/Work/WorkStats";
+declare module 'bb-lib/Work/formulas/Faction' {
+  import { IPerson } from "bb-lib/PersonObjects/IPerson";
+  import { FactionWorkType } from "bb-lib/Work/data/FactionWorkType";
+  import { WorkStats } from "bb-lib/Work/WorkStats";
   export const FactionWorkStats: Record<FactionWorkType, WorkStats>;
   export const calculateFactionRep: (person: IPerson, tpe: FactionWorkType, favor: number) => number;
   export function calculateFactionExp(person: IPerson, tpe: FactionWorkType): WorkStats;
 
 }
-declare module 'bitburner/Work/GraftingWork' {
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { Work } from "bitburner/Work/Work";
-  import { IReviverValue } from "bitburner/utils/JSONReviver";
+declare module 'bb-lib/Work/GraftingWork' {
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { Work } from "bb-lib/Work/Work";
+  import { IReviverValue } from "bb-lib/utils/JSONReviver";
   export const isGraftingWork: (w: Work | null) => w is GraftingWork;
   interface GraftingWorkParams {
       augmentation: string;
@@ -12967,9 +12967,9 @@ declare module 'bitburner/Work/GraftingWork' {
   export {};
 
 }
-declare module 'bitburner/Work/Work' {
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
-  import { IReviverValue } from "bitburner/utils/JSONReviver";
+declare module 'bb-lib/Work/Work' {
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
+  import { IReviverValue } from "bb-lib/utils/JSONReviver";
   export abstract class Work {
       type: WorkType;
       singularity: boolean;
@@ -12990,9 +12990,9 @@ declare module 'bitburner/Work/Work' {
   }
 
 }
-declare module 'bitburner/Work/WorkStats' {
+declare module 'bb-lib/Work/WorkStats' {
   import { IPerson } from "src/PersonObjects/IPerson";
-  import { IPlayer } from "bitburner/PersonObjects/IPlayer";
+  import { IPlayer } from "bb-lib/PersonObjects/IPlayer";
   export interface WorkStats {
       money: number;
       reputation: number;
@@ -13023,7 +13023,7 @@ declare module 'bitburner/Work/WorkStats' {
   export {};
 
 }
-declare module 'bitburner' {
-  import main = require('bitburner/index');
+declare module 'bb-lib' {
+  import main = require('bb-lib/index');
   export = main;
 }

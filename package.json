@@ -1,5 +1,5 @@
 {
-  "name": "bitburner",
+  "name": "bb-lib",
   "license": "SEE LICENSE IN license.txt",
   "version": "2.0.1",
   "main": "electron-main.js",
@@ -7,7 +7,7 @@
     "name": "Daniel Xie & Olivier Gagnon"
   },
   "bugs": {
-    "url": "https://github.com/danielyxie/bitburner/issues"
+    "url": "https://github.com/jasongoemaat/bitburner/issues"
   },
   "dependencies": {
     "@emotion/react": "^11.4.1",
